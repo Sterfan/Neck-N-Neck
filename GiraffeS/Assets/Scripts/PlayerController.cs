@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
     PlayerStates playerState = PlayerStates.Running;
 
     public float jumpAmplitude = 15.0f;
-    public float fallSpeedMultiplier = 0.25f;
+    //Doesn't work when it's a variable idk why, go change value manually
+    public float fallSpeedMultiplier = 0.75f;
+
     Rigidbody2D rb;
 
     private void Awake()
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
                 }
             case PlayerStates.Jumping:
                 {
-                    rb.velocity -= Vector2.up * fallSpeedMultiplier;
+                    rb.velocity -= Vector2.up * 0.75f;
                     
 
                     break;
@@ -52,14 +54,11 @@ public class PlayerController : MonoBehaviour
                 }
 
         }
-
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (playerState == PlayerStates.Jumping && collision.gameObject.CompareTag("Ground"))
             playerState = PlayerStates.Running;
     }
 
