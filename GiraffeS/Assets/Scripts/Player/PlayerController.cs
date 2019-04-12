@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float jumpAmplitude = 15.0f;
     //Doesn't work when it's a variable idk why, go change value manually
     public float fallSpeedMultiplier = 0.75f;
+    public KeyCode jumpInput = KeyCode.Space;
 
     Rigidbody2D rb;
 
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerStates.Running:
                 {
-                    if (Input.GetKey(KeyCode.Space))
+                    if (Input.GetKey(jumpInput))
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;
