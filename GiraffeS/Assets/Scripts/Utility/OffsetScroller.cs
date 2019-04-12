@@ -24,4 +24,5 @@ public class OffsetScroller : MonoBehaviour
     {
         scrollSpeed = speed;
     }
+
 }
