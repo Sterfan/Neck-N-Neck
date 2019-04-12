@@ -8,14 +8,16 @@ public class BackgroundScroller : MonoBehaviour
 
     private Vector3 startPosition;
 
+    private float newPosition;
+
     void Start()
     {
         startPosition = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        float newPosition = Time.time * scrollSpeed;
+        newPosition += Time.deltaTime * scrollSpeed;
         transform.position = startPosition + Vector3.left * newPosition;
     }
 
