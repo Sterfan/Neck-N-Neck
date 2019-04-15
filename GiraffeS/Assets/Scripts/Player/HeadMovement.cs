@@ -8,20 +8,29 @@ public class HeadMovement : MonoBehaviour
     public GameObject Head;
     public GameObject Neck;
 
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 mouseStart;
+    public Vector3 headStart;
+
+    private void Start()
     {
-        
+        mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseStart.x = 0;
+        mouseStart.z = 0;
+        headStart = Head.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        mousePos.x = -3;
+        mousePos.x = -1;
         //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-        Head.transform.position = mousePos;
+        Head.transform.position = headStart - (mouseStart - mousePos);
+
+        if (Head.transform.position.y > 4.0f)
+            Head.transform.position = new Vector3(headStart.x, 4.0f, 0.0f);
+        if (Head.transform.position.y < -3.0f)
+            Head.transform.position = new Vector3(headStart.x, -3.0f, 0.0f);
 
         Vector3 headPos = Head.transform.position;
         Vector3 bodyPos = Body.transform.position;

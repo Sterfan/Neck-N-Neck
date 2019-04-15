@@ -8,15 +8,34 @@ public class HeadMovement3 : MonoBehaviour
     public GameObject Head;
     public GameObject Neck;
 
+    public Vector3 mouseStart;
+    public Vector3 headStart;
+
+    private void Start()
+    {
+        mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseStart.y = mouseStart.x;
+        mouseStart.x = 0;
+        mouseStart.z = 0;
+        headStart = Head.transform.position;
+    }
+
     void Update()
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        //mousePos.x = -3;
-        Vector3 headMove = new Vector3(-3.0f, mousePos.x, 0.0f);
+        mousePos.y = 0;
+        Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
+
+        Head.transform.position = headStart - (mouseStart - headMove);
+
+        if (Head.transform.position.y > 15.0f)
+            Head.transform.position = new Vector3(headStart.x, 15.0f, 0.0f);
+        if (Head.transform.position.y < 8.0f)
+            Head.transform.position = new Vector3(headStart.x, 8.0f, 0.0f);
 
         //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-        Head.transform.position = headMove;
+        //Head.transform.position = headMove;
 
         Vector3 headPos = Head.transform.position;
         Vector3 bodyPos = Body.transform.position;
