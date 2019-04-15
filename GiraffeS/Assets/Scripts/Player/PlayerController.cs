@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     //Doesn't work when it's a variable idk why, go change value manually
     public float fallSpeedMultiplier = 0.75f;
     public KeyCode jumpInput = KeyCode.Space;
+    public GameObject Head;
+    public bool Jumping = false;
 
     Rigidbody2D rb;
 
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerStates.Running:
                 {
+                    Jumping = false;
                     if (Input.GetKey(jumpInput))
                     {
                         Jump();
@@ -43,6 +46,8 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Jumping:
                 {
                     rb.velocity -= Vector2.up * 0.75f;
+                    //Head.GetComponent<Rigidbody2D>().velocity -= Vector2.up * 0.75f;
+                    Jumping = true;
                     
 
                     break;
@@ -66,6 +71,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         rb.velocity = Vector2.up * jumpAmplitude;
+        //Head.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpAmplitude;
     }
 
 }

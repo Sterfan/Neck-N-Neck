@@ -8,7 +8,10 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Background.GetComponent<BackgroundScroller>().SetSpeed(5.0f);
+        if (collision.CompareTag("Obstacle"))
+        {
+            Background.GetComponent<BackgroundScroller>().SetSpeed(5.0f);
+        }
         //Background.GetComponent<BackgroundScroller>().InvokeReset();
     }
 
