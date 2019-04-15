@@ -2109,6 +2109,8 @@ MonoBehaviour:
   Body: {fileID: 1818828243}
   Head: {fileID: 374256973}
   Neck: {fileID: 219709343}
+  mouseStart: {x: 0, y: 0, z: 0}
+  headStart: {x: 0, y: 0, z: 0}
 --- !u!60 &374256976
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5555,6 +5557,8 @@ MonoBehaviour:
   Body: {fileID: 284792546}
   Head: {fileID: 1700983097}
   Neck: {fileID: 1775437737}
+  mouseStart: {x: 0, y: 0, z: 0}
+  headStart: {x: 0, y: 0, z: 0}
 --- !u!1 &1722291846
 GameObject:
   m_ObjectHideFlags: 0

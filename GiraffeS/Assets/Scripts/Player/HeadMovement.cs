@@ -23,7 +23,7 @@ public class HeadMovement : MonoBehaviour
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        mousePos.x = -1;
+        mousePos.x = 0;
         //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
         Head.transform.position = headStart - (mouseStart - mousePos);
 
