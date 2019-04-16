@@ -10,6 +10,7 @@ public class HeadMovement3 : MonoBehaviour
 
     public Vector3 mouseStart;
     public Vector3 headStart;
+    public Vector3 bodyStart;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class HeadMovement3 : MonoBehaviour
         mouseStart.x = 0;
         mouseStart.z = 0;
         headStart = Head.transform.position;
+        bodyStart = Body.transform.position;
     }
 
     void Update()
@@ -29,10 +31,15 @@ public class HeadMovement3 : MonoBehaviour
 
         Head.transform.position = headStart - (mouseStart - headMove);
 
+        if (Body.GetComponent<PlayerController>().Jumping == true)
+        {
+            Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - headMove);
+        }
+
         if (Head.transform.position.y > 15.0f)
             Head.transform.position = new Vector3(headStart.x, 15.0f, 0.0f);
-        if (Head.transform.position.y < 8.0f)
-            Head.transform.position = new Vector3(headStart.x, 8.0f, 0.0f);
+        if (Head.transform.position.y < Body.transform.position.y)
+            Head.transform.position = new Vector3(headStart.x, Body.transform.position.y, 0.0f);
 
         //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
         //Head.transform.position = headMove;
