@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
         Dashing,
     };
 
-    PlayerStates playerState = PlayerStates.Running;
+    PlayerStates playerState = PlayerStates.Jumping;
 
     public float jumpAmplitude = 15.0f;
     //Doesn't work when it's a variable idk why, go change value manually
