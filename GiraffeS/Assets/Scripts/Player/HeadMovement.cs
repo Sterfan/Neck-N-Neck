@@ -35,9 +35,15 @@ public class HeadMovement : MonoBehaviour
         }
 
         if (Head.transform.position.y > 4.0f)
+        {
             Head.transform.position = new Vector3(headStart.x, 4.0f, 0.0f);
+            //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
         if (Head.transform.position.y < Body.transform.position.y)
+        {
             Head.transform.position = new Vector3(headStart.x, Body.transform.position.y, 0.0f);
+            //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
 
         Vector3 headPos = Head.transform.position;
         Vector3 bodyPos = Body.transform.position;
