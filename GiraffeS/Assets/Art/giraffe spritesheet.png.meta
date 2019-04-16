@@ -105,11 +105,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 296.93097
-        y: 743.33655
+        y: 743.19037
         width: 276.7434
-        height: 616.46985
+        height: 616.3516
       alignment: 9
-      pivot: {x: 0.49890628, y: 0.499073}
+      pivot: {x: 0.49890628, y: 0.4994059}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,11 +265,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 860.8839
-        y: 837.2576
+        y: 837.17535
         width: 347.59888
-        height: 240.62872
+        height: 240.60614
       alignment: 9
-      pivot: {x: 0.50091094, y: 0.49346712}
+      pivot: {x: 0.50091094, y: 0.49385518}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -325,11 +325,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 379.25995
-        y: 195.41956
+        y: 195.4
         width: 246.67413
-        height: 409.22467
+        height: 409.1857
       alignment: 9
-      pivot: {x: 0.49757972, y: 0.50114375}
+      pivot: {x: 0.49757972, y: 0.5012393}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: giraffe spritesheet_12
       rect:
         serializedVersion: 2
-        x: 740.8731
-        y: 221.80644
-        width: 565.80035
-        height: 370.87518
+        x: 740.87317
+        y: 221.78429
+        width: 565.8003
+        height: 370.8399
       alignment: 9
-      pivot: {x: 0.5004007, y: 0.4952975}
+      pivot: {x: 0.50040066, y: 0.4954044}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,12 +364,12 @@ TextureImporter:
       name: giraffe spritesheet_13
       rect:
         serializedVersion: 2
-        x: 1427
-        y: 424.958
-        width: 218.1543
-        height: 244.79156
+        x: 1423.6757
+        y: 422.68466
+        width: 224.11865
+        height: 251.92636
       alignment: 9
-      pivot: {x: 0.49735385, y: 0.49855474}
+      pivot: {x: 0.49895096, y: 0.49345902}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -384,12 +384,12 @@ TextureImporter:
       name: giraffe spritesheet_14
       rect:
         serializedVersion: 2
-        x: 1712.9999
-        y: 454.95508
-        width: 163.8086
-        height: 221.20984
+        x: 1712.7834
+        y: 454.49973
+        width: 163.73303
+        height: 221.16428
       alignment: 9
-      pivot: {x: 0.4975319, y: 0.49746847}
+      pivot: {x: 0.49908334, y: 0.49962986}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,12 +404,12 @@ TextureImporter:
       name: giraffe spritesheet_15
       rect:
         serializedVersion: 2
-        x: 1488
-        y: 180.98184
-        width: 95.10742
-        height: 164.81885
+        x: 1485.355
+        y: 180.55289
+        width: 98.166016
+        height: 166.53705
       alignment: 9
-      pivot: {x: 0.49943528, y: 0.49762607}
+      pivot: {x: 0.51081854, y: 0.4950677}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -424,12 +424,12 @@ TextureImporter:
       name: giraffe spritesheet_16
       rect:
         serializedVersion: 2
-        x: 1752
-        y: 181.98174
-        width: 100.234375
-        height: 176.09703
+        x: 1750.9946
+        y: 181.48003
+        width: 100.72693
+        height: 176.96877
       alignment: 9
-      pivot: {x: 0.49384254, y: 0.49698886}
+      pivot: {x: 0.5014088, y: 0.49737576}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -451,6 +451,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 636906703640789903
+  userData: 636910036887770441
   assetBundleName: 
   assetBundleVariant: 
