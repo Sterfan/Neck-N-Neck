@@ -5,18 +5,44 @@ using UnityEngine;
 public class CollisionLogic : MonoBehaviour
 {
     public GameObject Background;
+    bool shouldSpeedUp = false;
+    float scrollSpeed;
+    float acceleration = 0.17f;
+
+
+    private void FixedUpdate()
+    {
+        if (shouldSpeedUp == true)
+        {
+            scrollSpeed += acceleration;
+            Background.GetComponent<BackgroundScroller>().SetSpeed(scrollSpeed);
+            if (scrollSpeed >= 10.0f)
+            {
+                scrollSpeed = 10.0f;
+                shouldSpeedUp = false;
+            }
+            //Debug.Log(scrollSpeed);
+        }
+
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle"))
         {
-            Background.GetComponent<BackgroundScroller>().SetSpeed(5.0f);
+            scrollSpeed = 5.0f;
+            Background.GetComponent<BackgroundScroller>().SetSpeed(scrollSpeed);
         }
         //Background.GetComponent<BackgroundScroller>().InvokeReset();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Background.GetComponent<BackgroundScroller>().SetSpeed(10.0f);
+        if (collision.CompareTag("Obstacle"))
+        {
+            shouldSpeedUp = true;
+        }
     }
+
 }

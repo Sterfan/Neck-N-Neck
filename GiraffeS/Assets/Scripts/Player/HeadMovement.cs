@@ -12,6 +12,8 @@ public class HeadMovement : MonoBehaviour
     public Vector3 headStart;
     public Vector3 bodyStart;
 
+    public float headToBody;
+
     private void Start()
     {
         mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -19,6 +21,7 @@ public class HeadMovement : MonoBehaviour
         mouseStart.z = 0;
         headStart = Head.transform.position;
         bodyStart = Body.transform.position;
+        headToBody = headStart.y - bodyStart.y;
     }
 
     void Update()
@@ -38,11 +41,16 @@ public class HeadMovement : MonoBehaviour
         {
             Head.transform.position = new Vector3(headStart.x, 4.0f, 0.0f);
             //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseStart.y = mouseStart.y + headToBody * 0.0171f;
+            //Debug.Log(mouseStart.y);
         }
         if (Head.transform.position.y < Body.transform.position.y)
         {
             Head.transform.position = new Vector3(headStart.x, Body.transform.position.y, 0.0f);
+            mouseStart.y = mouseStart.y - headToBody * 0.0162f;
+            //Debug.Log(mouseStart.y);
             //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         }
 
         Vector3 headPos = Head.transform.position;
