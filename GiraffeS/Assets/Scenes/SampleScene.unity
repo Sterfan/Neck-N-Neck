@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 80063050}
   - component: {fileID: 80063048}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Bottom ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 190449720}
   - component: {fileID: 190449719}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Top ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1611,7 +1611,6 @@ GameObject:
   - component: {fileID: 219709347}
   - component: {fileID: 219709346}
   - component: {fileID: 219709345}
-  - component: {fileID: 219709344}
   m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
@@ -1619,20 +1618,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &219709344
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219709343}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &219709345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2876,7 +2861,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2891,28 +2876,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.39152983, y: 0.3172318}
-      - {x: 0.23651156, y: 0.44369337}
-      - {x: 0.102601975, y: 0.4938343}
-      - {x: 0.00000011920929, y: 0.49999988}
-      - {x: -0.109613925, y: 0.48562652}
-      - {x: -0.23134036, y: 0.44372416}
-      - {x: -0.35582614, y: 0.36311233}
-      - {x: -0.4298224, y: 0.26382756}
-      - {x: -0.47552815, y: 0.15450837}
-      - {x: -0.4960632, y: 0.03512659}
-      - {x: -0.49574327, y: -0.05637828}
-      - {x: -0.47595826, y: -0.1492523}
-      - {x: -0.42094824, y: -0.27971047}
-      - {x: -0.35016292, y: -0.371024}
-      - {x: -0.29389247, y: -0.40450865}
-      - {x: -0.1371687, y: -0.4931472}
-      - {x: 0.097903185, y: -0.49006486}
-      - {x: 0.2938928, y: -0.4045086}
-      - {x: 0.4047264, y: -0.29498884}
-      - {x: 0.475893, y: -0.1479826}
-      - {x: 0.50470275, y: 0.0059702937}
-      - {x: 0.47552836, y: 0.15450844}
+    - - {x: -0.21273443, y: 0.37714955}
+      - {x: -0.47552803, y: 0.15450871}
+      - {x: -0.34494883, y: -0.4727583}
+      - {x: -0.10680448, y: -0.5222674}
+      - {x: 0.36196813, y: -0.4591088}
+      - {x: 0.44086474, y: -0.13391511}
+      - {x: 0.3053404, y: 0.07260853}
 --- !u!23 &374256977
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10643,7 +10613,6 @@ GameObject:
   - component: {fileID: 1775437738}
   - component: {fileID: 1775437741}
   - component: {fileID: 1775437740}
-  - component: {fileID: 1775437739}
   m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
@@ -10665,20 +10634,6 @@ Transform:
   m_Father: {fileID: 284792554}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1775437739
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775437737}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1775437740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10936,7 +10891,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
