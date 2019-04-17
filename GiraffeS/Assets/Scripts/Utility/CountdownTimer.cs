@@ -31,20 +31,17 @@ public class CountdownTimer : MonoBehaviour
             if (timer > 2.0f)
             {
                 three.SetActive(true);
-                Debug.Log("3");
             }
             if (timer > 1.0f && timer <= 2.0f)
             {
                 three.SetActive(false);
                 two.SetActive(true);
-                Debug.Log("2");
 
             }
             if (timer > 0.0f && timer <= 1.0f)
             {
                 two.SetActive(false);
                 one.SetActive(true);
-                Debug.Log("1");
 
             }
         }
