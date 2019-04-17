@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
         Dashing,
     };
 
-    PlayerStates playerState = PlayerStates.Running;
+    PlayerStates playerState = PlayerStates.Jumping;
 
     public float jumpAmplitude = 15.0f;
     //Doesn't work when it's a variable idk why, go change value manually
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
                 }
             case PlayerStates.Jumping:
                 {
-                    rb.velocity -= Vector2.up * 0.75f;
+                    //rb.velocity -= Vector2.up * fallSpeedMultiplier;
                     //Head.GetComponent<Rigidbody2D>().velocity -= Vector2.up * 0.75f;
                     Jumping = true;
                     
@@ -66,6 +66,12 @@ public class PlayerController : MonoBehaviour
     {
         if (playerState == PlayerStates.Jumping && collision.gameObject.CompareTag("Ground"))
             playerState = PlayerStates.Running;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (playerState == PlayerStates.Running && collision.gameObject.CompareTag("Ground"))
+            playerState = PlayerStates.Jumping;
     }
 
     void Jump()
