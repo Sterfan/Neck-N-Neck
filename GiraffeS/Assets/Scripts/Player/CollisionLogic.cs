@@ -7,7 +7,7 @@ public class CollisionLogic : MonoBehaviour
     public GameObject Background;
     bool shouldSpeedUp = false;
     float scrollSpeed;
-    float acceleration = 0.2f;
+    float acceleration = 0.17f;
 
 
     private void FixedUpdate()
@@ -21,7 +21,7 @@ public class CollisionLogic : MonoBehaviour
                 scrollSpeed = 10.0f;
                 shouldSpeedUp = false;
             }
-            Debug.Log(scrollSpeed);
+            //Debug.Log(scrollSpeed);
         }
 
     }
