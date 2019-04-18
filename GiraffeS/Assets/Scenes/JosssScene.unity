@@ -3788,6 +3788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bd3ae5d33010e48961eb93c5054e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 0}
   scrollSpeed: 10
 --- !u!114 &628543794
 MonoBehaviour:
@@ -13385,6 +13386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bd3ae5d33010e48961eb93c5054e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 0}
   scrollSpeed: 10
 --- !u!114 &1893910019
 MonoBehaviour:
