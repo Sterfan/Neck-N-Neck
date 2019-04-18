@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(playerState);
+        //Debug.Log(playerState);
         switch (playerState)
         {
             case PlayerStates.Running:

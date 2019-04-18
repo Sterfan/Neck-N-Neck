@@ -45,9 +45,9 @@ public class HeadMovement3 : MonoBehaviour
             mouseStart.y = mouseStart.y + headToBody * 0.042f;
 
         }
-        if (Head.transform.position.y < Body.transform.position.y)
+        if (Head.transform.position.y < Body.transform.position.y + 2)
         {
-            Head.transform.position = new Vector3(headStart.x, Body.transform.position.y, 0.0f);
+            Head.transform.position = new Vector3(headStart.x, Body.transform.position.y + 2, 0.0f);
             mouseStart.y = mouseStart.y - headToBody * 0.039f;
         }
 
