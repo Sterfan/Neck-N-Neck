@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public float jumpAmplitude = 15.0f;
     //Doesn't work when it's a variable idk why, go change value manually
-    public float fallSpeedMultiplier = 0.75f;
+    //public float fallSpeedMultiplier = 0.75f;
     public KeyCode jumpInput = KeyCode.Space;
     public GameObject Head;
     public bool Jumping = false;
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(playerState);
         switch (playerState)
         {
             case PlayerStates.Running:
@@ -68,11 +69,11 @@ public class PlayerController : MonoBehaviour
             playerState = PlayerStates.Running;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (playerState == PlayerStates.Running && collision.gameObject.CompareTag("Ground"))
-            playerState = PlayerStates.Jumping;
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (playerState == PlayerStates.Running && collision.gameObject.CompareTag("Ground"))
+    //        playerState = PlayerStates.Jumping;
+    //}
 
     void Jump()
     {

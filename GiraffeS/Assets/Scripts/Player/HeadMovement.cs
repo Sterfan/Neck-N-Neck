@@ -8,11 +8,11 @@ public class HeadMovement : MonoBehaviour
     public GameObject Head;
     public GameObject Neck;
 
-    public Vector3 mouseStart;
-    public Vector3 headStart;
-    public Vector3 bodyStart;
+    Vector3 mouseStart;
+    Vector3 headStart;
+    Vector3 bodyStart;
 
-    public float headToBody;
+    float headToBody;
 
     private void Start()
     {
