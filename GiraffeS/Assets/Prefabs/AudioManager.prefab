@@ -44,34 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioFiles:
-  - audioName: 
-    audioClip: {fileID: 0}
-    volume: 0
+  - audioName: Leaves
+    audioClip: {fileID: 8300000, guid: 6ed8f44312d3f2c41b738da5cb35374d, type: 3}
+    volume: 1
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
-  - audioName: 
-    audioClip: {fileID: 0}
-    volume: 0
+  - audioName: GiraffeWalk
+    audioClip: {fileID: 8300000, guid: feecc178e30a1a3419d828518091604b, type: 3}
+    volume: 1
     source: {fileID: 0}
-    isLooping: 0
-    playOnAwake: 0
-  - audioName: 
-    audioClip: {fileID: 0}
-    volume: 0
-    source: {fileID: 0}
-    isLooping: 0
-    playOnAwake: 0
-  - audioName: 
-    audioClip: {fileID: 0}
-    volume: 0
-    source: {fileID: 0}
-    isLooping: 0
-    playOnAwake: 0
-  - audioName: 
-    audioClip: {fileID: 0}
-    volume: 0
-    source: {fileID: 0}
-    isLooping: 0
+    isLooping: 1
     playOnAwake: 0
   Mixer: {fileID: 0}
