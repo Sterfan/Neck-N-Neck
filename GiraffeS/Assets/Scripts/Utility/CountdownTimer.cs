@@ -54,6 +54,7 @@ public class CountdownTimer : MonoBehaviour
             canCount = false;
             doOnce = true;
             timer = 0.0f;
+            FindObjectOfType<AudioManager>().Play("GiraffeWalk");
         }
     }
 

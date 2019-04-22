@@ -33,6 +33,7 @@ public class CollisionLogic : MonoBehaviour
         {
             scrollSpeed = 5.0f;
             Background.GetComponent<BackgroundScroller>().SetSpeed(scrollSpeed);
+            FindObjectOfType<AudioManager>().Play("Leaves");
         }
         //Background.GetComponent<BackgroundScroller>().InvokeReset();
     }
@@ -42,6 +43,7 @@ public class CollisionLogic : MonoBehaviour
         if (collision.CompareTag("Obstacle"))
         {
             shouldSpeedUp = true;
+            FindObjectOfType<AudioManager>().StopMusic("Leaves");
         }
     }
 
