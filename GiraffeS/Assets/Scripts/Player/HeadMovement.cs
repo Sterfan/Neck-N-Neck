@@ -29,27 +29,37 @@ public class HeadMovement : MonoBehaviour
 
     private void Start()
     {
+        mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if (yGiraffe == true)
         {
-            mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseStart.x = 0;
-            mouseStart.z = 0;
-            headStart = Head.transform.position;
-            bodyStart = Body.transform.position;
-            headToBodyStart = headStart.y - bodyStart.y;
+            xGiraffe = false;
+
         }
+        if (xGiraffe == true)
+        {
+            yGiraffe = false;
+            mouseStart.y = mouseStart.x;
+        }
+
+        mouseStart.x = 0;
+        mouseStart.z = 0;
+        headStart = Head.transform.position;
+        bodyStart = Body.transform.position;
+        headToBody = headStart.y - bodyStart.y;
 
         spriteR = Neck.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+        headToBody = Head.transform.position.y - Body.transform.position.y;
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+
         if (yGiraffe == true)
         {
-            headToBody = Head.transform.position.y - Body.transform.position.y;
 
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
             mousePos.x = 0;
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
             Head.transform.position = headStart - (mouseStart - mousePos);
@@ -75,6 +85,31 @@ public class HeadMovement : MonoBehaviour
 
             }
 
+        }
+
+        if (xGiraffe == true)
+        {
+            mousePos.y = 0;
+            Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
+
+            Head.transform.position = headStart - (mouseStart - headMove);
+
+            if (Body.GetComponent<PlayerController>().Jumping == true)
+            {
+                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - headMove);
+            }
+
+            if (Head.transform.position.y > 15.0f)
+            {
+                Head.transform.position = new Vector3(headStart.x, 15.0f, 0.0f);
+                mouseStart.y = mouseStart.y + headToBody * 0.042f;
+
+            }
+            if (Head.transform.position.y < Body.transform.position.y + 2)
+            {
+                Head.transform.position = new Vector3(headStart.x, Body.transform.position.y + 2, 0.0f);
+                mouseStart.y = mouseStart.y - headToBody * 0.039f;
+            }
         }
 
         //Debug.Log(headToBody);
