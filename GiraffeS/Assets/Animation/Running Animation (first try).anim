@@ -74,7 +74,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bones/Bodybone 1/Bodybone 2/Backleg bone 1
+    path: Bones/Bodybone 1/Fronleg bone 1/Frontleg bone 2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -521,14 +521,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1790828986
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1603658294
+      path: 1879144920
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -542,42 +535,7 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1879144920
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 397894089
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 933865298
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 3158215760
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 3225244221
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 2061288636
+      path: 1790828986
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -666,7 +624,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Bones/Bodybone 1/Bodybone 2/Backleg bone 1
+    path: Bones/Bodybone 1/Fronleg bone 1/Frontleg bone 2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -730,7 +688,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Bones/Bodybone 1/Bodybone 2/Backleg bone 1
+    path: Bones/Bodybone 1/Fronleg bone 1/Frontleg bone 2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -986,7 +944,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Bones/Bodybone 1/Bodybone 2/Backleg bone 1/Backleg bone 2
+    path: Bones/Bodybone 1/Fronleg bone 1/Frontleg bone 2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1434,7 +1392,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Bones/Bodybone 1/Bodybone 2/Tailbone
+    path: Bones/Bodybone 1/Bodybone 2/Backleg bone 1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1498,7 +1456,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Bones/Bodybone 1/Bodybone 2/Tailbone
+    path: Bones/Bodybone 1/Bodybone 2/Backleg bone 1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1562,7 +1520,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Bones/Bodybone 1/Bodybone 2/Tailbone
+    path: Bones/Bodybone 1/Bodybone 2/Backleg bone 1
     classID: 4
     script: {fileID: 0}
   - curve:

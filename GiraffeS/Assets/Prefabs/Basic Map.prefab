@@ -783,8 +783,6 @@ GameObject:
   - component: {fileID: 7623672387388618606}
   - component: {fileID: 1788193939273242922}
   - component: {fileID: 6300213084592466991}
-  - component: {fileID: 4264372227375702964}
-  - component: {fileID: 6582313245943368661}
   - component: {fileID: 258821435044978684}
   m_Layer: 0
   m_Name: Basic Map
@@ -856,34 +854,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4264372227375702964
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7044166276907815443}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6582313245943368661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7044166276907815443}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b77785f10433672499c7bc45264c1f3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 10
-  tileSizeX: 26.14011
 --- !u!114 &258821435044978684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bd3ae5d33010e48961eb93c5054e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 0}
   scrollSpeed: 10
 --- !u!1001 &8123095065759324275
 PrefabInstance:
