@@ -117,27 +117,27 @@ public class HeadMovement : MonoBehaviour
         if (headToBody >= 5)
         {
             spriteR.sprite = neck5;
-            Debug.Log("neck5");
+            //Debug.Log("neck5");
         }
         else if (headToBody < 5 && headToBody >= 4)
         {
             spriteR.sprite = neck4;
-            Debug.Log("neck4");
+            //Debug.Log("neck4");
         }
         else if (headToBody < 4 && headToBody >= 3)
         {
             spriteR.sprite = neck3;
-            Debug.Log("neck3");
+            //Debug.Log("neck3");
         }
         else if (headToBody < 3 && headToBody >= 2.5f)
         {
             spriteR.sprite = neck2;
-            Debug.Log("neck2");
+            //Debug.Log("neck2");
         }
         else if (headToBody < 2.5f && headToBody > 2) 
         {
             spriteR.sprite = neck1;
-            Debug.Log("neck1");
+            //Debug.Log("neck1");
         }
 
 
@@ -146,13 +146,13 @@ public class HeadMovement : MonoBehaviour
         Vector3 bodyPos = Body.transform.position;
 
 
-        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + 1.0f, headPos.y + bodyPos.y + 0.2f) / 2;
+        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + 0.7f, headPos.y + bodyPos.y + 0.4f) / 2;
 
         float scaleX = Mathf.Abs(bodyPos.x - headPos.x);
         float scaleY = Mathf.Abs(bodyPos.y - headPos.y);
 
         Neck.transform.position = centerPos;
-        Neck.transform.localScale = new Vector3(scaleX/1.5f, scaleY/3.3f, 1);
+        Neck.transform.localScale = new Vector3(scaleX/1.0f, scaleY/3.7f, 1);
     }
 
 //    void NeckDraw(Vector3 headPos, Vector3 bodyPos)

@@ -3196,6 +3196,8 @@ MonoBehaviour:
   neck3: {fileID: 0}
   neck2: {fileID: 0}
   neck1: {fileID: 0}
+  xGiraffe: 0
+  yGiraffe: 0
 --- !u!60 &374256976
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5394,7 +5396,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2, y: -1.92}
+  m_Offset: {x: -0.45, y: -3.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9953,6 +9955,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.009328443
       objectReference: {fileID: 0}
+    - target: {fileID: 1722373839234511326, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 594610959020843386, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584215607772445466, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521823974019240619, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653958279436509653, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886934521096029439, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079001102670041803, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cbed82c14188e84f903c7f2a8c4cd44, type: 3}
 --- !u!1 &1417964403
@@ -11368,6 +11405,8 @@ MonoBehaviour:
   neck3: {fileID: 21300004, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
   neck2: {fileID: 21300006, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
   neck1: {fileID: 21300008, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
+  xGiraffe: 0
+  yGiraffe: 1
 --- !u!1 &1666048157
 GameObject:
   m_ObjectHideFlags: 0
