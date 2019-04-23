@@ -21,54 +21,63 @@ public class HeadMovement : MonoBehaviour
     [SerializeField] Sprite neck2;
     [SerializeField] Sprite neck1;
 
+    public bool xGiraffe;
+    public bool yGiraffe;
 
     float headToBodyStart;
     float headToBody;
 
     private void Start()
     {
-        mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseStart.x = 0;
-        mouseStart.z = 0;
-        headStart = Head.transform.position;
-        bodyStart = Body.transform.position;
-        headToBodyStart = headStart.y - bodyStart.y;
+        if (yGiraffe == true)
+        {
+            mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseStart.x = 0;
+            mouseStart.z = 0;
+            headStart = Head.transform.position;
+            bodyStart = Body.transform.position;
+            headToBodyStart = headStart.y - bodyStart.y;
+        }
 
         spriteR = Neck.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        headToBody = Head.transform.position.y - Body.transform.position.y;
-
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-        mousePos.x = 0;
-        //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-        Head.transform.position = headStart - (mouseStart - mousePos);
-
-        if (Body.GetComponent<PlayerController>().Jumping == true)
+        if (yGiraffe == true)
         {
-            Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - mousePos);
+            headToBody = Head.transform.position.y - Body.transform.position.y;
+
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
+            mousePos.x = 0;
+            //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
+            Head.transform.position = headStart - (mouseStart - mousePos);
+
+            if (Body.GetComponent<PlayerController>().Jumping == true)
+            {
+                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - mousePos);
+            }
+
+            if (Head.transform.position.y > 4.0f)
+            {
+                Head.transform.position = new Vector3(headStart.x, 4.0f, 0.0f);
+                //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseStart.y = mouseStart.y + headToBodyStart * 0.0171f;
+                //Debug.Log(mouseStart.y);
+            }
+            if (Head.transform.position.y < Body.transform.position.y + 2)
+            {
+                Head.transform.position = new Vector3(headStart.x, Body.transform.position.y + 2, 0.0f);
+                mouseStart.y = mouseStart.y - headToBodyStart * 0.0162f;
+                //Debug.Log(mouseStart.y);
+                //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            }
+
         }
 
-        if (Head.transform.position.y > 4.0f)
-        {
-            Head.transform.position = new Vector3(headStart.x, 4.0f, 0.0f);
-            //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseStart.y = mouseStart.y + headToBodyStart * 0.0171f;
-            //Debug.Log(mouseStart.y);
-        }
-        if (Head.transform.position.y < Body.transform.position.y + 2)
-        {
-            Head.transform.position = new Vector3(headStart.x, Body.transform.position.y + 2, 0.0f);
-            mouseStart.y = mouseStart.y - headToBodyStart * 0.0162f;
-            //Debug.Log(mouseStart.y);
-            //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        }
-
-        Debug.Log(headToBody);
+        //Debug.Log(headToBody);
 
         if (headToBody >= 5)
         {
@@ -98,7 +107,7 @@ public class HeadMovement : MonoBehaviour
 
 
 
-            Vector3 headPos = Head.transform.position;
+        Vector3 headPos = Head.transform.position;
         Vector3 bodyPos = Body.transform.position;
 
 
