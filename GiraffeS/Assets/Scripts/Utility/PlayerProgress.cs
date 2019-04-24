@@ -13,7 +13,9 @@ public class PlayerProgress : MonoBehaviour
     float height;
     float width;
     public float yPos = 5.7f;
-    
+
+    bool top;
+    bool bottom;
 
 
     void Start()
@@ -24,6 +26,8 @@ public class PlayerProgress : MonoBehaviour
         startPos = cam.transform.position.x - (width / 4);
         endPos = cam.transform.position.x - (width / 4);
         gameObject.transform.position = new Vector2(startPos, yPos);
+        top = gameObject.CompareTag("Top Background");
+        bottom = gameObject.CompareTag("Bottom Background");
     }
 
     void FixedUpdate()
@@ -34,6 +38,7 @@ public class PlayerProgress : MonoBehaviour
             gameTime += Time.deltaTime;
 
             gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
+
         }
 
     }
