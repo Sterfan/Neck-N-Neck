@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    [SerializeField] private float mainTimer;
-    [SerializeField] private GameObject three;
-    [SerializeField] private GameObject two;
-    [SerializeField] private GameObject one;
-    [SerializeField] private GameObject go;
+    public float mainTimer;
+    public GameObject three;
+    public GameObject two;
+    public GameObject one;
+    public GameObject go;
 
     public bool startGame = false;
 

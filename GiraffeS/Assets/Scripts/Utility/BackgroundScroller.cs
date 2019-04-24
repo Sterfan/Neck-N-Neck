@@ -33,7 +33,7 @@ public class BackgroundScroller : MonoBehaviour
             newPosition += Time.deltaTime * scrollSpeed;
             transform.position = startPosition + Vector3.left * newPosition;
             distanceTraveled = totalDistance - (startPosition.x - transform.position.x);
-            percentCompleted = (distanceTraveled / totalDistance) * 100;
+            percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
             // Get camera size and set position to a % of x screen size I guess
         }
     }
