@@ -52,4 +52,9 @@ public class BackgroundScroller : MonoBehaviour
     {
         Invoke("ResetSpeed", 0.25f);
     }
+
+    public float GetPercentCompleted()
+    {
+        return percentCompleted;
+    }
 }
