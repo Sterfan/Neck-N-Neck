@@ -15,11 +15,13 @@ public class HeadMovement : MonoBehaviour
     
     //SkinnedMeshRenderer spriteR;
     SpriteRenderer spriteR;
-    [SerializeField] Sprite neck5;
-    [SerializeField] Sprite neck4;
-    [SerializeField] Sprite neck3;
-    [SerializeField] Sprite neck2;
-    [SerializeField] Sprite neck1;
+    public Sprite neck5;
+    public Sprite neck4;
+    public Sprite neck3;
+    public Sprite neck2;
+    public Sprite neck1;
+
+    [SerializeField] int mouseSlower = 3;
 
     public bool xGiraffe;
     public bool yGiraffe;
@@ -62,11 +64,11 @@ public class HeadMovement : MonoBehaviour
 
             mousePos.x = 0;
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            Head.transform.position = headStart - (mouseStart - mousePos);
+            Head.transform.position = headStart - ((mouseStart - mousePos) / mouseSlower);
 
             if (Body.GetComponent<PlayerController>().Jumping == true)
             {
-                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - mousePos);
+                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
             }
 
             if (Head.transform.position.y > 4.0f)
@@ -90,11 +92,11 @@ public class HeadMovement : MonoBehaviour
             mousePos.y = 0;
             Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
 
-            Head.transform.position = headStart - (mouseStart - headMove);
+            Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
 
             if (Body.GetComponent<PlayerController>().Jumping == true)
             {
-                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - headMove);
+                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
             }
 
             if (Head.transform.position.y > 15.0f)
