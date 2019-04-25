@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerProgress : MonoBehaviour
 {
     public GameObject countdownTimer;
     public GameObject background;
-    float gameTime;
+    float gameTime = 0;
     float startPos;
     float endPos;
     float percentProgress;
     float height;
     float width;
     public float yPos = 5.7f;
+
+    public Text topTimer;
+    public Text botTimer;
 
     bool top;
     bool bottom;
@@ -26,8 +30,6 @@ public class PlayerProgress : MonoBehaviour
         startPos = cam.transform.position.x - (width / 4);
         endPos = cam.transform.position.x - (width / 4);
         gameObject.transform.position = new Vector2(startPos, yPos);
-        top = gameObject.CompareTag("Top Background");
-        bottom = gameObject.CompareTag("Bottom Background");
     }
 
     void FixedUpdate()
@@ -39,6 +41,14 @@ public class PlayerProgress : MonoBehaviour
 
             gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
 
+            if (top)
+            {
+                topTimer.text = gameTime.ToString();
+            }
+            if (bottom)
+            {
+                botTimer.text = gameTime.ToString();
+            }
         }
 
     }
