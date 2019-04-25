@@ -11,6 +11,9 @@ public class CountdownTimer : MonoBehaviour
     public GameObject one;
     public GameObject go;
 
+    public Text topTimer;
+    public Text botTimer;
+
     public bool startGame = false;
 
     private float timer;
