@@ -36,7 +36,6 @@ public class BackgroundScroller : MonoBehaviour
             transform.position = startPosition + Vector2.left * newPosition;
             distanceTraveled = totalDistance - (startPosition.x - transform.position.x);
             percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
-            Debug.Log(percentCompleted);
             // Get camera size and set position to a % of x screen size I guess
         }
     }
