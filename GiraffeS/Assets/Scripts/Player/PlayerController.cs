@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         //Debug.Log(playerState);
         switch (playerState)
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Running:
                 {
                     Jumping = false;
-                    if (Input.GetKeyUp(jumpInput))
+                    if (Input.GetKey(jumpInput))
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;
