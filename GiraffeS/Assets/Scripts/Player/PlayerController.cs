@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Running:
                 {
                     Jumping = false;
-                    if (Input.GetKey(jumpInput))
+                    if (Input.GetKeyUp(jumpInput))
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-
+                    
 
                     break;
                 }
