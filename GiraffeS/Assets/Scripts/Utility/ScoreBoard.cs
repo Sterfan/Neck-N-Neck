@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ScoreBoard : MonoBehaviour
 {
-    function addScore(namespace : String, score : int)
+    public void AddScore(string name, float score)
     {
+        float newScore;
 
     }
 }

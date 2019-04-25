@@ -435,6 +435,7 @@ MonoBehaviour:
   countdownTimer: {fileID: 1284810745}
   finishLine: {fileID: 92469328}
   scrollSpeed: 10
+  slowStart: 0
 --- !u!23 &73887996
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9117,6 +9118,7 @@ MonoBehaviour:
   countdownTimer: {fileID: 1284810745}
   finishLine: {fileID: 1366385073}
   scrollSpeed: 10
+  slowStart: 0
 --- !u!23 &1237324686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9561,7 +9563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpAmplitude: 15
-  jumpInput: 273
+  jumpInput: 119
   Jumping: 0
 --- !u!50 &1255054143
 Rigidbody2D:
@@ -9675,13 +9677,13 @@ MonoBehaviour:
   Body: {fileID: 1255054136}
   Head: {fileID: 1255054134}
   Neck: {fileID: 1255054135}
-  neck7: {fileID: 21300000, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck6: {fileID: 21300002, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck5: {fileID: 21300004, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck4: {fileID: 21300006, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck3: {fileID: 21300008, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck2: {fileID: 21300010, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck1: {fileID: 21300012, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
+  neck7: {fileID: 21300000, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck6: {fileID: 21300002, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck5: {fileID: 21300004, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck4: {fileID: 21300006, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck3: {fileID: 21300008, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck2: {fileID: 21300010, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck1: {fileID: 21300012, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
   mouseSlower: 3
   xGiraffe: 1
   yGiraffe: 0
@@ -14470,13 +14472,13 @@ MonoBehaviour:
   Body: {fileID: 1862792244}
   Head: {fileID: 1862792242}
   Neck: {fileID: 1862792243}
-  neck7: {fileID: 21300000, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck6: {fileID: 21300002, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck5: {fileID: 21300004, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck4: {fileID: 21300006, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck3: {fileID: 21300008, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck2: {fileID: 21300010, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
-  neck1: {fileID: 21300012, guid: b1e70389547b9904cb86fa657a9f6bd6, type: 3}
+  neck7: {fileID: 21300000, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck6: {fileID: 21300002, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck5: {fileID: 21300004, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck4: {fileID: 21300006, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck3: {fileID: 21300008, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck2: {fileID: 21300010, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
+  neck1: {fileID: 21300012, guid: ff67d4b12a258ce4c926af473235f61d, type: 3}
   mouseSlower: 3
   xGiraffe: 0
   yGiraffe: 1
