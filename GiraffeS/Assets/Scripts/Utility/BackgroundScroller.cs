@@ -6,11 +6,12 @@ public class BackgroundScroller : MonoBehaviour
 {
     public GameObject countdownTimer;
     public GameObject finishLine;
+    //public GameObject giraffe;
 
     public float scrollSpeed = 10.0f;
 
-    private Vector3 startPosition;
-    private Vector3 endPosition;
+    private Vector2 startPosition;
+    private Vector2 endPosition;
 
     float totalDistance;
     float distanceTraveled;
@@ -21,6 +22,7 @@ public class BackgroundScroller : MonoBehaviour
 
     void Start()
     {
+        //startPosition = new Vector2(transform.position.x + giraffe.transform.position.x, transform.position.y);
         startPosition = transform.position;
         endPosition = finishLine.transform.position;
         totalDistance = endPosition.x - startPosition.x;
@@ -31,9 +33,10 @@ public class BackgroundScroller : MonoBehaviour
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             newPosition += Time.deltaTime * scrollSpeed;
-            transform.position = startPosition + Vector3.left * newPosition;
+            transform.position = startPosition + Vector2.left * newPosition;
             distanceTraveled = totalDistance - (startPosition.x - transform.position.x);
             percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
+            Debug.Log(percentCompleted);
             // Get camera size and set position to a % of x screen size I guess
         }
     }
