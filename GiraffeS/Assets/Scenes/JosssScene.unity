@@ -282,7 +282,6 @@ GameObject:
   m_Component:
   - component: {fileID: 57967291}
   - component: {fileID: 57967290}
-  - component: {fileID: 57967289}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -290,14 +289,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &57967289
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57967288}
-  m_Enabled: 1
 --- !u!20 &57967290
 Camera:
   m_ObjectHideFlags: 0
@@ -764,11 +755,14 @@ MonoBehaviour:
   Body: {fileID: 1746109424}
   Head: {fileID: 306480873}
   Neck: {fileID: 2103105061}
+  neck7: {fileID: 0}
+  neck6: {fileID: 0}
   neck5: {fileID: 21300000, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
   neck4: {fileID: 21300002, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
   neck3: {fileID: 21300004, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
   neck2: {fileID: 21300006, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
   neck1: {fileID: 21300008, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
+  mouseSlower: 3
   xGiraffe: 1
   yGiraffe: 0
 --- !u!1 &342921714 stripped
@@ -804,7 +798,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpAmplitude: 15
   jumpInput: 32
-  Head: {fileID: 0}
   Jumping: 0
 --- !u!114 &342921717
 MonoBehaviour:
@@ -1028,6 +1021,11 @@ PrefabInstance:
       propertyPath: groundPoint
       value: 
       objectReference: {fileID: 1565353138}
+    - target: {fileID: 8139258595707349410, guid: 137f12d52d915c045bbc7fd5267147c1,
+        type: 3}
+      propertyPath: finishLine
+      value: 
+      objectReference: {fileID: 1872197192}
     - target: {fileID: 1080814504209244730, guid: 137f12d52d915c045bbc7fd5267147c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1892,7 +1890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpAmplitude: 15
   jumpInput: 32
-  Head: {fileID: 306480873}
   Jumping: 0
 --- !u!1 &1756296595
 GameObject:
@@ -1990,6 +1987,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundPoint: {fileID: 1565353138}
+--- !u!1 &1872197192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8795962610468690025, guid: 137f12d52d915c045bbc7fd5267147c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 676534135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1932590831
 GameObject:
   m_ObjectHideFlags: 0
