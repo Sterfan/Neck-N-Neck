@@ -15,11 +15,15 @@ public class HeadMovement : MonoBehaviour
     
     //SkinnedMeshRenderer spriteR;
     SpriteRenderer spriteR;
-    [SerializeField] Sprite neck5;
-    [SerializeField] Sprite neck4;
-    [SerializeField] Sprite neck3;
-    [SerializeField] Sprite neck2;
-    [SerializeField] Sprite neck1;
+    public Sprite neck7;
+    public Sprite neck6;
+    public Sprite neck5;
+    public Sprite neck4;
+    public Sprite neck3;
+    public Sprite neck2;
+    public Sprite neck1;
+
+    [SerializeField] int mouseSlower = 3;
 
     public bool xGiraffe;
     public bool yGiraffe;
@@ -29,6 +33,7 @@ public class HeadMovement : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (yGiraffe == true)
@@ -57,16 +62,17 @@ public class HeadMovement : MonoBehaviour
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
+
         if (yGiraffe == true)
         {
 
             mousePos.x = 0;
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            Head.transform.position = headStart - (mouseStart - mousePos);
+            Head.transform.position = headStart - ((mouseStart - mousePos) / mouseSlower);
 
             if (Body.GetComponent<PlayerController>().Jumping == true)
             {
-                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - mousePos);
+                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
             }
 
             if (Head.transform.position.y > 4.0f)
@@ -90,11 +96,11 @@ public class HeadMovement : MonoBehaviour
             mousePos.y = 0;
             Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
 
-            Head.transform.position = headStart - (mouseStart - headMove);
+            Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
 
             if (Body.GetComponent<PlayerController>().Jumping == true)
             {
-                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - (mouseStart - headMove);
+                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
             }
 
             if (Head.transform.position.y > 15.0f)
@@ -112,27 +118,35 @@ public class HeadMovement : MonoBehaviour
 
         //Debug.Log(headToBody);
 
-        if (headToBody >= 5)
+        if (headToBody >= 6)
         {
-            spriteR.sprite = neck5;
+            spriteR.sprite = neck7;
             //Debug.Log("neck5");
         }
-        else if (headToBody < 5 && headToBody >= 4)
+        else if (headToBody < 6 && headToBody >= 4.5f)
         {
-            spriteR.sprite = neck4;
+            spriteR.sprite = neck6;
+        }
+        else if (headToBody < 4.5f && headToBody >= 3.75f)
+        {
+            spriteR.sprite = neck5;
+        }
+        else if (headToBody < 3.75f && headToBody >= 3)
+        {
+            spriteR.sprite = neck4; //HAPPENS TOO SOON FROM HERE ON
             //Debug.Log("neck4");
         }
-        else if (headToBody < 4 && headToBody >= 3)
+        else if (headToBody < 3 && headToBody >= 2.5f)
         {
             spriteR.sprite = neck3;
             //Debug.Log("neck3");
         }
-        else if (headToBody < 3 && headToBody >= 2.5f)
+        else if (headToBody < 2.5f && headToBody >= 2.25f)
         {
             spriteR.sprite = neck2;
             //Debug.Log("neck2");
         }
-        else if (headToBody < 2.5f && headToBody > 2) 
+        else if (headToBody < 2.25f && headToBody > 2) 
         {
             spriteR.sprite = neck1;
             //Debug.Log("neck1");
@@ -144,13 +158,13 @@ public class HeadMovement : MonoBehaviour
         Vector3 bodyPos = Body.transform.position;
 
 
-        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + 0.7f, headPos.y + bodyPos.y + 0.4f) / 2;
+        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + 0.7f, headPos.y + bodyPos.y + 0.3f) / 2;
 
         float scaleX = Mathf.Abs(bodyPos.x - headPos.x);
         float scaleY = Mathf.Abs(bodyPos.y - headPos.y);
 
         Neck.transform.position = centerPos;
-        Neck.transform.localScale = new Vector3(scaleX/1.0f, scaleY/3.7f, 1);
+        Neck.transform.localScale = new Vector3(scaleX/1.0f, scaleY/3.3f, 1);
     }
 
 //    void NeckDraw(Vector3 headPos, Vector3 bodyPos)

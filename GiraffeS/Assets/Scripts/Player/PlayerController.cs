@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
     public KeyCode jumpInput = KeyCode.Space;
-    public GameObject Head;
+    //public GameObject Head;
     public bool Jumping = false;
 
     Rigidbody2D rb;
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         //Debug.Log(playerState);
         switch (playerState)
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-
+                    
 
                     break;
                 }
