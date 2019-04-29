@@ -13,8 +13,8 @@ public class FinishLine : MonoBehaviour
         if (collision.transform.CompareTag("Giraffe"))
         {
             backgroundScrl = collision.gameObject;
-            Debug.Log("We all up in this bitch");
-            gameObject.GetComponentInParent<BackgroundScroller>().enabled = false;
+            //Debug.Log("We all up in this bitch");
+            gameObject.GetComponentInParent<BackgroundScroller>().scrollSpeed = 0.0f;
             progressTracker.GetComponent<PlayerProgress>().isFinished = true;
             endOfRace = true;
         }
