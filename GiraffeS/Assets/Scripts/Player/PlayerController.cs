@@ -13,12 +13,18 @@ public class PlayerController : MonoBehaviour
 
     PlayerStates playerState = PlayerStates.Jumping;
 
+    public GameObject background;
+
     public float jumpAmplitude = 15.0f;
+    float dashSpeed;
+    float deceleration;
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
     public KeyCode jumpInput = KeyCode.Space;
+    public KeyCode dashInput = KeyCode.D;
     //public GameObject Head;
     public bool Jumping = false;
+    public bool Dashing = false;
 
     Rigidbody2D rb;
 
@@ -36,10 +42,15 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Running:
                 {
                     Jumping = false;
-                    if (Input.GetKey(jumpInput))
+                    if (Input.GetKeyUp(jumpInput))
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;
+                    }
+                    if (Input.GetKey(dashInput))
+                    {
+                        Dash(dashSpeed);
+                        playerState = PlayerStates.Dashing;
                     }
 
                     break;
@@ -56,6 +67,10 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Dashing:
                 {
                     
+                    if (background.GetComponentInChildren<BackgroundScroller>().speedMultiplier == 1.0f)
+                    {
+                        playerState = PlayerStates.Running;
+                    }
 
                     break;
                 }
@@ -79,6 +94,11 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = Vector2.up * jumpAmplitude;
         //Head.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpAmplitude;
+    }
+
+    void Dash(float dashSpeed)
+    {
+        background.GetComponentInChildren<BackgroundScroller>().speedMultiplier = dashSpeed;
     }
 
 }

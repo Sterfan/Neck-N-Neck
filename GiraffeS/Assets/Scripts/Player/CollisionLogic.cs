@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CollisionLogic : MonoBehaviour
 {
-    public GameObject BGManager;
     public GameObject Background;
     bool shouldSpeedUp = false;
     float scrollSpeed;
@@ -19,11 +18,12 @@ public class CollisionLogic : MonoBehaviour
 
     private void Update()
     {
-        multiplier = Background.GetComponent<BackgroundScroller>().speedMultiplier;
+        multiplier = Background.GetComponentInChildren<BackgroundScroller>().speedMultiplier;
 
         if (shouldSpeedUp == true && scrollSpeed * multiplier < scrollSpeed)
         {
             multiplier += acceleration * Time.deltaTime;
+            Debug.Log(multiplier);
             Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             if (multiplier >= 1.0f)
             {
@@ -38,10 +38,11 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Obstacle") && gameObject.GetComponent<PlayerController>().Dashing == false)
         {
             multiplier = 0.5f;
-            Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            Background.GetComponentInChildren<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             FindObjectOfType<AudioManager>().Play("Leaves");
         }
         //Background.GetComponent<BackgroundScroller>().InvokeReset();

@@ -19,6 +19,8 @@ public class BackgroundScroller : MonoBehaviour
     public bool slowStart = false;
     public bool isMainBg;
 
+    bool dashing = false;
+
 
     private float newPosition;
 
@@ -76,5 +78,11 @@ public class BackgroundScroller : MonoBehaviour
     public float GetDistanceTraveled()
     {
         return distanceTraveled;
+    }
+
+    public void Dash(float dashSpeed)
+    {
+        speedMultiplier *= dashSpeed;
+        dashing = true;
     }
 }
