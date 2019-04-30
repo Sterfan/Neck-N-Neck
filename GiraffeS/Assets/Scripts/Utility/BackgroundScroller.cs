@@ -32,7 +32,7 @@ public class BackgroundScroller : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
