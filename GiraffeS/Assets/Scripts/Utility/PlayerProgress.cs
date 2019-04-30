@@ -18,6 +18,7 @@ public class PlayerProgress : MonoBehaviour
     float startPos;
     float endPos;
     float percentProgress;
+    float distanceTraveled;
     float height;
     float width;
     public float yPos = 5.7f;
@@ -44,14 +45,16 @@ public class PlayerProgress : MonoBehaviour
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             percentProgress = background.GetComponent<BackgroundScroller>().GetPercentCompleted();
+            distanceTraveled = background.GetComponent<BackgroundScroller>().GetDistanceTraveled();
+
             if (isFinished == false)
             {
                 gameTime += Time.deltaTime;
-                if (percentProgress >= otherGiraffeTracker.GetComponent<PlayerProgress>().percentProgress)
+                if (distanceTraveled <= otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
                 {
                     position.sprite = first;
                 }
-                if (percentProgress < otherGiraffeTracker.GetComponent<PlayerProgress>().percentProgress)
+                if (distanceTraveled > otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
                 {
                     position.sprite = second;
                 }

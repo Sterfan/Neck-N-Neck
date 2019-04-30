@@ -8,9 +8,9 @@ public class HeadMovement : MonoBehaviour
     public GameObject Head;
     public GameObject Neck;
 
-    Vector3 mouseStart;
-    Vector3 headStart;
-    Vector3 bodyStart;
+    Vector2 mouseStart;
+    Vector2 headStart;
+    Vector2 bodyStart;
 
     
     //SkinnedMeshRenderer spriteR;
@@ -30,6 +30,7 @@ public class HeadMovement : MonoBehaviour
 
     float headToBodyStart;
     float headToBody;
+    float maxNeckLength = 7.0f;
 
     private void Start()
     {
@@ -48,7 +49,7 @@ public class HeadMovement : MonoBehaviour
         }
 
         mouseStart.x = 0;
-        mouseStart.z = 0;
+        //mouseStart.z = 0;
         headStart = Head.transform.position;
         bodyStart = Body.transform.position;
         headToBodyStart = headStart.y - bodyStart.y;
@@ -59,8 +60,12 @@ public class HeadMovement : MonoBehaviour
     void Update()
     {
         headToBody = Head.transform.position.y - Body.transform.position.y;
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 headPos = Head.transform.position;
+        Vector2 bodyPos = Body.transform.position;
+        //mousePos.z = 0;
+
+        Debug.Log(headToBody);
 
 
         if (yGiraffe == true)
@@ -72,18 +77,18 @@ public class HeadMovement : MonoBehaviour
 
             if (Body.GetComponent<PlayerController>().Jumping == true)
             {
-                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
+                Head.transform.position = (headStart + (bodyPos - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
             }
 
-            if (Head.transform.position.y > 4.0f)
+            if (headToBody > maxNeckLength)
             {
-                Head.transform.position = new Vector3(headStart.x, 4.0f, 0.0f);
+                Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseStart.y = mouseStart.y + headToBodyStart * 0.042f;
             }
             if (Head.transform.position.y < Body.transform.position.y + 2)
             {
-                Head.transform.position = new Vector3(headStart.x, Body.transform.position.y + 2, 0.0f);
+                Head.transform.position = new Vector2(headStart.x, Body.transform.position.y + 2);
                 mouseStart.y = mouseStart.y - headToBodyStart * 0.039f;
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -94,24 +99,24 @@ public class HeadMovement : MonoBehaviour
         if (xGiraffe == true)
         {
             mousePos.y = 0;
-            Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
+            Vector2 headMove = new Vector2(0.0f, mousePos.x);
 
             Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
 
             if (Body.GetComponent<PlayerController>().Jumping == true)
             {
-                Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
+                Head.transform.position = (headStart + (bodyPos - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
             }
 
-            if (Head.transform.position.y > 15.0f)
+            if (headToBody > maxNeckLength)
             {
-                Head.transform.position = new Vector3(headStart.x, 15.0f, 0.0f);
+                Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
                 mouseStart.y = mouseStart.y + headToBody * 0.042f;
 
             }
             if (Head.transform.position.y < Body.transform.position.y + 2)
             {
-                Head.transform.position = new Vector3(headStart.x, Body.transform.position.y + 2, 0.0f);
+                Head.transform.position = new Vector2(headStart.x, Body.transform.position.y + 2);
                 mouseStart.y = mouseStart.y - headToBody * 0.039f;
             }
         }
@@ -154,11 +159,10 @@ public class HeadMovement : MonoBehaviour
 
 
 
-        Vector3 headPos = Head.transform.position;
-        Vector3 bodyPos = Body.transform.position;
 
 
-        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + 0.7f, headPos.y + bodyPos.y + 0.3f) / 2;
+
+        Vector2 centerPos = new Vector2(headPos.x + bodyPos.x + 0.7f, headPos.y + bodyPos.y + 0.3f) / 2;
 
         float scaleX = Mathf.Abs(bodyPos.x - headPos.x);
         float scaleY = Mathf.Abs(bodyPos.y - headPos.y);

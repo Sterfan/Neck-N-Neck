@@ -16,6 +16,7 @@ public class BackgroundScroller : MonoBehaviour
     float percentCompleted;
 
     public bool slowStart = false;
+    public bool isMainBg;
 
 
     private float newPosition;
@@ -23,19 +24,25 @@ public class BackgroundScroller : MonoBehaviour
     void Start()
     {
         //startPosition = new Vector2(transform.position.x + giraffe.transform.position.x, transform.position.y);
-        startPosition = transform.position;
-        endPosition = finishLine.transform.position;
-        totalDistance = endPosition.x - startPosition.x;
+        if (isMainBg)
+        {
+            startPosition = transform.position;
+            endPosition = finishLine.transform.position;
+            totalDistance = endPosition.x - startPosition.x;
+        }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             newPosition += Time.deltaTime * scrollSpeed;
             transform.position = startPosition + Vector2.left * newPosition;
-            distanceTraveled = totalDistance - (startPosition.x - transform.position.x);
-            percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
+            if (isMainBg)
+            {
+                distanceTraveled = totalDistance - (startPosition.x - transform.position.x);
+                percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
+            }
         }
     }
 
@@ -57,5 +64,10 @@ public class BackgroundScroller : MonoBehaviour
     public float GetPercentCompleted()
     {
         return percentCompleted;
+    }
+
+    public float GetDistanceTraveled()
+    {
+        return distanceTraveled;
     }
 }

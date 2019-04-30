@@ -12,13 +12,12 @@ public class CollisionLogic : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (shouldSpeedUp == true)
+        if (shouldSpeedUp == true && scrollSpeed < 10.0f)
         {
             scrollSpeed += acceleration;
             Background.GetComponent<BackgroundScroller>().SetSpeed(scrollSpeed);
             if (scrollSpeed >= 10.0f)
             {
-                scrollSpeed = 10.0f;
                 shouldSpeedUp = false;
             }
             //Debug.Log(scrollSpeed);
