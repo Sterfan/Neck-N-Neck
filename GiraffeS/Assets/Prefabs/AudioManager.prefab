@@ -62,4 +62,10 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 1
     playOnAwake: 1
+  - audioName: Go
+    audioClip: {fileID: 8300000, guid: 6e0d86273e00b7a43bda35878efaa5ce, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 1
   Mixer: {fileID: 0}
