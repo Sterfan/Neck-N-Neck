@@ -88,12 +88,12 @@ TextureImporter:
       name: tree-2_0000s_0011_Layer-25_0
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 854
-        width: 201
-        height: 153
+        x: 0
+        y: 0
+        width: 2100
+        height: 1500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
