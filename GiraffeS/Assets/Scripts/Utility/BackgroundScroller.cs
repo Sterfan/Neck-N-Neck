@@ -7,6 +7,7 @@ public class BackgroundScroller : MonoBehaviour
     //public GameObject giraffe;
 
     public float scrollSpeed = 10.0f;
+    public float speedMultiplier = 1.0f;
 
     private Vector2 startPosition;
     private Vector2 endPosition;
@@ -17,6 +18,8 @@ public class BackgroundScroller : MonoBehaviour
 
     public bool slowStart = false;
     public bool isMainBg;
+
+    bool dashing = false;
 
 
     private float newPosition;
@@ -32,11 +35,12 @@ public class BackgroundScroller : MonoBehaviour
         }
     }
 
+
     void Update()
     {
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
-            newPosition += Time.deltaTime * scrollSpeed;
+            newPosition += Time.deltaTime * scrollSpeed * speedMultiplier;
             transform.position = startPosition + Vector2.left * newPosition;
             if (isMainBg)
             {
@@ -49,6 +53,11 @@ public class BackgroundScroller : MonoBehaviour
     public void SetSpeed(float speed)
     {
         scrollSpeed = speed;
+    }
+
+    public void SetSpeedMultiplier(float multiplier)
+    {
+        speedMultiplier = multiplier;
     }
 
     public void ResetSpeed()
@@ -69,5 +78,11 @@ public class BackgroundScroller : MonoBehaviour
     public float GetDistanceTraveled()
     {
         return distanceTraveled;
+    }
+
+    public void Dash(float dashSpeed)
+    {
+        speedMultiplier *= dashSpeed;
+        dashing = true;
     }
 }

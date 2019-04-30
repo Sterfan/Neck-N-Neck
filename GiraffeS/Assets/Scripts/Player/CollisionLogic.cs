@@ -7,18 +7,28 @@ public class CollisionLogic : MonoBehaviour
     public GameObject Background;
     bool shouldSpeedUp = false;
     float scrollSpeed;
-    float acceleration = 0.17f;
+    float multiplier;
+    [SerializeField] float acceleration = 0.15f;
 
 
-    private void FixedUpdate()
+    private void Start()
     {
-        if (shouldSpeedUp == true && scrollSpeed < 10.0f)
+        scrollSpeed = Background.GetComponent<BackgroundScroller>().scrollSpeed;
+    }
+
+    private void Update()
+    {
+        multiplier = Background.GetComponentInChildren<BackgroundScroller>().speedMultiplier;
+
+        if (shouldSpeedUp == true && scrollSpeed * multiplier < scrollSpeed)
         {
-            scrollSpeed += acceleration;
-            Background.GetComponent<BackgroundScroller>().SetSpeed(scrollSpeed);
-            if (scrollSpeed >= 10.0f)
+            multiplier += acceleration * Time.deltaTime;
+            Debug.Log(multiplier);
+            Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            if (multiplier >= 1.0f)
             {
                 shouldSpeedUp = false;
+                multiplier = 1.0f;
             }
             //Debug.Log(scrollSpeed);
         }
@@ -28,10 +38,11 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Obstacle") && gameObject.GetComponent<PlayerController>().Dashing == false)
         {
-            scrollSpeed = 5.0f;
-            Background.GetComponent<BackgroundScroller>().SetSpeed(scrollSpeed);
+            multiplier = 0.5f;
+            Background.GetComponentInChildren<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             FindObjectOfType<AudioManager>().Play("Leaves");
         }
         //Background.GetComponent<BackgroundScroller>().InvokeReset();
