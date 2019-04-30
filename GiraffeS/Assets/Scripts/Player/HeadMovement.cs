@@ -65,7 +65,6 @@ public class HeadMovement : MonoBehaviour
         Vector2 bodyPos = Body.transform.position;
         //mousePos.z = 0;
 
-        Debug.Log(headToBody);
 
 
         if (yGiraffe == true)

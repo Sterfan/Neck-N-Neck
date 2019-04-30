@@ -13,6 +13,8 @@ public class HeadMovement2 : MonoBehaviour
 
     Vector2 mouseMovement;
 
+    Vector3 mouseInput;
+
     SpriteRenderer spriteR;
     public Sprite neck7;
     public Sprite neck6;
@@ -22,7 +24,7 @@ public class HeadMovement2 : MonoBehaviour
     public Sprite neck2;
     public Sprite neck1;
 
-    [SerializeField] int mouseSlower = 3;
+    [SerializeField] float mouseSensitivity = 0.5f;
 
     public bool xGiraffe;
     public bool yGiraffe;
@@ -30,6 +32,8 @@ public class HeadMovement2 : MonoBehaviour
     float headToBodyStart;
     float headToBody;
     float maxNeckLength = 7.0f;
+    float yMouse;
+    float xMouse;
 
     private void Start()
     {
@@ -65,17 +69,20 @@ public class HeadMovement2 : MonoBehaviour
 
         if (yGiraffe == true)
         {
-            mouseMovement = new Vector2(0.0f, Input.GetAxis("Mouse Y"));
+            //Debug.Log(Input.GetAxis("Mouse Y"));
+            yMouse = Input.GetAxis("Mouse Y");
+            mouseMovement = new Vector2(0.0f, yMouse);
+            mouseInput = new Vector3(0, yMouse, 0);
 
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            headPos += mouseMovement;
+            Head.transform.position += mouseInput * mouseSensitivity;
 
-            if (Body.GetComponent<PlayerController>().Jumping == true)
-            {
-                //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
-                Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSlower);
+            //if (Body.GetComponent<PlayerController>().Jumping == true)
+            //{
+            //    //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
+            //    Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
 
-            }
+            //}
 
             if (headToBody > maxNeckLength)
             {
@@ -95,17 +102,21 @@ public class HeadMovement2 : MonoBehaviour
 
         if (xGiraffe == true)
         {
-            mouseMovement = new Vector2(0.0f, Input.GetAxis("Mouse X"));
+            xMouse = Input.GetAxis("Mouse X");
+            mouseMovement = new Vector2(0.0f, xMouse);
+            mouseInput = new Vector3(0, xMouse, 0);
+
+
 
             //Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
 
             //Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
-            headPos += mouseMovement;
+            Head.transform.position += new Vector3(0, xMouse, 0);
 
             if (Body.GetComponent<PlayerController>().Jumping == true)
             {
                 //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
-                Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSlower);
+                //Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
             }
 
             if (headToBody > maxNeckLength)
