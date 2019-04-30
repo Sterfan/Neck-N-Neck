@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CollisionLogic : MonoBehaviour
 {
-    public GameObject Background;
+    public GameObject Backgrounds;
+    public GameObject Giraffe;
     bool shouldSpeedUp = false;
     float scrollSpeed;
     float multiplier;
@@ -13,18 +14,17 @@ public class CollisionLogic : MonoBehaviour
 
     private void Start()
     {
-        scrollSpeed = Background.GetComponent<BackgroundScroller>().scrollSpeed;
+        scrollSpeed = Backgrounds.GetComponentInChildren<BackgroundScroller>().scrollSpeed;
     }
 
     private void Update()
     {
-        multiplier = Background.GetComponentInChildren<BackgroundScroller>().speedMultiplier;
+        multiplier = Backgrounds.GetComponentInChildren<BackgroundScroller>().speedMultiplier;
 
         if (shouldSpeedUp == true && scrollSpeed * multiplier < scrollSpeed)
         {
             multiplier += acceleration * Time.deltaTime;
-            Debug.Log(multiplier);
-            Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            Backgrounds.GetComponentInChildren<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             if (multiplier >= 1.0f)
             {
                 shouldSpeedUp = false;
@@ -38,10 +38,10 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle") && gameObject.GetComponent<PlayerController>().Dashing == false)
+        if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
             multiplier = 0.5f;
-            Background.GetComponentInChildren<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            Backgrounds.GetComponentInChildren<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             FindObjectOfType<AudioManager>().Play("Leaves");
         }
