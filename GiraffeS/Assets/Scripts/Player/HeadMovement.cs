@@ -30,12 +30,14 @@ public class HeadMovement : MonoBehaviour
 
     float headToBodyStart;
     float headToBody;
-    float maxNeckLength = 7.0f;
+    float maxNeckLength = 6.5f;
+    float minNeckLength;
 
     private void Start()
     {
         Cursor.visible = false;
         mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        minNeckLength = Body.transform.position.y + 2;
 
         if (yGiraffe == true)
         {
@@ -83,11 +85,12 @@ public class HeadMovement : MonoBehaviour
             {
                 Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mouseStart.y = mouseStart.y + headToBodyStart * 0.042f;
+                mouseStart.y = mouseStart.y + headToBodyStart * 0.035f;
+
             }
-            if (Head.transform.position.y < Body.transform.position.y + 2)
+            if (Head.transform.position.y < minNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, Body.transform.position.y + 2);
+                Head.transform.position = new Vector2(headStart.x, minNeckLength);
                 mouseStart.y = mouseStart.y - headToBodyStart * 0.039f;
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -113,9 +116,9 @@ public class HeadMovement : MonoBehaviour
                 mouseStart.y = mouseStart.y + headToBody * 0.042f;
 
             }
-            if (Head.transform.position.y < Body.transform.position.y + 2)
+            if (Head.transform.position.y < minNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, Body.transform.position.y + 2);
+                Head.transform.position = new Vector2(headStart.x, minNeckLength);
                 mouseStart.y = mouseStart.y - headToBody * 0.039f;
             }
         }
