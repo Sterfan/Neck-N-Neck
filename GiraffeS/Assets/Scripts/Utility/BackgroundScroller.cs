@@ -30,9 +30,9 @@ public class BackgroundScroller : MonoBehaviour
     void Start()
     {
         //startPosition = new Vector2(transform.position.x + giraffe.transform.position.x, transform.position.y);
+        startPosition = transform.position;
         if (isMainBg)
         {
-            startPosition = transform.position;
             endPosition = finishLine.transform.position;
             totalDistance = endPosition.x - startPosition.x;
         }
