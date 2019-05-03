@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator animator;
     public enum PlayerStates
     {
         Jumping,
@@ -41,11 +42,13 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerStates.Running:
                 {
+                    animator.SetBool("IsRunning", true);
                     Jumping = false;
                     if (Input.GetKeyUp(jumpInput))
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;
+                        animator.SetBool("IsJumping", true);
                     }
                     if (Input.GetKey(dashInput))
                     {
@@ -78,10 +81,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (playerState == PlayerStates.Jumping && collision.gameObject.CompareTag("Ground"))
+        {
             playerState = PlayerStates.Running;
+            animator.SetBool("IsJumping", false);
+        }
     }
 
     //private void OnCollisionExit2D(Collision2D collision)

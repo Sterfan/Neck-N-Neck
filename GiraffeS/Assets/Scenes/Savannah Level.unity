@@ -2499,6 +2499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c170e2821e78941a209c92bf475529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   background: {fileID: 0}
   jumpAmplitude: 15
   jumpInput: 32
@@ -4396,6 +4397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c170e2821e78941a209c92bf475529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   background: {fileID: 0}
   jumpAmplitude: 15
   jumpInput: 32
@@ -5537,6 +5539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c170e2821e78941a209c92bf475529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   background: {fileID: 0}
   jumpAmplitude: 15
   jumpInput: 32
@@ -6954,6 +6957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c170e2821e78941a209c92bf475529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   background: {fileID: 1237975772}
   jumpAmplitude: 15
   jumpInput: 119
@@ -8206,6 +8210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c170e2821e78941a209c92bf475529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1273082410}
   background: {fileID: 2107148819}
   jumpAmplitude: 15
   jumpInput: 32
@@ -8769,10 +8774,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 860187887}
   finishLine: {fileID: 1308337416}
+  BGManager: {fileID: 885988481}
   scrollSpeed: 10
-  speedMultiplier: 1
   slowStart: 0
   isMainBg: 1
+  testPurposes: 0
 --- !u!4 &1237975774
 Transform:
   m_ObjectHideFlags: 0
@@ -9469,6 +9475,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cbed82c14188e84f903c7f2a8c4cd44, type: 3}
+--- !u!95 &1273082410 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3525175917832711664, guid: 0cbed82c14188e84f903c7f2a8c4cd44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1273082409}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1302092097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9220294100789922466, guid: 30228f339fd82ca4fa46e5d4a8f60db1,
@@ -13686,6 +13698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c170e2821e78941a209c92bf475529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   background: {fileID: 0}
   jumpAmplitude: 15
   jumpInput: 32
@@ -14245,10 +14258,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 860187887}
   finishLine: {fileID: 263515454}
+  BGManager: {fileID: 644459125}
   scrollSpeed: 10
-  speedMultiplier: 1
   slowStart: 0
   isMainBg: 1
+  testPurposes: 0
 --- !u!4 &2107148821
 Transform:
   m_ObjectHideFlags: 0
