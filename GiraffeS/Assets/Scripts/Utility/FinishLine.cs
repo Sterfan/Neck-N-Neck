@@ -5,6 +5,7 @@ public class FinishLine : MonoBehaviour
     GameObject backgroundScrl;
     public GameObject progressTracker;
     public GameObject giraffe;
+    public GameObject backgrounds;
     bool endOfRace = false;
     Vector2 newPosition;
 
@@ -14,11 +15,13 @@ public class FinishLine : MonoBehaviour
         {
             backgroundScrl = collision.gameObject;
             //Debug.Log("We all up in this bitch");
-            gameObject.GetComponentInParent<BackgroundScroller>().scrollSpeed = 0.0f;
+            //gameObject.GetComponentInParent<BackgroundScroller>().scrollSpeed = 0.0f;
+            backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0);
             progressTracker.GetComponent<PlayerProgress>().isFinished = true;
             endOfRace = true;
         }
     }
+
 
     void Start()
     {

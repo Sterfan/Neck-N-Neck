@@ -14,17 +14,17 @@ public class CollisionLogic : MonoBehaviour
 
     private void Start()
     {
-        scrollSpeed = Backgrounds.GetComponentInChildren<BackgroundScroller>().scrollSpeed;
+        //scrollSpeed = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
+        multiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
     }
 
     private void Update()
     {
-        multiplier = Backgrounds.GetComponentInChildren<BackgroundScroller>().speedMultiplier;
 
-        if (shouldSpeedUp == true && scrollSpeed * multiplier < scrollSpeed)
+        if (shouldSpeedUp == true && multiplier <= 1.0f)
         {
             multiplier += acceleration * Time.deltaTime;
-            Backgrounds.GetComponentInChildren<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
             if (multiplier >= 1.0f)
             {
                 shouldSpeedUp = false;
@@ -41,7 +41,7 @@ public class CollisionLogic : MonoBehaviour
         if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
             multiplier = 0.5f;
-            Backgrounds.GetComponentInChildren<BackgroundScroller>().SetSpeedMultiplier(multiplier);
+            Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
             //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             FindObjectOfType<AudioManager>().Play("Leaves");
         }

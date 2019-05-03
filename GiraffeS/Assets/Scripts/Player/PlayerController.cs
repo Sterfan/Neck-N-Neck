@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Dashing:
                 {
                     
-                    if (background.GetComponentInChildren<BackgroundScroller>().speedMultiplier == 1.0f)
+                    if (background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() == 1.0f)
                     {
                         playerState = PlayerStates.Running;
                     }
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     void Dash(float dashSpeed)
     {
-        background.GetComponentInChildren<BackgroundScroller>().speedMultiplier = dashSpeed;
+        background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
     }
 
 }

@@ -712,6 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3525175917262299268}
   - component: {fileID: 3525175917262299269}
+  - component: {fileID: 7905498069401165561}
   m_Layer: 0
   m_Name: Frontleg bone 2
   m_TagString: Untagged
@@ -749,6 +750,22 @@ MonoBehaviour:
   m_Length: 1
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+--- !u!70 &7905498069401165561
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525175917262299291}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.56352854, y: -0.05348627}
+  m_Size: {x: 1.245611, y: 0.5404472}
+  m_Direction: 1
 --- !u!1 &3525175917354386173
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3525175917582873549}
   - component: {fileID: 3525175917582873550}
+  - component: {fileID: 70426650460756582}
   m_Layer: 0
   m_Name: Backleg bone 2
   m_TagString: Untagged
@@ -963,6 +981,22 @@ MonoBehaviour:
   m_Length: 1
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+--- !u!70 &70426650460756582
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525175917582873548}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4970859, y: -0.024123574}
+  m_Size: {x: 1.4701324, y: 0.59446687}
+  m_Direction: 1
 --- !u!1 &3525175917595910598
 GameObject:
   m_ObjectHideFlags: 0

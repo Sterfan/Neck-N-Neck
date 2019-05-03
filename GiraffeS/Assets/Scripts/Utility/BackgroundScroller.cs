@@ -4,10 +4,11 @@ public class BackgroundScroller : MonoBehaviour
 {
     public GameObject countdownTimer;
     public GameObject finishLine;
+    public GameObject BGManager;
     //public GameObject giraffe;
 
     public float scrollSpeed = 10.0f;
-    public float speedMultiplier = 1.0f;
+    float speedMultiplier;
 
     private Vector2 startPosition;
     private Vector2 endPosition;
@@ -18,6 +19,8 @@ public class BackgroundScroller : MonoBehaviour
 
     public bool slowStart = false;
     public bool isMainBg;
+
+    public bool testPurposes;
 
     bool dashing = false;
 
@@ -38,6 +41,8 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
+        speedMultiplier = BGManager.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
+
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             newPosition += Time.deltaTime * scrollSpeed * speedMultiplier;
@@ -47,6 +52,10 @@ public class BackgroundScroller : MonoBehaviour
                 distanceTraveled = totalDistance - (startPosition.x - transform.position.x);
                 percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
             }
+        }
+        if (testPurposes == true)
+        {
+            Debug.Log(Time.deltaTime * scrollSpeed * speedMultiplier);
         }
     }
 

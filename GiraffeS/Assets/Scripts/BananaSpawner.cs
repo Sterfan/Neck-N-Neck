@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class BananaSpawner : MonoBehaviour
 {
+    public GameObject countdownTimer;
     public GameObject Banana;
     public Transform[] SpawnPoints;
-    void Start()
+
+    bool hasStarted = false;
+
+    void Update()
     {
-        StartCoroutine(StartSpawning());
+        if (countdownTimer.GetComponent<CountdownTimer>().startGame == true && hasStarted == false)
+        {
+
+            StartCoroutine(StartSpawning());
+            hasStarted = true;
+        }
     }
 
     IEnumerator StartSpawning()
@@ -17,4 +26,5 @@ public class BananaSpawner : MonoBehaviour
         Instantiate(Banana, SpawnPoints[Random.Range(0, SpawnPoints.Length)].position, Quaternion.identity);
         StartCoroutine(StartSpawning());
     }
+
 }
