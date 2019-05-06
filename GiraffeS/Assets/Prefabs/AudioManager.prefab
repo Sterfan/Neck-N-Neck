@@ -61,11 +61,17 @@ MonoBehaviour:
     volume: 1
     source: {fileID: 0}
     isLooping: 1
-    playOnAwake: 1
+    playOnAwake: 0
   - audioName: Go
     audioClip: {fileID: 8300000, guid: 6e0d86273e00b7a43bda35878efaa5ce, type: 3}
     volume: 1
     source: {fileID: 0}
     isLooping: 0
+    playOnAwake: 1
+  - audioName: ThemeMusic
+    audioClip: {fileID: 8300000, guid: cc7d09481a8c0a54398d83c02833992b, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 1
     playOnAwake: 1
   Mixer: {fileID: 0}
