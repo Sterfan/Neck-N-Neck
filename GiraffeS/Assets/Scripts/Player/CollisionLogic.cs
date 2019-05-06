@@ -49,6 +49,11 @@ public class CollisionLogic : MonoBehaviour
             }
             //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
         }
+        if (collision.CompareTag("DashAmmo"))
+        {
+            Giraffe.GetComponent<PlayerController>().SetDashAmmo(1.0f);
+            Destroy(collision.gameObject);
+        }
         //Background.GetComponent<BackgroundScroller>().InvokeReset();
     }
 

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     float dashSpeed = 3.0f;
     float dashDuration = 0.5f;
     float deceleration;
-    float dashAmmo;
+    [SerializeField] float dashAmmo;
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
     public KeyCode jumpInput = KeyCode.Space;
@@ -56,11 +56,16 @@ public class PlayerController : MonoBehaviour
                         playerState = PlayerStates.Jumping;
                         animator.SetBool("IsJumping", true);
                     }
-                    if (Input.GetKey(dashInput))
+                    if (Input.GetKey(dashInput) && dashAmmo > 0.0f)
                     {
                         Dash(dashSpeed);
                         playerState = PlayerStates.Dashing;
                         Dashing = true;
+                        dashAmmo -= 1.0f;
+                        if (dashAmmo < 0.0f)
+                        {
+                            dashAmmo = 0.0f;
+                        }
                     }
 
                     break;
