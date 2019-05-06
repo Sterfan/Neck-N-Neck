@@ -38,14 +38,31 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
+        if (collision.CompareTag("Obstacle"))
         {
-            multiplier = 0.5f;
-            Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
-            //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
             FindObjectOfType<AudioManager>().Play("Leaves");
+            if (multiplier >= 0.5f && Giraffe.GetComponent<PlayerController>().Dashing == false)
+            {
+                multiplier = 0.5f;
+                Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
+
+            }
+            //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
         }
         //Background.GetComponent<BackgroundScroller>().InvokeReset();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
+        {
+            if (multiplier >= 0.25f)
+            {
+                multiplier *= 0.99f;
+                Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
+            }
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

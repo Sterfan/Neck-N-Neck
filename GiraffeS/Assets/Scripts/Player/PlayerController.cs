@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     float dashSpeed = 3.0f;
     float dashDuration = 0.5f;
     float deceleration;
+    float dashAmmo;
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
     public KeyCode jumpInput = KeyCode.Space;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject Head;
     public bool Jumping = false;
     public bool Dashing = false;
+    public bool testPurposes;
 
     Rigidbody2D rb;
 
@@ -38,7 +40,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(playerState);
+        if (testPurposes)
+        {
+            Debug.Log(playerState);
+        }
         switch (playerState)
         {
             case PlayerStates.Running:
@@ -117,5 +122,11 @@ public class PlayerController : MonoBehaviour
     void ResetSpeed()
     {
         background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+        playerState = PlayerStates.Running;
+    }
+
+    public void SetDashAmmo(float ammo)
+    {
+        dashAmmo += ammo;
     }
 }

@@ -664,6 +664,7 @@ MonoBehaviour:
   dashInput: 100
   Jumping: 0
   Dashing: 0
+  testPurposes: 0
 --- !u!114 &12983384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +871,7 @@ MonoBehaviour:
   dashInput: 100
   Jumping: 0
   Dashing: 0
+  testPurposes: 0
 --- !u!70 &12983392
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16775,6 +16777,7 @@ MonoBehaviour:
   dashInput: 97
   Jumping: 0
   Dashing: 0
+  testPurposes: 0
 --- !u!114 &1630592560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16981,6 +16984,7 @@ MonoBehaviour:
   dashInput: 100
   Jumping: 0
   Dashing: 0
+  testPurposes: 0
 --- !u!70 &1630592568
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19711,6 +19715,7 @@ MonoBehaviour:
   dashInput: 100
   Jumping: 0
   Dashing: 0
+  testPurposes: 0
 --- !u!50 &1941506988
 Rigidbody2D:
   serializedVersion: 4
@@ -19731,7 +19736,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!114 &1941506989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19902,6 +19907,7 @@ MonoBehaviour:
   dashInput: 100
   Jumping: 0
   Dashing: 0
+  testPurposes: 0
 --- !u!70 &1941506995
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
