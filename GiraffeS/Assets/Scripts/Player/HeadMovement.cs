@@ -23,7 +23,7 @@ public class HeadMovement : MonoBehaviour
     public Sprite neck2;
     public Sprite neck1;
 
-    [SerializeField] int mouseSlower = 3;
+    [SerializeField] float mouseSlower = 1.0f;
 
     public bool xGiraffe;
     public bool yGiraffe;
@@ -37,7 +37,6 @@ public class HeadMovement : MonoBehaviour
     {
         Cursor.visible = false;
         mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        minNeckLength = Body.transform.position.y + 2;
 
         if (yGiraffe == true)
         {
@@ -65,6 +64,8 @@ public class HeadMovement : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 headPos = Head.transform.position;
         Vector2 bodyPos = Body.transform.position;
+        minNeckLength = Body.transform.position.y + 2;
+
         //mousePos.z = 0;
 
 
@@ -76,18 +77,18 @@ public class HeadMovement : MonoBehaviour
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
             Head.transform.position = headStart - ((mouseStart - mousePos) / mouseSlower);
 
-            if (Body.GetComponent<PlayerController>().Jumping == true)
+            if (Body.GetComponent<PlayerController>().Jumping == true && Head.transform.position.y <= bodyStart.y + maxNeckLength)
             {
                 Head.transform.position = (headStart + (bodyPos - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
             }
 
-            if (headToBody > maxNeckLength)
+            if (Head.transform.position.y > bodyStart.y + maxNeckLength)
             {
                 Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseStart.y = mouseStart.y + headToBodyStart * 0.035f;
-
             }
+
             if (Head.transform.position.y < minNeckLength)
             {
                 Head.transform.position = new Vector2(headStart.x, minNeckLength);
@@ -105,12 +106,12 @@ public class HeadMovement : MonoBehaviour
 
             Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
 
-            if (Body.GetComponent<PlayerController>().Jumping == true)
+            if (Body.GetComponent<PlayerController>().Jumping == true && Head.transform.position.y <= bodyStart.y + maxNeckLength)
             {
                 Head.transform.position = (headStart + (bodyPos - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
             }
 
-            if (headToBody > maxNeckLength)
+            if (Head.transform.position.y > bodyStart.y + maxNeckLength)
             {
                 Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
                 mouseStart.y = mouseStart.y + headToBody * 0.042f;

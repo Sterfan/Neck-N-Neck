@@ -50,7 +50,7 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
             shouldSpeedUp = true;
             FindObjectOfType<AudioManager>().StopMusic("Leaves");
