@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     public GameObject background;
 
     public float jumpAmplitude = 15.0f;
-    float dashSpeed;
+    float dashSpeed = 3.0f;
+    float dashDuration = 0.5f;
     float deceleration;
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
                     {
                         Dash(dashSpeed);
                         playerState = PlayerStates.Dashing;
+                        Dashing = true;
                     }
 
                     break;
@@ -70,9 +72,10 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Dashing:
                 {
                     
-                    if (background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() == 1.0f)
+                    if (background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
                     {
                         playerState = PlayerStates.Running;
+                        Dashing = false;
                     }
 
                     break;
@@ -108,6 +111,11 @@ public class PlayerController : MonoBehaviour
     void Dash(float dashSpeed)
     {
         background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
+        Invoke("ResetSpeed", dashDuration);
     }
 
+    void ResetSpeed()
+    {
+        background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+    }
 }

@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Y))
         {
-            SceneManager.LoadScene("Axel's Scene");
+            SceneManager.LoadScene("BackupScene");
         }
     }
 }
