@@ -48,7 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 0}
+  finishLine: {fileID: 0}
+  BGManager: {fileID: 0}
   scrollSpeed: 10
+  slowStart: 0
+  isMainBg: 0
+  testPurposes: 0
 --- !u!1 &2392362282827356332
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +271,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1508603020979551031
 PrefabInstance:
