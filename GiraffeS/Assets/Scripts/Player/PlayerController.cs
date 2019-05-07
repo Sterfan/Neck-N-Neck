@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     public GameObject background;
 
     public float jumpAmplitude = 15.0f;
-    float dashSpeed = 3.0f;
-    float dashDuration = 0.5f;
-    float deceleration;
+    float dashSpeed = 7.0f;
+    float currentDashSpeed;
+    float dashDuration = 0.25f;
+    float dashTimer = 0.0f;
+    float deceleration = 0.90f;
     [SerializeField] float dashAmmo;
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
@@ -37,6 +39,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        currentDashSpeed = dashSpeed;
+    }
 
     void Update()
     {
@@ -81,12 +87,26 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-                    
-                    if (background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
+                    Debug.Log(background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
+                    //Debug.Log(dashTimer);
+                    dashTimer += Time.deltaTime;
+                    //Debug.Log(dashTimer);
+                    if (dashTimer >= dashDuration)
                     {
-                        playerState = PlayerStates.Running;
-                        Dashing = false;
+                        currentDashSpeed *= deceleration;
+                        //Debug.Log("currentDashSpeed = " + currentDashSpeed);
+                        background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(currentDashSpeed);
+
+                        if (background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
+                        {
+                            ResetSpeed();
+                            currentDashSpeed = dashSpeed;
+                            dashTimer = 0.0f;
+                            playerState = PlayerStates.Running;
+                            Dashing = false;
+                        }
                     }
+
 
                     break;
                 }
@@ -121,13 +141,12 @@ public class PlayerController : MonoBehaviour
     void Dash(float dashSpeed)
     {
         background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
-        Invoke("ResetSpeed", dashDuration);
+        //Invoke("ResetSpeed", dashDuration);
     }
 
     void ResetSpeed()
     {
         background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
-        playerState = PlayerStates.Running;
     }
 
     public void SetDashAmmo(float ammo)

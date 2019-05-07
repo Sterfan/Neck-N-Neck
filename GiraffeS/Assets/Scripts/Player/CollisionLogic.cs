@@ -6,9 +6,13 @@ public class CollisionLogic : MonoBehaviour
 {
     public GameObject Backgrounds;
     public GameObject Giraffe;
+    public GameObject TimeController;
+    public GameObject ProgressTracker;
     bool shouldSpeedUp = false;
     float scrollSpeed;
     float multiplier;
+    float timeSinceHit = 0.0f;
+    float overSpeedAcceleration = 0.1f;
     [SerializeField] float acceleration = 0.15f;
 
 
@@ -20,6 +24,15 @@ public class CollisionLogic : MonoBehaviour
 
     private void Update()
     {
+        if (TimeController.GetComponent<CountdownTimer>().startGame == true && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false)
+        {
+            timeSinceHit += Time.deltaTime;
+            if (timeSinceHit >= 6.0f && multiplier < 1.3f)
+            {
+                multiplier += overSpeedAcceleration * Time.deltaTime;
+                Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
+            }
+        }
 
         if (shouldSpeedUp == true && multiplier <= 1.0f)
         {
@@ -45,6 +58,7 @@ public class CollisionLogic : MonoBehaviour
             {
                 multiplier = 0.5f;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
+                timeSinceHit = 0.0f;
 
             }
             //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
@@ -61,6 +75,7 @@ public class CollisionLogic : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
+            timeSinceHit = 0.0f;
             if (multiplier >= 0.25f)
             {
                 multiplier *= 0.99f;
@@ -74,6 +89,7 @@ public class CollisionLogic : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
+            timeSinceHit = 0.0f;
             shouldSpeedUp = true;
             FindObjectOfType<AudioManager>().StopMusic("Leaves");
         }

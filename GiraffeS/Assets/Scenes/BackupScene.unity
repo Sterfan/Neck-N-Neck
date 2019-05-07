@@ -660,6 +660,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   background: {fileID: 4263925159288952781}
   jumpAmplitude: 15
+  dashAmmo: 0
   jumpInput: 32
   dashInput: 100
   Jumping: 0
@@ -679,6 +680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 4263925159420214559}
   Giraffe: {fileID: 12983374}
+  TimeController: {fileID: 0}
+  ProgressTracker: {fileID: 0}
   acceleration: 1
 --- !u!50 &12983385
 Rigidbody2D:
@@ -715,6 +718,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 4263925159420214559}
   Giraffe: {fileID: 12983374}
+  TimeController: {fileID: 0}
+  ProgressTracker: {fileID: 0}
   acceleration: 1
 --- !u!60 &12983387
 PolygonCollider2D:
@@ -867,6 +872,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   background: {fileID: 0}
   jumpAmplitude: 15
+  dashAmmo: 0
   jumpInput: 32
   dashInput: 100
   Jumping: 0
@@ -1376,7 +1382,7 @@ Transform:
   m_LocalScale: {x: 0.19826204, y: 0.19826207, z: 0.19826204}
   m_Children: []
   m_Father: {fileID: 1596621356}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &45538565
 SpriteRenderer:
@@ -4559,7 +4565,7 @@ Transform:
   m_Children:
   - {fileID: 1308589990}
   m_Father: {fileID: 397730424}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &420167328
 SpriteRenderer:
@@ -5315,7 +5321,7 @@ Transform:
   m_Children:
   - {fileID: 1907106212}
   m_Father: {fileID: 418613855}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &519333361
 SpriteRenderer:
@@ -12439,7 +12445,7 @@ Transform:
   m_LocalScale: {x: 0.19826204, y: 0.19826207, z: 0.19826204}
   m_Children: []
   m_Father: {fileID: 759425073}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1301980982
 SpriteRenderer:
@@ -16773,6 +16779,7 @@ MonoBehaviour:
   animator: {fileID: 1630592572}
   background: {fileID: 1672553516}
   jumpAmplitude: 15
+  dashAmmo: 0
   jumpInput: 119
   dashInput: 97
   Jumping: 0
@@ -16792,6 +16799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 1672553516}
   Giraffe: {fileID: 1630592550}
+  TimeController: {fileID: 1600088607}
+  ProgressTracker: {fileID: 1397933948}
   acceleration: 1
 --- !u!50 &1630592561
 Rigidbody2D:
@@ -16828,6 +16837,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 1672553516}
   Giraffe: {fileID: 1630592550}
+  TimeController: {fileID: 1600088607}
+  ProgressTracker: {fileID: 1397933948}
   acceleration: 1
 --- !u!60 &1630592563
 PolygonCollider2D:
@@ -16980,6 +16991,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   background: {fileID: 0}
   jumpAmplitude: 15
+  dashAmmo: 0
   jumpInput: 32
   dashInput: 100
   Jumping: 0
@@ -19695,6 +19707,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 4263925159420214559}
   Giraffe: {fileID: 3525175915977320022}
+  TimeController: {fileID: 1600088607}
+  ProgressTracker: {fileID: 402405760}
   acceleration: 1
 --- !u!114 &1941506987
 MonoBehaviour:
@@ -19711,6 +19725,7 @@ MonoBehaviour:
   animator: {fileID: 3525175915977320016}
   background: {fileID: 4263925159420214559}
   jumpAmplitude: 15
+  dashAmmo: 100
   jumpInput: 32
   dashInput: 100
   Jumping: 0
@@ -19751,6 +19766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 4263925159420214559}
   Giraffe: {fileID: 3525175915977320022}
+  TimeController: {fileID: 1600088607}
+  ProgressTracker: {fileID: 402405760}
   acceleration: 1
 --- !u!60 &1941506990
 PolygonCollider2D:
@@ -19903,6 +19920,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   background: {fileID: 0}
   jumpAmplitude: 15
+  dashAmmo: 0
   jumpInput: 32
   dashInput: 100
   Jumping: 0
