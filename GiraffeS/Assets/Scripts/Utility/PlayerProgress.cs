@@ -40,7 +40,7 @@ public class PlayerProgress : MonoBehaviour
         gameObject.transform.position = new Vector2(startPos, yPos);
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {

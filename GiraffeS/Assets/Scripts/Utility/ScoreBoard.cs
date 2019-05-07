@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ScoreBoard : MonoBehaviour
 {
+
+    //Call this in PlayerProgress, find a place to input name
+
     public void AddScore(string name, float score)
     {
         float newScore;
