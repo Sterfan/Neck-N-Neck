@@ -14,12 +14,12 @@ public class PlayerController : MonoBehaviour
 
     PlayerStates playerState = PlayerStates.Jumping;
 
-    public GameObject background;
+    public GameObject Background1;
 
     public float jumpAmplitude = 15.0f;
-    float dashSpeed = 7.0f;
+    [SerializeField] float dashSpeed = 7.0f;
     float currentDashSpeed;
-    float dashDuration = 0.25f;
+    [SerializeField] float dashDuration = 0.25f;
     float dashTimer = 0.0f;
     float deceleration = 0.90f;
     [SerializeField] float dashAmmo;
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-                    Debug.Log(background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
+                    Debug.Log(Background1.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
                     //Debug.Log(dashTimer);
                     dashTimer += Time.deltaTime;
                     //Debug.Log(dashTimer);
@@ -95,9 +95,9 @@ public class PlayerController : MonoBehaviour
                     {
                         currentDashSpeed *= deceleration;
                         //Debug.Log("currentDashSpeed = " + currentDashSpeed);
-                        background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(currentDashSpeed);
+                        Background1.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(currentDashSpeed);
 
-                        if (background.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
+                        if (Background1.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
                         {
                             ResetSpeed();
                             currentDashSpeed = dashSpeed;
@@ -140,13 +140,13 @@ public class PlayerController : MonoBehaviour
 
     void Dash(float dashSpeed)
     {
-        background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
+        Background1.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
         //Invoke("ResetSpeed", dashDuration);
     }
 
     void ResetSpeed()
     {
-        background.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+        Background1.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
     }
 
     public void SetDashAmmo(float ammo)

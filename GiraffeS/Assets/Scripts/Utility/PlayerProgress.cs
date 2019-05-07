@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerProgress : MonoBehaviour
 {
     public GameObject countdownTimer;
-    public GameObject background;
+    public GameObject Background1;
     public GameObject otherGiraffeTracker;
 
     public Image position;
@@ -44,8 +44,8 @@ public class PlayerProgress : MonoBehaviour
     {
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
-            percentProgress = background.GetComponent<BackgroundScroller>().GetPercentCompleted();
-            distanceTraveled = background.GetComponent<BackgroundScroller>().GetDistanceTraveled();
+            percentProgress = Background1.GetComponent<BackgroundScroller>().GetPercentCompleted();
+            distanceTraveled = Background1.GetComponent<BackgroundScroller>().GetDistanceTraveled();
 
             if (isFinished == false)
             {
@@ -62,6 +62,11 @@ public class PlayerProgress : MonoBehaviour
 
             gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
             timer.text = gameTime.ToString("n2");
+
+            if (isFinished == true)
+            {
+                Background1.GetComponent<BackgroundScroller>().SetSpeedMultiplier(0.0f);
+            }
 
             if (isFinished == true && otherGiraffeTracker.GetComponent<PlayerProgress>().isFinished == false)
             {

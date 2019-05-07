@@ -4,7 +4,7 @@ public class BackgroundScroller : MonoBehaviour
 {
     public GameObject countdownTimer;
     public GameObject finishLine;
-    public GameObject BGManager;
+    public GameObject Backgrounds;
     //public GameObject giraffe;
 
     public float scrollSpeed = 10.0f;
@@ -41,7 +41,7 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        speedMultiplier = BGManager.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
+        speedMultiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
 
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
