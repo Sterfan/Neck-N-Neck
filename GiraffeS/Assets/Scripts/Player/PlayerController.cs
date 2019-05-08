@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         if (testPurposes)
         {
             Debug.Log(playerState);

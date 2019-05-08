@@ -8,7 +8,7 @@ public class BackgroundScroller : MonoBehaviour
     //public GameObject giraffe;
 
     public float scrollSpeed = 10.0f;
-    float speedMultiplier;
+    float speedMultiplier = 1.0f;
 
     private Vector2 startPosition;
     private Vector2 endPosition;
@@ -38,11 +38,14 @@ public class BackgroundScroller : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         speedMultiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
 
+        //Vector3 deltaPos = Time.deltaTime * Vector2.left * 14.0f;
+        //transform.Translate(deltaPos);
+
+        //// transform.position += deltaPos;
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             newPosition += Time.deltaTime * scrollSpeed * speedMultiplier;
