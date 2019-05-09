@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerStates playerState = PlayerStates.Jumping;
 
-    public GameObject Background1;
+    public GameObject Backgrounds;
 
     public float jumpAmplitude = 15.0f;
     [SerializeField] float dashSpeed = 7.0f;
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-                    Debug.Log(Background1.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
+                    Debug.Log(Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
                     //Debug.Log(dashTimer);
                     dashTimer += Time.deltaTime;
                     //Debug.Log(dashTimer);
@@ -96,9 +96,9 @@ public class PlayerController : MonoBehaviour
                     {
                         currentDashSpeed *= deceleration;
                         //Debug.Log("currentDashSpeed = " + currentDashSpeed);
-                        Background1.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(currentDashSpeed);
+                        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(currentDashSpeed);
 
-                        if (Background1.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
+                        if (Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
                         {
                             ResetSpeed();
                             currentDashSpeed = dashSpeed;
@@ -141,13 +141,13 @@ public class PlayerController : MonoBehaviour
 
     void Dash(float dashSpeed)
     {
-        Background1.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
+        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
         //Invoke("ResetSpeed", dashDuration);
     }
 
     void ResetSpeed()
     {
-        Background1.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
     }
 
     public void SetDashAmmo(float ammo)

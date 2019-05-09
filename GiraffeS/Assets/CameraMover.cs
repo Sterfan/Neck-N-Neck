@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMover : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float speed = 0.1f;    // Start is called before the first frame update
     void Start()
     {
         
@@ -13,7 +13,7 @@ public class CameraMover : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position += Vector3.right * Time.deltaTime * 30;
+        transform.position += Vector3.right * Time.deltaTime * speed;
         // transform.Translate(Vector2.right * Time.deltaTime * 30);
 
     }
