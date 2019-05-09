@@ -6,6 +6,7 @@ public class CollisionLogic : MonoBehaviour
 {
     public GameObject Backgrounds;
     public GameObject Giraffe;
+    public GameObject LeafParticles;
     public GameObject TimeController;
     public GameObject ProgressTracker;
     bool shouldSpeedUp = false;
@@ -53,6 +54,8 @@ public class CollisionLogic : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle"))
         {
+            //LeafParticles.SetActive(true);
+            LeafParticles.GetComponent<ParticleSystem>().Play();
             FindObjectOfType<AudioManager>().Play("Leaves");
             if (multiplier >= 0.5f && Giraffe.GetComponent<PlayerController>().Dashing == false)
             {
@@ -75,6 +78,8 @@ public class CollisionLogic : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
+            //LeafParticles.SetActive(true);
+            LeafParticles.GetComponent<ParticleSystem>().Play();
             timeSinceHit = 0.0f;
             if (multiplier >= 0.25f)
             {
@@ -92,6 +97,7 @@ public class CollisionLogic : MonoBehaviour
             timeSinceHit = 0.0f;
             shouldSpeedUp = true;
             FindObjectOfType<AudioManager>().StopMusic("Leaves");
+            LeafParticles.GetComponent<ParticleSystem>().Stop();
         }
     }
 
