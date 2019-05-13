@@ -84,14 +84,18 @@ public class HeadMovement : MonoBehaviour
 
             if (Head.transform.position.y > bodyStart.y + maxNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
+                //Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
+                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
+
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseStart.y = mouseStart.y + headToBodyStart * 0.035f;
             }
 
             if (Head.transform.position.y < minNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, minNeckLength);
+                //Head.transform.position = new Vector2(headStart.x, minNeckLength);
+                Head.transform.position = new Vector2(Head.transform.position.x, minNeckLength);
+
                 mouseStart.y = mouseStart.y - headToBodyStart * 0.039f;
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -113,13 +117,17 @@ public class HeadMovement : MonoBehaviour
 
             if (Head.transform.position.y > bodyStart.y + maxNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
+                //Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
+                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
+
                 mouseStart.y = mouseStart.y + headToBody * 0.042f;
 
             }
             if (Head.transform.position.y < minNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, minNeckLength);
+                //Head.transform.position = new Vector2(headStart.x, minNeckLength);
+                Head.transform.position = new Vector2(Head.transform.position.x, minNeckLength);
+
                 mouseStart.y = mouseStart.y - headToBody * 0.039f;
             }
         }

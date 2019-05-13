@@ -20,6 +20,7 @@ public class BackgroundScroller : MonoBehaviour
     public bool slowStart = false;
     public bool isMainBg;
 
+    public bool cameraScrolling;
     public bool testPurposes;
 
     bool dashing = false;
@@ -49,7 +50,10 @@ public class BackgroundScroller : MonoBehaviour
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             newPosition += Time.deltaTime * scrollSpeed * speedMultiplier;
-            transform.position = startPosition + Vector2.left * newPosition;
+            if (!cameraScrolling)
+                transform.position = startPosition + Vector2.left * newPosition;
+            if (cameraScrolling)
+                transform.position = startPosition + Vector2.right * newPosition;
             if (isMainBg)
             {
                 distanceTraveled = totalDistance - (startPosition.x - transform.position.x);

@@ -21,6 +21,7 @@ public class CollisionLogic : MonoBehaviour
     {
         //scrollSpeed = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
         multiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
+        //LeafParticles.GetComponent<ParticleSystem>().Stop();
     }
 
     private void Update()
@@ -55,7 +56,10 @@ public class CollisionLogic : MonoBehaviour
         if (collision.CompareTag("Obstacle"))
         {
             //LeafParticles.SetActive(true);
-            LeafParticles.GetComponent<ParticleSystem>().Play();
+            if (LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
+            {
+                LeafParticles.GetComponent<ParticleSystem>().Play();
+            }
             FindObjectOfType<AudioManager>().Play("Leaves");
             if (multiplier >= 0.5f && Giraffe.GetComponent<PlayerController>().Dashing == false)
             {
@@ -79,7 +83,7 @@ public class CollisionLogic : MonoBehaviour
         if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
             //LeafParticles.SetActive(true);
-            LeafParticles.GetComponent<ParticleSystem>().Play();
+            //LeafParticles.GetComponent<ParticleSystem>().Play();
             timeSinceHit = 0.0f;
             if (multiplier >= 0.25f)
             {
