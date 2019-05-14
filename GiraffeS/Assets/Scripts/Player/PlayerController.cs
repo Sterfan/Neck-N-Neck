@@ -88,7 +88,6 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-                    Debug.Log(Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
                     //Debug.Log(dashTimer);
                     dashTimer += Time.deltaTime;
                     //Debug.Log(dashTimer);
