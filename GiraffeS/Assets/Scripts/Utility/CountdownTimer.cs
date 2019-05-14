@@ -10,6 +10,7 @@ public class CountdownTimer : MonoBehaviour
     public GameObject two;
     public GameObject one;
     public GameObject go;
+    //public TMPro.TextMeshProUGUI text;
 
     public bool startGame = false;
 
@@ -30,6 +31,7 @@ public class CountdownTimer : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer > 2.0f)
             {
+                //text.text = "3";
                 three.SetActive(true);
             }
             if (timer > 1.0f && timer <= 2.0f)
