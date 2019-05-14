@@ -4112,7 +4112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &200886836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4883,7 +4883,7 @@ MonoBehaviour:
   scrollSpeed: 0
   slowStart: 0
   isMainBg: 0
-  cameraScrolling: 0
+  cameraScrolling: 1
   testPurposes: 0
 --- !u!1 &267980904
 GameObject:
@@ -8273,7 +8273,7 @@ MonoBehaviour:
   scrollSpeed: 2
   slowStart: 0
   isMainBg: 0
-  cameraScrolling: 0
+  cameraScrolling: 1
   testPurposes: 0
 --- !u!1 &543627991
 GameObject:
@@ -13005,7 +13005,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907587732}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f0242ad3d3866b4ab77524075219e61, type: 3}
   m_Name: 
@@ -14952,7 +14952,7 @@ MonoBehaviour:
   scrollSpeed: 5
   slowStart: 0
   isMainBg: 0
-  cameraScrolling: 0
+  cameraScrolling: 1
   testPurposes: 0
 --- !u!1 &1055013568
 GameObject:
@@ -20046,7 +20046,7 @@ MonoBehaviour:
   scrollSpeed: 10
   slowStart: 0
   isMainBg: 1
-  cameraScrolling: 0
+  cameraScrolling: 1
   testPurposes: 0
 --- !u!4 &1390132254
 Transform:
@@ -32236,7 +32236,7 @@ MonoBehaviour:
   scrollSpeed: 7
   slowStart: 0
   isMainBg: 0
-  cameraScrolling: 0
+  cameraScrolling: 1
   testPurposes: 0
 --- !u!1001 &1669362326
 PrefabInstance:
@@ -37250,7 +37250,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049795048}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f0242ad3d3866b4ab77524075219e61, type: 3}
   m_Name: 
