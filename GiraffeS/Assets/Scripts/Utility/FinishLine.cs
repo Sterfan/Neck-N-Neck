@@ -32,7 +32,6 @@ public class FinishLine : MonoBehaviour
     {
         if (endOfRace)
         {
-            Debug.Log("desosdfalk?");
             newPosition = newPosition + new Vector2(0.5f, 0);
             giraffe.GetComponent<Rigidbody2D>().MovePosition(newPosition);
         }

@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = Vector2.up * jumpAmplitude;
         //Head.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpAmplitude;
+        //GameObject.Find("button collider 1").GetComponent<SelectButton>().Click(true);
     }
 
     void Dash(float dashSpeed)
