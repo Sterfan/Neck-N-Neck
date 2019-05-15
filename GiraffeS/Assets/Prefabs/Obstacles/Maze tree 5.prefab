@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 734943117110179102}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2878804156934440841}
   - component: {fileID: 7499206494223815979}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7532136324251104277}
   - component: {fileID: 6799799755746157155}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4861717211829322625}
   - component: {fileID: 7637352562370450908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085425353973943223}
   - component: {fileID: 920326899773698196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1340007092708042790}
   - component: {fileID: 1629681649730493563}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1961634631037817017}
   - component: {fileID: 7061396865651375476}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trunk 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 359353272129401395}
   - component: {fileID: 5703665558312232835}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 67
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6312230952653172514}
   - component: {fileID: 3363180757345973256}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6468888408962525361}
   - component: {fileID: 1121549377729863166}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956814363803776303}
   - component: {fileID: 8728815276214738827}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 67
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6422804115366516515}
   - component: {fileID: 66451069252628239}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,7 +918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 208913493033584526}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Front layers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4072031329709555181}
   - component: {fileID: 6223117419112334669}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3715442152823560912}
   - component: {fileID: 3236584311516329914}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 73
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1263846562505491199}
   - component: {fileID: 7058000441705867981}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1219122107483452467}
   - component: {fileID: 373890895338319496}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trunk 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1275,7 +1275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2808550449547451864}
   - component: {fileID: 3415963633373728794}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,7 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6661183024602768776}
   - component: {fileID: 5083910916828061233}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683766812429113993}
   - component: {fileID: 2549964861822916632}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 70
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1512,7 +1512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7572833900938455704}
   - component: {fileID: 718252176013370867}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1591,7 +1591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663362185224639769}
   - component: {fileID: 6323813588414770946}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1670,7 +1670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3142346900096771114}
   - component: {fileID: 1353037394646460232}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1748,9 +1748,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7816653824448642227}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Maze tree 5
-  m_TagString: Untagged
+  m_TagString: HeadObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1784,9 +1784,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4069683103267466928}
   - component: {fileID: 2106982040536184887}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collider
-  m_TagString: Obstacle
+  m_TagString: HeadObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2045,7 +2045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5457402588473786906}
   - component: {fileID: 7335033233609320309}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer 64
   m_TagString: Untagged
   m_Icon: {fileID: 0}

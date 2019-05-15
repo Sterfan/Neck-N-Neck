@@ -7,6 +7,7 @@ public class CollisionLogic : MonoBehaviour
     public GameObject Backgrounds;
     public GameObject Giraffe;
     public GameObject LeafParticles;
+    public GameObject ThornParticles;
     public GameObject TimeController;
     public GameObject ProgressTracker;
     bool shouldSpeedUp = false;
@@ -53,12 +54,16 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
         {
             //LeafParticles.SetActive(true);
-            if (LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
+            if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
             {
                 LeafParticles.GetComponent<ParticleSystem>().Play();
+            }
+            if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
+            {
+                ThornParticles.GetComponent<ParticleSystem>().Play();
             }
             FindObjectOfType<AudioManager>().Play("Leaves");
             if (multiplier >= 0.5f && Giraffe.GetComponent<PlayerController>().Dashing == false)
@@ -80,8 +85,9 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
+        if (Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
+            if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
             //LeafParticles.SetActive(true);
             //LeafParticles.GetComponent<ParticleSystem>().Play();
             timeSinceHit = 0.0f;
@@ -96,12 +102,22 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle") && Giraffe.GetComponent<PlayerController>().Dashing == false)
+        if (Giraffe.GetComponent<PlayerController>().Dashing == false)
         {
-            timeSinceHit = 0.0f;
-            shouldSpeedUp = true;
-            FindObjectOfType<AudioManager>().StopMusic("Leaves");
-            LeafParticles.GetComponent<ParticleSystem>().Stop();
+            if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
+            {
+                timeSinceHit = 0.0f;
+                shouldSpeedUp = true;
+                FindObjectOfType<AudioManager>().StopMusic("Leaves");
+                if (collision.CompareTag("HeadObstacle"))
+                {
+                    LeafParticles.GetComponent<ParticleSystem>().Stop();
+                }
+                if (collision.CompareTag("LegObstacle"))
+                {
+                    ThornParticles.GetComponent<ParticleSystem>().Stop();
+                }
+            }
         }
     }
 

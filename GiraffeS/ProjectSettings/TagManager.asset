@@ -10,6 +10,8 @@ TagManager:
   - Bottom Background
   - Top Background
   - DashAmmo
+  - HeadObstacle
+  - LegObstacle
   layers:
   - Default
   - TransparentFX
@@ -22,10 +24,10 @@ TagManager:
   - 
   - Background
   - Giraffe
-  - 
-  - 
-  - 
-  - 
+  - HeadObstacles
+  - LegObstacles
+  - GiraffeLegs
+  - GiraffeHead
   - 
   - 
   - 

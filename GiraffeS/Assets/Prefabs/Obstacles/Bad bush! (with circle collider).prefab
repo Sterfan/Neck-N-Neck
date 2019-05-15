@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3551288172825138102}
   - component: {fileID: 2460273849914171784}
   - component: {fileID: 9134227517334221701}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bad bush! (with circle collider)
-  m_TagString: Obstacle
+  m_TagString: LegObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

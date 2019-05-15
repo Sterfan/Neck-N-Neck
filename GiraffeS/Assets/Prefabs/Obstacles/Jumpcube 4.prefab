@@ -89,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2538510787859295933}
   - component: {fileID: 2538510787859295934}
-  - component: {fileID: 2538510787859295935}
   m_Layer: 0
   m_Name: Cube 3
   m_TagString: Obstacle
@@ -159,91 +158,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &2538510787859295935
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2538510787859295932}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.000001, y: 10.000001}
-    newSize: {x: 21, y: 15}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.40036222, y: 0.37578374}
-      - {x: 0.47762352, y: 0.38855264}
-      - {x: 0.5454241, y: 0.39153376}
-      - {x: 0.5810702, y: 0.40105334}
-      - {x: 0.67591816, y: 0.45568535}
-      - {x: 0.7715845, y: 0.43195}
-      - {x: 0.81942713, y: 0.47119612}
-      - {x: 0.82187337, y: 0.51936305}
-      - {x: 0.7391978, y: 0.5746796}
-      - {x: 0.6417358, y: 0.6292234}
-      - {x: 0.5580338, y: 0.70912826}
-      - {x: 0.37435332, y: 0.83239305}
-      - {x: 0.29549327, y: 0.8783293}
-      - {x: 0.22176254, y: 0.8968394}
-      - {x: 0.11871441, y: 0.90344787}
-      - {x: 0.03412686, y: 0.89377964}
-      - {x: -0.040644806, y: 0.91256845}
-      - {x: -0.131378, y: 0.9567449}
-      - {x: -0.21636108, y: 0.99605906}
-      - {x: -0.30442593, y: 1.0263692}
-      - {x: -0.41135794, y: 1.041521}
-      - {x: -0.5493561, y: 1.04351}
-      - {x: -0.62371945, y: 1.0833504}
-      - {x: -0.7207268, y: 1.1281167}
-      - {x: -0.81231666, y: 1.1631788}
-      - {x: -0.8830451, y: 1.1866684}
-      - {x: -0.9528014, y: 1.1808133}
-      - {x: -1.0826877, y: 1.131969}
-      - {x: -1.1905352, y: 1.0894314}
-      - {x: -1.2850012, y: 1.022481}
-      - {x: -1.3793354, y: 0.9215134}
-      - {x: -1.477423, y: 0.92672294}
-      - {x: -1.5221992, y: 0.919704}
-      - {x: -1.5321678, y: 0.88614833}
-      - {x: -1.5288403, y: 0.85259455}
-      - {x: -1.5265502, y: 0.8140212}
-      - {x: -1.5061482, y: 0.771793}
-      - {x: -1.4344367, y: 0.70125777}
-      - {x: -1.3671081, y: 0.6559405}
-      - {x: -1.3171548, y: 0.64072526}
-      - {x: -1.2278455, y: 0.6266446}
-      - {x: -1.0900491, y: 0.5589228}
-      - {x: -0.9982601, y: 0.5128088}
-      - {x: -0.90108305, y: 0.480746}
-      - {x: -0.7233379, y: 0.42773727}
-      - {x: -0.46855137, y: 0.40200102}
-      - {x: -0.38316065, y: 0.36217096}
-      - {x: -0.3487876, y: 0.3429742}
-      - {x: -0.31208423, y: 0.32605806}
-      - {x: -0.27349162, y: 0.3164899}
-      - {x: -0.16525576, y: 0.30652848}
-      - {x: -0.12724438, y: 0.29763523}
-      - {x: -0.074882045, y: 0.29730487}
-      - {x: -0.02497372, y: 0.29316276}
-      - {x: 0.007748663, y: 0.29325727}
-      - {x: 0.109067485, y: 0.31456348}
-      - {x: 0.20451887, y: 0.3190051}
-      - {x: 0.2719288, y: 0.327058}
-      - {x: 0.3037568, y: 0.32675737}
-      - {x: 0.3471351, y: 0.34756058}
 --- !u!1 &2538510787925717697
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +189,7 @@ Transform:
   - {fileID: 2538510787859295933}
   - {fileID: 2538510787952217679}
   - {fileID: 2538510787845120508}
+  - {fileID: 5040860590193038056}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -336,7 +251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2538510787952217679}
   - component: {fileID: 2538510787952217678}
-  - component: {fileID: 2538510787952217672}
   m_Layer: 0
   m_Name: Cube 4
   m_TagString: Obstacle
@@ -406,81 +320,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &2538510787952217672
+--- !u!1 &6017898990168832569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5040860590193038056}
+  - component: {fileID: 6431041596033652961}
+  m_Layer: 12
+  m_Name: Collider
+  m_TagString: LegObstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5040860590193038056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017898990168832569}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.00000018826485, z: 0}
+  m_LocalScale: {x: 1.5792799, y: 1.57928, z: 1.5792797}
+  m_Children: []
+  m_Father: {fileID: 2538510787925717698}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &6431041596033652961
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2538510787952217677}
+  m_GameObject: {fileID: 6017898990168832569}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.000001, y: 10.000001}
-    newSize: {x: 21, y: 15}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -4.1004343, y: 2.646656}
-      - {x: -4.0740614, y: 2.6918132}
-      - {x: -4.0811954, y: 2.7909212}
-      - {x: -4.1231327, y: 2.8465445}
-      - {x: -4.167967, y: 2.877093}
-      - {x: -4.262651, y: 2.9192436}
-      - {x: -4.3684893, y: 2.958501}
-      - {x: -4.465637, y: 2.9670954}
-      - {x: -4.576318, y: 2.9745555}
-      - {x: -4.699277, y: 2.9537354}
-      - {x: -4.8388815, y: 2.9608839}
-      - {x: -4.9347324, y: 2.9677188}
-      - {x: -5.027601, y: 3.0372217}
-      - {x: -5.1237545, y: 3.0582776}
-      - {x: -5.249567, y: 3.0961008}
-      - {x: -5.377974, y: 3.1170595}
-      - {x: -5.527479, y: 3.0735793}
-      - {x: -5.6653543, y: 3.0976076}
-      - {x: -5.8438697, y: 3.0907714}
-      - {x: -5.9689474, y: 3.0332751}
-      - {x: -6.124549, y: 2.9697387}
-      - {x: -6.2346244, y: 2.9238317}
-      - {x: -6.3379116, y: 2.8366694}
-      - {x: -6.4058766, y: 2.8020008}
-      - {x: -6.442842, y: 2.767702}
-      - {x: -6.4428854, y: 2.7379122}
-      - {x: -6.416123, y: 2.722772}
-      - {x: -6.3797626, y: 2.71435}
-      - {x: -6.3320317, y: 2.7302165}
-      - {x: -6.258922, y: 2.7553167}
-      - {x: -6.150879, y: 2.7822194}
-      - {x: -6.00306, y: 2.7849035}
-      - {x: -5.9068193, y: 2.7617114}
-      - {x: -5.871929, y: 2.7553654}
-      - {x: -5.8316345, y: 2.7477798}
-      - {x: -5.7523856, y: 2.7054086}
-      - {x: -5.684377, y: 2.66138}
-      - {x: -5.577112, y: 2.6215239}
-      - {x: -5.4750357, y: 2.5961196}
-      - {x: -5.4286447, y: 2.5837483}
-      - {x: -5.38688, y: 2.579108}
-      - {x: -5.3343067, y: 2.5822015}
-      - {x: -5.2824254, y: 2.5747144}
-      - {x: -5.242217, y: 2.5778077}
-      - {x: -5.1613684, y: 2.5830972}
-      - {x: -5.0586, y: 2.5990899}
-      - {x: -4.9407854, y: 2.5724816}
-      - {x: -4.806499, y: 2.5649102}
-      - {x: -4.689506, y: 2.5428228}
-      - {x: -4.5690546, y: 2.5580745}
-      - {x: -4.436627, y: 2.5694308}
-      - {x: -4.2961574, y: 2.6073964}
-      - {x: -4.1905785, y: 2.623183}
+    - - {x: -0.48188782, y: 0.5886296}
+      - {x: -1.6092454, y: 0.55583906}
+      - {x: -1.7631302, y: 0.21353197}
+      - {x: -0.8282929, y: 0.31638622}
+      - {x: 0.35271454, y: 0.28405297}
+      - {x: 0.2576065, y: 0.42655146}

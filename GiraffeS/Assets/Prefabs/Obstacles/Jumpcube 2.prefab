@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786268746064583997}
   - component: {fileID: 786268746064583996}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Branch 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786268746264980504}
   - component: {fileID: 786268746264980507}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Branch 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,9 +169,9 @@ GameObject:
   - component: {fileID: 786268746895688914}
   - component: {fileID: 786268746895688924}
   - component: {fileID: 786268746895688925}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Jumpcube 2
-  m_TagString: Obstacle
+  m_TagString: LegObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
