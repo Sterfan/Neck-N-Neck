@@ -282,9 +282,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6069819526575054346}
   - component: {fileID: 3630549901152479986}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collider
-  m_TagString: Obstacle
+  m_TagString: HeadObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,9 +367,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2755574665046609880}
   - component: {fileID: 2335392603920939552}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collider
-  m_TagString: Obstacle
+  m_TagString: HeadObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
