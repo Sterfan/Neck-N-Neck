@@ -5,7 +5,7 @@ public class BackgroundScroller : MonoBehaviour
     public GameObject countdownTimer;
     public GameObject finishLine;
     public GameObject Backgrounds;
-    //public GameObject giraffe;
+    public GameObject giraffe;
 
     public float scrollSpeed = 10.0f;
     float speedMultiplier = 1.0f;
@@ -56,7 +56,7 @@ public class BackgroundScroller : MonoBehaviour
                 transform.position = startPosition + Vector2.right * newPosition;
             if (isMainBg)
             {
-                distanceTraveled = totalDistance - (startPosition.x - transform.position.x);
+                distanceTraveled = totalDistance - (startPosition.x - giraffe.transform.position.x);
                 percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
             }
         }

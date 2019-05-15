@@ -50,13 +50,14 @@ public class PlayerProgress : MonoBehaviour
             if (isFinished == false)
             {
                 gameTime += Time.deltaTime;
-                if (distanceTraveled <= otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
+                if (distanceTraveled < otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
                 {
                     position.sprite = first;
+                    otherGiraffeTracker.GetComponent<PlayerProgress>().ChangePosSprite();
                 }
-                if (distanceTraveled > otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
+                if (distanceTraveled == otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
                 {
-                    position.sprite = second;
+                    position.sprite = first;
                 }
             }
 
@@ -86,5 +87,10 @@ public class PlayerProgress : MonoBehaviour
                 resultText.text = "SECOND WINNER";
             }
         }
+    }
+
+    public void ChangePosSprite()
+    {
+        position.sprite = second;
     }
 }
