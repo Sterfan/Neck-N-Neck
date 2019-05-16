@@ -72,14 +72,14 @@ public class HeadMovement : MonoBehaviour
 
         if (yGiraffe == true)
         {
-
+            Debug.Log(Head.transform.position.y - minNeckLength);
             mousePos.x = 0;
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            Head.transform.position = headStart - ((mouseStart - mousePos) / mouseSlower);
+            Head.transform.position = new Vector2(Head.transform.position.x, headStart.y) - ((mouseStart - mousePos) / mouseSlower);
 
             if (Body.GetComponent<PlayerController>().Jumping == true && Head.transform.position.y <= bodyStart.y + maxNeckLength)
             {
-                Head.transform.position = (headStart + (bodyPos - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
+                Head.transform.position = (new Vector2(Head.transform.position.x, headStart.y) + (bodyPos - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
             }
 
             if (Head.transform.position.y > bodyStart.y + maxNeckLength)
