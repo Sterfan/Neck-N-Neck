@@ -8214,16 +8214,6 @@ PrefabInstance:
       objectReference: {fileID: 843350634}
     - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
-      propertyPath: LeafParticles
-      value: 
-      objectReference: {fileID: 2030306314}
-    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: ThornParticles
-      value: 
-      objectReference: {fileID: 933254816}
-    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
       propertyPath: ProgressTracker
       value: 
       objectReference: {fileID: 595137876}
@@ -8296,6 +8286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426169281620388669, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2214892658336105562, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
@@ -8401,6 +8396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336848663939554844, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5424382175025855241, guid: a71f163688b190b42b4e280ad04d6daf, type: 3}
@@ -14415,12 +14415,6 @@ Transform:
   m_Father: {fileID: 843375298}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &933254816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5289224023013929260, guid: a71f163688b190b42b4e280ad04d6daf,
-    type: 3}
-  m_PrefabInstance: {fileID: 550090351}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &935425224
 GameObject:
   m_ObjectHideFlags: 0
@@ -45683,12 +45677,6 @@ MonoBehaviour:
   m_Length: 1
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
---- !u!1 &2030306314 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3820896780629110282, guid: a71f163688b190b42b4e280ad04d6daf,
-    type: 3}
-  m_PrefabInstance: {fileID: 550090351}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2045010730
 PrefabInstance:
   m_ObjectHideFlags: 0

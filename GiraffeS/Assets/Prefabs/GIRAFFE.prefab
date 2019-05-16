@@ -5097,8 +5097,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 0}
   Giraffe: {fileID: 2336848663984591506}
-  LeafParticles: {fileID: 0}
-  ThornParticles: {fileID: 0}
+  LeafParticles: {fileID: 3820896780629110282}
+  ThornParticles: {fileID: 5289224023013929260}
   TimeController: {fileID: 2988998474216517992, guid: 11df645fd6056104c8859c0dfeac3ca5,
     type: 3}
   ProgressTracker: {fileID: 0}
