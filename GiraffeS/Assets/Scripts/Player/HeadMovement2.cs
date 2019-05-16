@@ -180,7 +180,7 @@ public class HeadMovement2 : MonoBehaviour
         float scaleY = Mathf.Abs(bodyPos.y - headPos.y);
 
         Neck.transform.position = centerPos;
-        Neck.transform.localScale = new Vector3(scaleX / 1.0f, scaleY / 3.7f, 1);
+        Neck.transform.localScale = new Vector3(scaleX / 2.0f, scaleY / 3.7f, 1);
     }
 
     //    void NeckDraw(Vector3 headPos, Vector3 bodyPos)
