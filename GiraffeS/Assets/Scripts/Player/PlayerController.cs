@@ -17,13 +17,15 @@ public class PlayerController : MonoBehaviour
     public int grffenumber;
 
     public GameObject Backgrounds;
+    public GameObject SpeedController;
 
     [SerializeField] float jumpAmplitude = 15.0f;
-    [SerializeField] float dashSpeed = 7.0f;
+    [SerializeField] float dashSpeed = 14.0f;
+    [SerializeField] float baseSpeed = 7.0f;
     float currentDashSpeed;
-    [SerializeField] float dashDuration = 0.25f;
+    [SerializeField] float dashDuration = 0.5f;
     float dashTimer = 0.0f;
-    float deceleration = 0.90f;
+    float deceleration = 0.99f;
     [SerializeField] float dashAmmo;
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
@@ -64,7 +66,8 @@ public class PlayerController : MonoBehaviour
                         Jump();
                         playerState = PlayerStates.Jumping;
                     }
-                    if (Input.GetKey(dashInput) && dashAmmo > 0.0f)
+                    //if (Input.GetKey(dashInput) && dashAmmo > 0.0f)
+                    if (dashAmmo >= 1.0f)
                     {
                         Dash(dashSpeed);
                         playerState = PlayerStates.Dashing;
@@ -91,16 +94,18 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-                    //Debug.Log(dashTimer);
+                    Debug.Log("DashTimer" + dashTimer);
                     dashTimer += Time.deltaTime;
                     //Debug.Log(dashTimer);
                     if (dashTimer >= dashDuration)
                     {
                         currentDashSpeed *= deceleration;
                         //Debug.Log("currentDashSpeed = " + currentDashSpeed);
-                        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(currentDashSpeed);
+                        //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(currentDashSpeed);
+                        SpeedController.GetComponent<MainSpeed>().SetSpeed(currentDashSpeed);
 
-                        if (Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
+                        //if (Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier() <= 1.0f)
+                        if (SpeedController.GetComponent<MainSpeed>().GetSpeed() <= baseSpeed)
                         {
                             ResetSpeed();
                             currentDashSpeed = dashSpeed;
@@ -143,13 +148,17 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(float dashSpeed)
     {
-        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
+        //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
+        SpeedController.GetComponent<MainSpeed>().SetSpeed(dashSpeed);
+        //playerState = PlayerStates.Dashing;
+
         //Invoke("ResetSpeed", dashDuration);
     }
 
     void ResetSpeed()
     {
-        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+        //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+        SpeedController.GetComponent<MainSpeed>().SetSpeed(baseSpeed);
     }
 
     public void SetDashAmmo(float ammo)

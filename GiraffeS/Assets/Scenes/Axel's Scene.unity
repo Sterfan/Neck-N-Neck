@@ -24931,6 +24931,26 @@ PrefabInstance:
       propertyPath: Backgrounds
       value: 
       objectReference: {fileID: 843350634}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: SpeedController
+      value: 
+      objectReference: {fileID: 771296273}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: baseSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: dashAmmo
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: CountdownTimer
@@ -24939,6 +24959,11 @@ PrefabInstance:
     - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: SpeedController
+      value: 
+      objectReference: {fileID: 771296273}
+    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: Backgrounds
       value: 
       objectReference: {fileID: 843350634}
     - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
@@ -29019,7 +29044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5406be0dc31ee845b51510d110df53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 14
 --- !u!4 &771296275
 Transform:
   m_ObjectHideFlags: 0
@@ -29810,8 +29835,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32
@@ -30724,7 +30751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountdownTimer: {fileID: 1064882133}
-  SpeedController: {fileID: 843350634}
+  SpeedController: {fileID: 771296273}
+  Backgrounds: {fileID: 843350634}
   speed: 14
 --- !u!81 &907587734
 AudioListener:
@@ -41921,8 +41949,10 @@ MonoBehaviour:
   animator: {fileID: 1260363628}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 119
@@ -42014,8 +42044,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32
@@ -60780,8 +60812,10 @@ MonoBehaviour:
   animator: {fileID: 1908344029}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 100
   jumpInput: 32
@@ -63440,6 +63474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountdownTimer: {fileID: 1064882133}
   SpeedController: {fileID: 843350634}
+  Backgrounds: {fileID: 0}
   speed: 14
 --- !u!114 &2049795050
 MonoBehaviour:
@@ -63456,8 +63491,10 @@ MonoBehaviour:
   animator: {fileID: 2049795053}
   grffenumber: 0
   Backgrounds: {fileID: 843350634}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32
@@ -64213,8 +64250,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32

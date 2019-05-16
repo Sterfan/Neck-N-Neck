@@ -6,12 +6,14 @@ public class CameraMover : MonoBehaviour
 {
     public GameObject CountdownTimer;
     public GameObject SpeedController;
+    public GameObject Backgrounds;
     [SerializeField]float speed;
     float speedMultiplier;
 
     private void Update()
     {
-        speedMultiplier = SpeedController.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
+        speed = SpeedController.GetComponent<MainSpeed>().GetSpeed();
+        speedMultiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
     }
 
     void LateUpdate()
