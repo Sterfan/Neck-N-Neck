@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject Backgrounds;
 
-    public float jumpAmplitude = 15.0f;
+    [SerializeField] float jumpAmplitude = 15.0f;
     [SerializeField] float dashSpeed = 7.0f;
     float currentDashSpeed;
     [SerializeField] float dashDuration = 0.25f;
@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;
-                        animator.SetBool("IsJumping", true);
                     }
                     if (Input.GetKey(dashInput) && dashAmmo > 0.0f)
                     {
@@ -82,7 +81,9 @@ public class PlayerController : MonoBehaviour
                     //rb.velocity -= Vector2.up * fallSpeedMultiplier;
                     //Head.GetComponent<Rigidbody2D>().velocity -= Vector2.up * 0.75f;
                     Jumping = true;
-                    
+                    animator.SetBool("IsJumping", true);
+
+
 
                     break;
                 } 

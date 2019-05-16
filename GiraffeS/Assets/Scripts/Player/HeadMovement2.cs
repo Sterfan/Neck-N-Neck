@@ -7,6 +7,7 @@ public class HeadMovement2 : MonoBehaviour
     public GameObject Body;
     public GameObject Head;
     public GameObject Neck;
+    public GameObject Giraffe;
 
     Vector2 headStart;
     Vector2 bodyStart;
@@ -86,13 +87,13 @@ public class HeadMovement2 : MonoBehaviour
 
             if (headToBody > maxNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
+                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 //mouseStart.y = mouseStart.y + headToBodyStart * 0.042f;
             }
             if (Head.transform.position.y <= Body.transform.position.y + 2)
             {
-                Head.transform.position = new Vector2(headStart.x, Body.transform.position.y + 2);
+                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + 2);
                 //mouseStart.y = mouseStart.y - headToBodyStart * 0.039f;
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
