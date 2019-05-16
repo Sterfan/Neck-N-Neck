@@ -17,5 +17,9 @@ public class MainSpeed : MonoBehaviour
         speed = x;
     }
 
+    private void Update()
+    {
+        Debug.Log(speed);
+    }
 
 }
