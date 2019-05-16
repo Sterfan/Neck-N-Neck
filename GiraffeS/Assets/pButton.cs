@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class pButton : MonoBehaviour, IDeselectHandler
+public class pButton : MonoBehaviour
 {
     public enum SelectionState
     {
@@ -29,7 +29,7 @@ public class pButton : MonoBehaviour, IDeselectHandler
             if (selected.Equals(SelectionState.ByBoth))
                 Function();
         }
-        else if (selected.Equals(SelectionState.FromTop) || selected.Equals(SelectionState.FromBot))
+        else if (selected.Equals(SelectionState.FromTop) || selected.Equals(SelectionState.FromBot)) { }
             Function();
     }
 
@@ -38,8 +38,25 @@ public class pButton : MonoBehaviour, IDeselectHandler
         pButtonFunctions.GetFunction(_FunctionIndex);
     }
 
-    public void OnDeselect(BaseEventData eventData)
+    public void Selected(int grff)
     {
-        throw new System.NotImplementedException();
+        switch(grff)
+        {
+            case 1:
+                if (selected == SelectionState.FromBot)
+                    selected = SelectionState.ByBoth;
+                else
+                    selected = SelectionState.FromTop;
+                break;
+            case 2:
+                if (selected == SelectionState.FromTop)
+                    selected = SelectionState.ByBoth;
+                else
+                    selected = SelectionState.FromBot;
+                break;
+            default:
+                Debug.LogError("something went wrong with selecting the button.");
+                break;
+        }
     }
 }
