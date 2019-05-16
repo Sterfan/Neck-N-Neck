@@ -4114,9 +4114,10 @@ GameObject:
   m_Component:
   - component: {fileID: 227472275}
   - component: {fileID: 227472276}
+  - component: {fileID: 227472277}
   m_Layer: 0
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: DashAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4183,6 +4184,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &227472277
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227472274}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000061035156, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.825
 --- !u!1 &228628693
 GameObject:
   m_ObjectHideFlags: 0
