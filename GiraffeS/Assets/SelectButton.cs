@@ -14,9 +14,9 @@ public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
     //public static HashSet<pButton> allButtons = new HashSet<pButton>();
     //public static HashSet<pButton> currentButtons = new HashSet<pButton>();
 
-    public GameObject counterpart;
-    [HideInInspector]
-    public bool counterpartSelected = false;
+    //public GameObject counterpart;
+    //[HideInInspector]
+    //public bool counterpartSelected = false;
 
     private void Awake()
     {
@@ -37,15 +37,15 @@ public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
 
     public void InvokeSelection(int grff)
     {
-        DeselectAll(leaf, button);
+        DeselectAll(grff, leaf, button);
         leaf.SetActive(true);
-        //button.
+        button.Selected(grff);
     }
 
-    public static void DeselectAll(GameObject Leaf, pButton Button)
+    public static void DeselectAll(int grff, GameObject Leaf, pButton Button)
     {
         Leaf.SetActive(false);
-
+        Button.Deselected(grff);
     }
 
     //public void Click(bool grffe1)

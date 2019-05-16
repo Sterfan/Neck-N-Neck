@@ -54,8 +54,24 @@ public class pButton : MonoBehaviour
                 else
                     selected = SelectionState.FromBot;
                 break;
-            default:
-                Debug.LogError("something went wrong with selecting the button.");
+        }
+    }
+
+    public void Deselected(int grff)
+    {
+        switch (grff)
+        {
+            case 1:
+                if (selected == SelectionState.ByBoth)
+                    selected = SelectionState.FromBot;
+                else
+                    selected = SelectionState.ByNone;
+                break;
+            case 2:
+                if (selected == SelectionState.ByBoth)
+                    selected = SelectionState.FromTop;
+                else
+                    selected = SelectionState.ByNone;
                 break;
         }
     }
