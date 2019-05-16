@@ -9488,7 +9488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c170e2821e78941a209c92bf475529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 3525175915977320016}
+  animator: {fileID: 940687586}
   Backgrounds: {fileID: 4263925159420214559}
   jumpAmplitude: 15
   dashSpeed: 7
@@ -9518,6 +9518,12 @@ MonoBehaviour:
   TimeController: {fileID: 1600088607}
   ProgressTracker: {fileID: 402405760}
   acceleration: 1
+--- !u!95 &940687586 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2336848663984591508, guid: a71f163688b190b42b4e280ad04d6daf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1769407699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &940743218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49672,7 +49678,7 @@ PrefabInstance:
     - target: {fileID: 2336848663984591507, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.815186
+      value: -10.21
       objectReference: {fileID: 0}
     - target: {fileID: 2336848663984591507, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
