@@ -7,6 +7,7 @@ public class HeadMovement : MonoBehaviour
     public GameObject Body;
     public GameObject Head;
     public GameObject Neck;
+    public GameObject Giraffe;
 
     Vector2 mouseStart;
     Vector2 headStart;
@@ -61,6 +62,7 @@ public class HeadMovement : MonoBehaviour
     void Update()
     {
         headToBody = Head.transform.position.y - Body.transform.position.y;
+        //Debug.Log(headToBody);
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 headPos = Head.transform.position;
         Vector2 bodyPos = Body.transform.position;
@@ -72,14 +74,14 @@ public class HeadMovement : MonoBehaviour
 
         if (yGiraffe == true)
         {
-
+            //Debug.Log(Head.transform.position.y - minNeckLength);
             mousePos.x = 0;
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            Head.transform.position = headStart - ((mouseStart - mousePos) / mouseSlower);
-
-            if (Body.GetComponent<PlayerController>().Jumping == true && Head.transform.position.y <= bodyStart.y + maxNeckLength)
+            Head.transform.position = new Vector2(Head.transform.position.x, headStart.y) - ((mouseStart - mousePos) / mouseSlower);
+   
+            if (Giraffe.GetComponent<PlayerController>().Jumping == true && Head.transform.position.y <= bodyStart.y + maxNeckLength)
             {
-                Head.transform.position = (headStart + (bodyPos - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
+                Head.transform.position = (new Vector2(Head.transform.position.x, headStart.y) + (bodyPos - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
             }
 
             if (Head.transform.position.y > bodyStart.y + maxNeckLength)
@@ -110,7 +112,7 @@ public class HeadMovement : MonoBehaviour
 
             Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
 
-            if (Body.GetComponent<PlayerController>().Jumping == true && Head.transform.position.y <= bodyStart.y + maxNeckLength)
+            if (Giraffe.GetComponent<PlayerController>().Jumping == true && Head.transform.position.y <= bodyStart.y + maxNeckLength)
             {
                 Head.transform.position = (headStart + (bodyPos - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
             }
