@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
         if (testPurposes)
         {
-            Debug.Log(playerState);
+            //Debug.Log(playerState);
         }
         switch (playerState)
         {
