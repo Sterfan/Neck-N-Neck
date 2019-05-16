@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
         //Head.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpAmplitude;
     }
 
-    void Dash(float dashSpeed)
+    public void Dash(float dashSpeed)
     {
         Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
         //Invoke("ResetSpeed", dashDuration);

@@ -5097,8 +5097,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds: {fileID: 0}
   Giraffe: {fileID: 2336848663984591506}
-  LeafParticles: {fileID: 0}
-  ThornParticles: {fileID: 0}
+  LeafParticles: {fileID: 3820896780629110282}
+  ThornParticles: {fileID: 5289224023013929260}
   TimeController: {fileID: 2988998474216517992, guid: 11df645fd6056104c8859c0dfeac3ca5,
     type: 3}
   ProgressTracker: {fileID: 0}
@@ -16153,6 +16153,7 @@ GameObject:
   - component: {fileID: 2404472579737509460}
   - component: {fileID: 6481555258885353249}
   - component: {fileID: 899032955700705460}
+  - component: {fileID: 6146889485680537247}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -16266,6 +16267,22 @@ MonoBehaviour:
   mouseSensitivity: 0.5
   xGiraffe: 0
   yGiraffe: 1
+--- !u!70 &6146889485680537247
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722244265787321323}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.036527187, y: -0.3275468}
+  m_Size: {x: 3.081275, y: 1.2070427}
+  m_Direction: 1
 --- !u!1 &7811385639736093496
 GameObject:
   m_ObjectHideFlags: 0
