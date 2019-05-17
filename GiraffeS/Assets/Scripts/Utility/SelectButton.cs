@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
 {
@@ -11,6 +12,8 @@ public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
     [SerializeField]
     GameObject leaf;
 
+    public static List<pButton> buttons = new List<pButton>();
+
     //public static HashSet<pButton> allButtons = new HashSet<pButton>();
     //public static HashSet<pButton> currentButtons = new HashSet<pButton>();
 
@@ -18,35 +21,54 @@ public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
     //[HideInInspector]
     //public bool counterpartSelected = false;
 
-    private void Awake()
-    {
-        //allButtons.Add(this.GetComponentInParent<pButton>());
-        Debug.Log(gameObject.name + " is one of them");
-    }
+    //private void Awake()
+    //{
+    //    //allButtons.Add(this.GetComponentInParent<pButton>());
+
+    //}
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject == giraffeHead)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && collision.GetComponent<HeadMovement2>().xGiraffe)
+            {
+                //Debug.Log("W was pressed when graffe was in the collider");
                 InvokeSelection(1);
-            if (Input.GetKeyDown(KeyCode.Space))
+            }
+            if (Input.GetKeyDown(KeyCode.Space) && collision.GetComponent<HeadMovement2>().yGiraffe)
+            {
+                //Debug.Log("Space was pressed when graffe was in the collider");
                 InvokeSelection(2);
+            }
         }
     }
 
     public void InvokeSelection(int grff)
     {
-        DeselectAll(grff, leaf, button);
-        leaf.SetActive(true);
+        Deselect(grff);
+
         button.Selected(grff);
+        leaf.SetActive(true);
     }
 
-    public static void DeselectAll(int grff, GameObject Leaf, pButton Button)
+    public void Deselect(int grff)
     {
-        Leaf.SetActive(false);
-        Button.Deselected(grff);
+        foreach (var button in buttons)
+        {
+            //Debug.Log(grff);
+            //leaf.SetActive(false);
+            button.Deselected(grff);
+        }
     }
+
+    //public void DeactivateLeaf()
+    //{
+    //    //Debug.Log("Leaf is " + leaf.activeSelf);
+    //    leaf.SetActive(false);
+    //}
+
+
 
     //public void Click(bool grffe1)
     //{

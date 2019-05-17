@@ -57,13 +57,17 @@ public class CollisionLogic : MonoBehaviour
         if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
         {
             //LeafParticles.SetActive(true);
-            if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
+            if (Giraffe.GetComponent<PlayerController>().Dashing == false)
             {
-                LeafParticles.GetComponent<ParticleSystem>().Play();
-            }
-            if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
-            {
-                ThornParticles.GetComponent<ParticleSystem>().Play();
+                if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
+                {
+                    LeafParticles.GetComponent<ParticleSystem>().Play();
+                }
+                if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
+                {
+                    ThornParticles.GetComponent<ParticleSystem>().Play();
+                }
+
             }
             FindObjectOfType<AudioManager>().Play("Leaves");
             if (multiplier >= 0.5f && Giraffe.GetComponent<PlayerController>().Dashing == false)

@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Y))
         {
-            SceneManager.LoadScene("BackupScene");
+            SceneManager.LoadScene("Menu");
         }
     }
 }

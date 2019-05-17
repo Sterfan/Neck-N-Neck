@@ -6,6 +6,7 @@ public class FinishLine : MonoBehaviour
     public GameObject progressTracker;
     public GameObject giraffe;
     public GameObject Backgrounds;
+    public GameObject SpeedController;
     bool endOfRace = false;
     Vector2 newPosition;
 
@@ -17,6 +18,8 @@ public class FinishLine : MonoBehaviour
             //Debug.Log("We all up in this bitch");
             //gameObject.GetComponentInParent<BackgroundScroller>().scrollSpeed = 0.0f;
             Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0);
+            //Debug.Log(Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
+            SpeedController.GetComponent<MainSpeed>().SetSpeed(0);
             progressTracker.GetComponent<PlayerProgress>().isFinished = true;
             endOfRace = true;
         }

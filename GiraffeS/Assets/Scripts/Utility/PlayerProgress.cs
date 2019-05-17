@@ -8,6 +8,8 @@ public class PlayerProgress : MonoBehaviour
     public GameObject countdownTimer;
     public GameObject Background1;
     public GameObject otherGiraffeTracker;
+    public GameObject Giraffe;
+    public GameObject FinishLine;
 
     public Image position;
 
@@ -19,8 +21,10 @@ public class PlayerProgress : MonoBehaviour
     float endPos;
     float percentProgress;
     float distanceTraveled;
+    float distanceRemaining;
     float height;
     float width;
+    float trackLength;
     public float yPos = 5.7f;
 
     public Text timer;
@@ -38,6 +42,7 @@ public class PlayerProgress : MonoBehaviour
         startPos = cam.transform.position.x - (width / 4);
         endPos = cam.transform.position.x - (width / 4);
         gameObject.transform.position = new Vector2(startPos, yPos);
+        trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
     }
 
     void LateUpdate()
@@ -46,16 +51,20 @@ public class PlayerProgress : MonoBehaviour
         {
             percentProgress = Background1.GetComponent<BackgroundScroller>().GetPercentCompleted();
             distanceTraveled = Background1.GetComponent<BackgroundScroller>().GetDistanceTraveled();
+            distanceRemaining = FinishLine.transform.position.x - Giraffe.transform.position.x;
 
             if (isFinished == false)
             {
                 gameTime += Time.deltaTime;
-                if (distanceTraveled < otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
+                //if (distanceTraveled < otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
+                if (distanceRemaining < otherGiraffeTracker.GetComponent<PlayerProgress>().distanceRemaining)
                 {
+                    Debug.Log("Should change to second");
                     position.sprite = first;
                     otherGiraffeTracker.GetComponent<PlayerProgress>().ChangePosSprite();
                 }
-                if (distanceTraveled == otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
+                //if (distanceTraveled == otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
+                if (distanceRemaining == otherGiraffeTracker.GetComponent<PlayerProgress>().distanceRemaining)
                 {
                     position.sprite = first;
                 }
