@@ -10,6 +10,7 @@ public class PlayerProgress : MonoBehaviour
     public GameObject otherGiraffeTracker;
     public GameObject Giraffe;
     public GameObject FinishLine;
+    public GameObject ScoreManager;
 
     public Image position;
 
@@ -76,6 +77,7 @@ public class PlayerProgress : MonoBehaviour
             if (isFinished == true)
             {
                 Background1.GetComponent<BackgroundScroller>().SetSpeedMultiplier(0.0f);
+                ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime);
             }
 
             if (isFinished == true && otherGiraffeTracker.GetComponent<PlayerProgress>().isFinished == false)

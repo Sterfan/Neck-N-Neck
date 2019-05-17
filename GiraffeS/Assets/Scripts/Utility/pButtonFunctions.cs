@@ -10,6 +10,7 @@ public static class pButtonFunctions
         switch(index)
         {
             case 1:
+                Debug.Log("Play button works");
                 NextScene();
                 break;
             case 2:
