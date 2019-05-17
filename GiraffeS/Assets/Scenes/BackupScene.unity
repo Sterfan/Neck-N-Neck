@@ -374,8 +374,10 @@ MonoBehaviour:
   animator: {fileID: 3525175917844902333}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 100
   jumpInput: 32
@@ -594,8 +596,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32
@@ -9418,6 +9422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountdownTimer: {fileID: 1600088607}
   SpeedController: {fileID: 0}
+  Backgrounds: {fileID: 0}
   speed: 7
 --- !u!114 &940687583
 MonoBehaviour:
@@ -9434,8 +9439,10 @@ MonoBehaviour:
   animator: {fileID: 940687586}
   grffenumber: 0
   Backgrounds: {fileID: 4263925159420214559}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 100
   jumpInput: 32
@@ -48426,8 +48433,10 @@ MonoBehaviour:
   animator: {fileID: 1630592572}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 119
@@ -48538,8 +48547,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32
@@ -49637,6 +49648,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GIRAFFE
       objectReference: {fileID: 0}
+    - target: {fileID: 7722244265787321323, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Giraffe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722244265787321323, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2336848663984591507, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49752,16 +49773,6 @@ PrefabInstance:
       propertyPath: Backgrounds
       value: 
       objectReference: {fileID: 4263925159420214559}
-    - target: {fileID: 7722244265787321323, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_TagString
-      value: Giraffe
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722244265787321323, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 2404472579737509460, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Mesh
@@ -49776,6 +49787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: dashDuration
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5424382175025855241, guid: a71f163688b190b42b4e280ad04d6daf, type: 3}
@@ -50128,6 +50144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountdownTimer: {fileID: 1600088607}
   SpeedController: {fileID: 0}
+  Backgrounds: {fileID: 0}
   speed: 7
 --- !u!1 &1799045724
 GameObject:
@@ -52131,8 +52148,10 @@ MonoBehaviour:
   animator: {fileID: 3525175915977320016}
   grffenumber: 0
   Backgrounds: {fileID: 4263925159420214559}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 100
   jumpInput: 32
@@ -52311,8 +52330,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32
@@ -52745,7 +52766,7 @@ GameObject:
   - component: {fileID: 2017611382}
   m_Layer: 0
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: DashAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54860,6 +54881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountdownTimer: {fileID: 1600088607}
   SpeedController: {fileID: 0}
+  Backgrounds: {fileID: 0}
   speed: 7
 --- !u!4 &3525175916018304680
 Transform:
