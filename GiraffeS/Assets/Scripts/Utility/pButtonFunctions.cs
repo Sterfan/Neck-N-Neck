@@ -33,6 +33,6 @@ public static class pButtonFunctions
 
     public static void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Axel's Scene");
     }
 }

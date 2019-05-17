@@ -16,7 +16,7 @@ public class pButton : MonoBehaviour
     private void OnEnable()
     {
         SelectButton.buttons.Add(this);
-        //Debug.Log(gameObject.name + " is one of them");
+        Debug.Log("On Enable " + selected);
     }
 
     private void OnDisable()
@@ -41,7 +41,8 @@ public class pButton : MonoBehaviour
 
     public void Selected(int grff)
     {
-        switch(grff)
+        Debug.Log("Selected before all " + selected);
+        switch (grff)
         {
             case 1:
                 Debug.Log("Selected " + selected);
@@ -71,6 +72,7 @@ public class pButton : MonoBehaviour
 
     public void Deselected(int grff)
     {
+        Debug.Log("Deselected before all " + selected);
         switch (grff)
         {
             case 1:
