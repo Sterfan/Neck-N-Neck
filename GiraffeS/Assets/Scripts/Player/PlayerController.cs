@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
                 {
                     animator.SetBool("IsRunning", true);
                     Jumping = false;
-                    if (Input.GetKeyUp(jumpInput))
+                    if (Input.GetKey(jumpInput))
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;

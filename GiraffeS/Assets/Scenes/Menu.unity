@@ -767,7 +767,7 @@ Transform:
   m_GameObject: {fileID: 344342625}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.16, y: 0.099998474, z: 0}
-  m_LocalScale: {x: 2, y: 0.36, z: 1}
+  m_LocalScale: {x: 2, y: 5.41, z: 1}
   m_Children: []
   m_Father: {fileID: 803260343}
   m_RootOrder: 2
@@ -791,6 +791,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Giraffe Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2336848663984591507, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
@@ -902,6 +912,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 899032955700705460, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 0.013
+      objectReference: {fileID: 0}
     - target: {fileID: 6481555258885353249, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -911,16 +926,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3820896780629110282, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
@@ -3178,7 +3183,7 @@ Transform:
   m_GameObject: {fileID: 1508117936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.32, y: 0.099998474, z: 0}
-  m_LocalScale: {x: 2, y: 0.36, z: 1}
+  m_LocalScale: {x: 2, y: 5.41, z: 1}
   m_Children: []
   m_Father: {fileID: 803260343}
   m_RootOrder: 3
@@ -3688,6 +3693,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Giraffe Top
       objectReference: {fileID: 0}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: jumpInput
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2336848663984591507, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3798,6 +3818,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 899032955700705460, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: xGiraffe
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 899032955700705460, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: yGiraffe
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 899032955700705460, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 0.013
+      objectReference: {fileID: 0}
     - target: {fileID: 6481555258885353249, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3808,16 +3843,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3820896780629110282, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_IsActive
@@ -3826,21 +3851,6 @@ PrefabInstance:
     - target: {fileID: 1032680166864618952, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: jumpInput
-      value: 119
-      objectReference: {fileID: 0}
-    - target: {fileID: 899032955700705460, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: xGiraffe
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 899032955700705460, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: yGiraffe
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2723852278118834307, guid: a71f163688b190b42b4e280ad04d6daf,

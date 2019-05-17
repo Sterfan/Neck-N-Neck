@@ -38331,7 +38331,6 @@ GameObject:
   m_Component:
   - component: {fileID: 907587736}
   - component: {fileID: 907587735}
-  - component: {fileID: 907587734}
   - component: {fileID: 907587733}
   m_Layer: 0
   m_Name: Bottom Camera
@@ -38356,14 +38355,6 @@ MonoBehaviour:
   SpeedController: {fileID: 771296273}
   Backgrounds: {fileID: 843350634}
   speed: 14
---- !u!81 &907587734
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907587732}
-  m_Enabled: 1
 --- !u!20 &907587735
 Camera:
   m_ObjectHideFlags: 0
