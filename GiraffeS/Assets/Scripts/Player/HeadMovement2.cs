@@ -25,7 +25,7 @@ public class HeadMovement2 : MonoBehaviour
     public Sprite neck2;
     public Sprite neck1;
 
-    [SerializeField] float mouseSensitivity = 0.5f;
+    [SerializeField] float mouseSensitivity = 0.05f;
 
     public bool xGiraffe;
     public bool yGiraffe;
@@ -112,9 +112,11 @@ public class HeadMovement2 : MonoBehaviour
             //Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
 
             //Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
-            Head.transform.position += new Vector3(0, xMouse, 0);
+            //Head.transform.position += new Vector3(Head.transform.position.x, xMouse, 0);
+            Head.transform.position -= mouseInput * mouseSensitivity;
 
-            if (Body.GetComponent<PlayerController>().Jumping == true)
+
+            if (Giraffe.GetComponent<PlayerController>().Jumping == true)
             {
                 //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
                 //Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
@@ -122,13 +124,13 @@ public class HeadMovement2 : MonoBehaviour
 
             if (headToBody > maxNeckLength)
             {
-                Head.transform.position = new Vector2(headStart.x, bodyPos.y + maxNeckLength);
+                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
                 //mouseStart.y = mouseStart.y + headToBody * 0.042f;
 
             }
             if (Head.transform.position.y <= Body.transform.position.y + 2)
             {
-                Head.transform.position = new Vector2(headStart.x, Body.transform.position.y + 2);
+                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + 2);
                 //mouseStart.y = mouseStart.y - headToBody * 0.039f;
             }
         }
