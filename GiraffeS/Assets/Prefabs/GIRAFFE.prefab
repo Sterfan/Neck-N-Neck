@@ -5117,6 +5117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountdownTimer: {fileID: 0}
   SpeedController: {fileID: 0}
+  Backgrounds: {fileID: 0}
   speed: 14
 --- !u!114 &7041523864093419643
 MonoBehaviour:
@@ -5133,8 +5134,10 @@ MonoBehaviour:
   animator: {fileID: 2336848663984591508}
   grffenumber: 0
   Backgrounds: {fileID: 0}
+  SpeedController: {fileID: 0}
   jumpAmplitude: 15
   dashSpeed: 7
+  baseSpeed: 7
   dashDuration: 0.25
   dashAmmo: 0
   jumpInput: 32
@@ -5151,6 +5154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2336848664068457774}
+  - component: {fileID: 7827611314404099094}
   m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
@@ -5172,6 +5176,54 @@ Transform:
   m_Father: {fileID: 3382097207047363433}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &7827611314404099094
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336848664068457773}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: ab4421e921aeb7e43afb6277b95a802e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.1899998, y: 6.7299995}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2336848664126590427
 GameObject:
   m_ObjectHideFlags: 0
@@ -16221,7 +16273,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16240,7 +16292,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!114 &899032955700705460
 MonoBehaviour:
   m_ObjectHideFlags: 0
