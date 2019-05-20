@@ -54,7 +54,7 @@ public class ScoreBoard : MonoBehaviour
         {
             if (PlayerPrefs.HasKey(i + "HScore"))
             {
-                if (PlayerPrefs.GetInt(i+"HScore") < newScore)
+                if (PlayerPrefs.GetInt(i+"HScore") < newScore) //Change the sign here since we want lowest time
                 {
                     oldScore = PlayerPrefs.GetInt(i + "HScore");
                     //oldName = PlayerPrefs.GetString(i + "HScoreName");
@@ -68,7 +68,7 @@ public class ScoreBoard : MonoBehaviour
             {
                 PlayerPrefs.SetFloat(i + "HScore", newScore);
                 //PlayerPrefs.SetString(i + "HScoreName", newName);
-                newScore = 0;
+                newScore = 0; //Set this to something else
                 //newName = "";
             }
         }
