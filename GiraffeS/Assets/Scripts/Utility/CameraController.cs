@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 desiredPosition = new Vector3(transform.position.x, GetRayInfo() + desiredGroundDistance, transform.position.z);
+        Vector3 desiredPosition = new Vector3(transform.position.x, HitPointY() + desiredGroundDistance, transform.position.z);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
     }
@@ -26,11 +26,10 @@ public class CameraController : MonoBehaviour
         direction = new Vector2(0, -1);
         startingPosition = new Vector2(giraffe.position.x, transform.position.y);
 
-        Debug.DrawRay(startingPosition, direction, Color.red, 3f);
         return Physics2D.Raycast(startingPosition, direction, raycastMaxDistance, layersToHit);
     }
 
-    private float GetRayInfo()
+    private float HitPointY()
     {
         RaycastHit2D hit = GroundLevel();
 
@@ -40,10 +39,5 @@ public class CameraController : MonoBehaviour
         Debug.Log("The ray hit at: " + hit.collider.name);
 
         return hit.point.y;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(startingPosition, direction);
     }
 }

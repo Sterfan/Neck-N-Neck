@@ -60,7 +60,7 @@ public class PlayerProgress : MonoBehaviour
                 //if (distanceTraveled < otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
                 if (distanceRemaining < otherGiraffeTracker.GetComponent<PlayerProgress>().distanceRemaining)
                 {
-                    Debug.Log("Should change to second");
+                    //Debug.Log("Should change to second");
                     position.sprite = first;
                     otherGiraffeTracker.GetComponent<PlayerProgress>().ChangePosSprite();
                 }
