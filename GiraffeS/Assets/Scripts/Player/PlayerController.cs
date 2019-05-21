@@ -167,6 +167,8 @@ public class PlayerController : MonoBehaviour
         SpeedController.GetComponent<MainSpeed>().SetSpeed(dashSpeed);
         Physics2D.IgnoreLayerCollision(11, 14, true);
         Physics2D.IgnoreLayerCollision(12, 13, true);
+        GetComponent<CollisionLogic>().SetSpeedUpFalse();
+        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
         //playerState = PlayerStates.Dashing;
 
         //Invoke("ResetSpeed", dashDuration);

@@ -125,4 +125,8 @@ public class CollisionLogic : MonoBehaviour
         //}
     }
 
+    public void SetSpeedUpFalse()
+    {
+        shouldSpeedUp = false;
+    }
 }
