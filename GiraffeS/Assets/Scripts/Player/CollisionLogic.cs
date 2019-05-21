@@ -57,8 +57,8 @@ public class CollisionLogic : MonoBehaviour
         if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
         {
             //LeafParticles.SetActive(true);
-            if (Giraffe.GetComponent<PlayerController>().Dashing == false)
-            {
+            //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
+            //{
                 if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
                 {
                     LeafParticles.GetComponent<ParticleSystem>().Play();
@@ -68,9 +68,9 @@ public class CollisionLogic : MonoBehaviour
                     ThornParticles.GetComponent<ParticleSystem>().Play();
                 }
 
-            }
+            //}
             FindObjectOfType<AudioManager>().Play("Leaves");
-            if (multiplier >= 0.5f && Giraffe.GetComponent<PlayerController>().Dashing == false)
+            if (multiplier >= 0.5f/* && Giraffe.GetComponent<PlayerController>().Dashing == false*/)
             {
                 multiplier = 0.5f;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
@@ -89,8 +89,8 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Giraffe.GetComponent<PlayerController>().Dashing == false)
-        {
+        //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
+        //{
             if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
             //LeafParticles.SetActive(true);
             //LeafParticles.GetComponent<ParticleSystem>().Play();
@@ -100,14 +100,14 @@ public class CollisionLogic : MonoBehaviour
                 multiplier *= 0.99f;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
             }
-        }
+        //}
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (Giraffe.GetComponent<PlayerController>().Dashing == false)
-        {
+        //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
+        //{
             if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
             {
                 timeSinceHit = 0.0f;
@@ -122,7 +122,11 @@ public class CollisionLogic : MonoBehaviour
                     ThornParticles.GetComponent<ParticleSystem>().Stop();
                 }
             }
-        }
+        //}
     }
 
+    public void SetSpeedUpFalse()
+    {
+        shouldSpeedUp = false;
+    }
 }

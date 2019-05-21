@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5521409443972367556}
   - component: {fileID: 1808958216662583978}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Collider
   m_TagString: LegObstacle
   m_Icon: {fileID: 0}

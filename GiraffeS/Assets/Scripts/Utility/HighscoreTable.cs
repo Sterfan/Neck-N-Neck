@@ -12,7 +12,7 @@ public class HighscoreTable : MonoBehaviour
     {
         EntryTemplate.gameObject.SetActive(false);
 
-        float templateHeight = 20.0f;
+        float templateHeight = 25.0f;
         for (int i = 0; i < 10; i++)
         {
             Transform EntryTransform = Instantiate(EntryTemplate, EntryContainer);

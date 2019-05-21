@@ -88,7 +88,17 @@ public class PlayerController : MonoBehaviour
                     Jumping = true;
                     animator.SetBool("IsJumping", true);
 
-
+                    if (dashAmmo >= 1.0f)
+                    {
+                        Dash(dashSpeed);
+                        playerState = PlayerStates.Dashing;
+                        Dashing = true;
+                        dashAmmo -= 1.0f;
+                        if (dashAmmo < 0.0f)
+                        {
+                            dashAmmo = 0.0f;
+                        }
+                    }
 
                     break;
                 } 
@@ -113,6 +123,11 @@ public class PlayerController : MonoBehaviour
                             playerState = PlayerStates.Running;
                             Dashing = false;
                         }
+                    }
+
+                    if (Input.GetKey(jumpInput))
+                    {
+                        Jump();
                     }
 
 
@@ -150,6 +165,10 @@ public class PlayerController : MonoBehaviour
     {
         //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
         SpeedController.GetComponent<MainSpeed>().SetSpeed(dashSpeed);
+        Physics2D.IgnoreLayerCollision(11, 14, true);
+        Physics2D.IgnoreLayerCollision(12, 13, true);
+        GetComponent<CollisionLogic>().SetSpeedUpFalse();
+        Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
         //playerState = PlayerStates.Dashing;
 
         //Invoke("ResetSpeed", dashDuration);
@@ -159,6 +178,8 @@ public class PlayerController : MonoBehaviour
     {
         //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
         SpeedController.GetComponent<MainSpeed>().SetSpeed(baseSpeed);
+        Physics2D.IgnoreLayerCollision(11, 14, false);
+        Physics2D.IgnoreLayerCollision(12, 13, false);
     }
 
     public void SetDashAmmo(float ammo)
