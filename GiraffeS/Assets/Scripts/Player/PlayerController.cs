@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject Backgrounds;
     public GameObject SpeedController;
+    public GameObject DashFlames;
 
     [SerializeField] float jumpAmplitude = 15.0f;
     [SerializeField] float dashSpeed = 14.0f;
@@ -104,7 +105,8 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-                    animator.SetBool("IsDashing", true);
+                    DashFlames.SetActive(true);
+                    //animator.SetBool("IsDashing", true);
                     dashTimer += Time.deltaTime;
                     //Debug.Log(dashTimer);
                     if (dashTimer >= dashDuration)
@@ -180,6 +182,7 @@ public class PlayerController : MonoBehaviour
         SpeedController.GetComponent<MainSpeed>().SetSpeed(baseSpeed);
         Physics2D.IgnoreLayerCollision(11, 14, false);
         Physics2D.IgnoreLayerCollision(12, 13, false);
+        DashFlames.SetActive(false);
     }
 
     public void SetDashAmmo(float ammo)
