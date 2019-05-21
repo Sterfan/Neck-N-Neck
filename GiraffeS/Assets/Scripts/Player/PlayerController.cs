@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
-                    Debug.Log("DashTimer" + dashTimer);
+                    animator.SetBool("IsDashing", true);
                     dashTimer += Time.deltaTime;
                     //Debug.Log(dashTimer);
                     if (dashTimer >= dashDuration)
