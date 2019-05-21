@@ -116,11 +116,11 @@ public class HeadMovement2 : MonoBehaviour
             Head.transform.position -= mouseInput * mouseSensitivity;
 
 
-            if (Giraffe.GetComponent<PlayerController>().Jumping == true)
-            {
-                //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
-                //Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
-            }
+            //if (Giraffe.GetComponent<PlayerController>().Jumping == true)
+            //{
+            //    //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
+            //    //Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
+            //}
 
             if (headToBody > maxNeckLength)
             {
