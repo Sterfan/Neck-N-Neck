@@ -10,16 +10,13 @@ public class CameraController : MonoBehaviour
     public float raycastMaxDistance = 50f;
     [SerializeField]
     private LayerMask layersToHit;
-    float rayDistanceFromCameraC;
-    float rayPointY;
 
     private Vector2 direction;
     private Vector2 startingPosition;
 
     void FixedUpdate()
     {
-        GetRayInfo();
-        Vector3 desiredPosition = new Vector3(transform.position.x, rayPointY + desiredGroundDistance, transform.position.z);
+        Vector3 desiredPosition = new Vector3(transform.position.x, GetRayInfo() + desiredGroundDistance, transform.position.z);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
     }
@@ -33,16 +30,16 @@ public class CameraController : MonoBehaviour
         return Physics2D.Raycast(startingPosition, direction, raycastMaxDistance, layersToHit);
     }
 
-    private void GetRayInfo()
+    private float GetRayInfo()
     {
         RaycastHit2D hit = GroundLevel();
 
         if (!hit.collider)
-            Debug.LogError("The ray did not hit any GameObject in the \'Ground\' Layer.");
+            return transform.position.y - 12;
 
-        rayDistanceFromCameraC = hit.distance;
-        rayPointY = hit.point.y;
         Debug.Log("The ray hit at: " + hit.collider.name);
+
+        return hit.point.y;
     }
 
     private void OnDrawGizmos()
