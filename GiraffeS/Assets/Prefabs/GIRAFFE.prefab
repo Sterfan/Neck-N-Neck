@@ -5101,8 +5101,7 @@ MonoBehaviour:
   Giraffe: {fileID: 2336848663984591506}
   LeafParticles: {fileID: 3820896780629110282}
   ThornParticles: {fileID: 5289224023013929260}
-  TimeController: {fileID: 2988998474216517992, guid: 11df645fd6056104c8859c0dfeac3ca5,
-    type: 3}
+  CountdownTimer: {fileID: 0}
   ProgressTracker: {fileID: 0}
   acceleration: 0.15
 --- !u!114 &5368653914321092920
@@ -5117,10 +5116,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0242ad3d3866b4ab77524075219e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Giraffe: {fileID: 0}
   CountdownTimer: {fileID: 0}
   SpeedController: {fileID: 0}
   Backgrounds: {fileID: 0}
   speed: 14
+  isCamera: 0
 --- !u!114 &7041523864093419643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6124,7 +6125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3820896780629110282}
   m_LocalRotation: {x: 0.45171332, y: -0.54401755, z: -0.54401755, w: 0.45171332}
-  m_LocalPosition: {x: 1.6400057, y: -0.39999962, z: -0.012033058}
+  m_LocalPosition: {x: 1.6400057, y: -0.39999962, z: -5}
   m_LocalScale: {x: 1.7374762, y: 1.7368149, z: 1.7374758}
   m_Children: []
   m_Father: {fileID: 7401846541233868748}
@@ -6382,7 +6383,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -11215,7 +11216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5289224023013929260}
   m_LocalRotation: {x: 0.39374703, y: -0.5873357, z: -0.5873357, w: 0.39374703}
-  m_LocalPosition: {x: 1.06, y: -0.42, z: 0}
+  m_LocalPosition: {x: 1.06, y: -0.42, z: -5}
   m_LocalScale: {x: 1.6519821, y: 1.6505463, z: 1.5973834}
   m_Children: []
   m_Father: {fileID: 2336848665600768485}
@@ -11473,7 +11474,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2

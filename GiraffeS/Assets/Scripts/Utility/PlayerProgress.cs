@@ -33,6 +33,7 @@ public class PlayerProgress : MonoBehaviour
 
     public bool isFinished = false;
     public bool winner = false;
+    bool scored = false;
 
 
     void Start()
@@ -77,7 +78,11 @@ public class PlayerProgress : MonoBehaviour
             if (isFinished == true)
             {
                 Background1.GetComponent<BackgroundScroller>().SetSpeedMultiplier(0.0f);
-                ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime);
+                if (scored == false)
+                {
+                    ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime); // CALL THIS ONLY ONCE
+                    scored = true;
+                }
             }
 
             if (isFinished == true && otherGiraffeTracker.GetComponent<PlayerProgress>().isFinished == false)

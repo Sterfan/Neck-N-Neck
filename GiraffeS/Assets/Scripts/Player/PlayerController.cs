@@ -207,4 +207,9 @@ public class PlayerController : MonoBehaviour
             BodySpeedParticles.GetComponent<ParticleSystem>().Stop();
         }
     }
+
+    public PlayerStates GetPlayerState()
+    {
+        return playerState;
+    }
 }

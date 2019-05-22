@@ -8,7 +8,7 @@ public class CollisionLogic : MonoBehaviour
     public GameObject Giraffe;
     public GameObject LeafParticles;
     public GameObject ThornParticles;
-    public GameObject TimeController;
+    public GameObject CountdownTimer;
     public GameObject ProgressTracker;
     GameObject[] FirstSpeedLines;
     GameObject[] SecondSpeedLines;
@@ -35,14 +35,15 @@ public class CollisionLogic : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(TimeController.GetComponent<CountdownTimer>().GetStartGame() == true);
-        if (TimeController.GetComponent<CountdownTimer>().GetStartGame() == true/* && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false*/)
+        //Debug.Log(multiplier);
+        //Debug.Log(CountdownTimer.GetComponent<CountdownTimer>().startGame == true);
+        if (CountdownTimer.GetComponent<CountdownTimer>().GetStartGame() == true/* && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false*/)
         {
             timeSinceHit += Time.deltaTime;
-            Debug.Log(timeSinceHit);
+            //Debug.Log(timeSinceHit);
             if (timeSinceHit >= 6.0f && multiplier <= 1.3f)
             {
-                Debug.Log("Should speed up");
+                //Debug.Log("Should speed up");
                 multiplier += overSpeedAcceleration * Time.deltaTime;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
                 if (multiplier <= 1.15f)
@@ -57,7 +58,7 @@ public class CollisionLogic : MonoBehaviour
                     StartSpeedLines(SecondSpeedLines);
                     StopSpeedLines(FirstSpeedLines);
                 }
-                else if (multiplier <= 1.3f && multiplier > 1.25f)
+                else if (multiplier > 1.25f)
                 {
                     Debug.Log("Third Lines");
 
@@ -106,9 +107,9 @@ public class CollisionLogic : MonoBehaviour
 
             //}
             FindObjectOfType<AudioManager>().Play("Leaves");
-            if (multiplier >= 0.5f/* && Giraffe.GetComponent<PlayerController>().Dashing == false*/)
+            if (multiplier >= 0.7f/* && Giraffe.GetComponent<PlayerController>().Dashing == false*/)
             {
-                multiplier = 0.5f;
+                multiplier = 0.7f;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
                 timeSinceHit = 0.0f;
 
@@ -133,7 +134,7 @@ public class CollisionLogic : MonoBehaviour
             timeSinceHit = 0.0f;
             if (multiplier >= 0.25f)
             {
-                multiplier *= 0.99f;
+                multiplier *= 0.98f;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
             }
         //}
@@ -178,7 +179,14 @@ public class CollisionLogic : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
+            speedlines[i].GetComponent<ParticleSystem>().Clear();
             speedlines[i].GetComponent<ParticleSystem>().Stop();
+
         }
     }
+
+    //void UpgradeParticles()
+    //{
+    //    FirstSpeedLines[1].GetComponent<ParticleSystem>().emission
+    //}
 }

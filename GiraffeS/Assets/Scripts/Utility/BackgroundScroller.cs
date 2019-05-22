@@ -23,7 +23,7 @@ public class BackgroundScroller : MonoBehaviour
     public bool cameraScrolling;
     public bool testPurposes;
 
-    bool dashing = false;
+    //bool dashing = false;
 
 
     private float newPosition;
@@ -99,6 +99,6 @@ public class BackgroundScroller : MonoBehaviour
     public void Dash(float dashSpeed)
     {
         speedMultiplier *= dashSpeed;
-        dashing = true;
+        //dashing = true;
     }
 }

@@ -5,6 +5,14 @@ using UnityEngine;
 public class ScoreBoard : MonoBehaviour
 {
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+    }
+
     //Call this in PlayerProgress, find a place to input name
 
     public void AddScore(string name, float score)
@@ -34,7 +42,7 @@ public class ScoreBoard : MonoBehaviour
             {
                 PlayerPrefs.SetFloat(i + "HScore", newScore);
                 PlayerPrefs.SetString(i + "HScoreName", newName);
-                newScore = 0;
+                newScore = 999;
                 newName = "";
             }
         }
@@ -54,21 +62,25 @@ public class ScoreBoard : MonoBehaviour
         {
             if (PlayerPrefs.HasKey(i + "HScore"))
             {
-                if (PlayerPrefs.GetInt(i+"HScore") < newScore) //Change the sign here since we want lowest time
+                if (newScore < PlayerPrefs.GetFloat(i+"HScore")) //Change the sign to "NS < OS" here since we want lowest time
                 {
-                    oldScore = PlayerPrefs.GetInt(i + "HScore");
+                    Debug.Log("New Score: " + newScore);
+                    oldScore = PlayerPrefs.GetFloat(i + "HScore");
+                    Debug.Log("Old Score: " + oldScore);
                     //oldName = PlayerPrefs.GetString(i + "HScoreName");
                     PlayerPrefs.SetFloat(i + "HScore", newScore);
                     //PlayerPrefs.SetString(i + "HScoreName", newName);
                     newScore = oldScore;
                     //newName = oldName;
+                    Debug.Log("New Score after: " + newScore);
+                    Debug.Log("Old Score after: " + oldScore);
                 }
             }
             else
             {
                 PlayerPrefs.SetFloat(i + "HScore", newScore);
                 //PlayerPrefs.SetString(i + "HScoreName", newName);
-                newScore = 0; //Set this to something else
+                newScore = 999; //Set this to something high
                 //newName = "";
             }
         }

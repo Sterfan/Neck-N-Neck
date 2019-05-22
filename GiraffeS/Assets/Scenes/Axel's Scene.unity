@@ -221,7 +221,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -3676,8 +3676,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -3852,7 +3852,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 32768
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4825,9 +4825,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5351729299139941915}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &533223745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 229444426718788415, guid: 10211c766996d9e4ea34e0393a501fb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5351729299139941915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549751795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4904974503224698300, guid: 10211c766996d9e4ea34e0393a501fb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5351729299139941915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &878668592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7151196379781376190, guid: 10211c766996d9e4ea34e0393a501fb7,
     type: 3}
   m_PrefabInstance: {fileID: 5351729299139941915}
   m_PrefabAsset: {fileID: 0}
@@ -4940,7 +4952,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -8395,8 +8407,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -8571,7 +8583,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 32768
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -9647,7 +9659,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -13102,8 +13114,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -13278,7 +13290,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 32768
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -14245,6 +14257,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1456904066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7650223835901670118, guid: 10211c766996d9e4ea34e0393a501fb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5351729299139941915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1566040591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7650223834833990678, guid: 10211c766996d9e4ea34e0393a501fb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5351729299139941915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1599864577
 GameObject:
   m_ObjectHideFlags: 0
@@ -14354,7 +14378,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -17809,8 +17833,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -17985,7 +18009,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 32768
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -18958,6 +18982,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5351729299139941915}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741588999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4904974504308695884, guid: 10211c766996d9e4ea34e0393a501fb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5351729299139941915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1938311161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 229444427802787279, guid: 10211c766996d9e4ea34e0393a501fb7,
@@ -19079,7 +19109,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -22534,8 +22564,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -22710,7 +22740,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 32768
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -23786,7 +23816,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -27241,8 +27271,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -27417,7 +27447,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 32768
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -28391,6 +28421,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 585686067399220427, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Axel's Scene Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904974503224698300, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 229444427802787279, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6602259216144673990, guid: 10211c766996d9e4ea34e0393a501fb7,
         type: 3}
       propertyPath: playOnAwake
@@ -28475,16 +28520,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 229444427802787279, guid: 10211c766996d9e4ea34e0393a501fb7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 585686067399220427, guid: 10211c766996d9e4ea34e0393a501fb7,
-        type: 3}
-      propertyPath: m_Name
-      value: Axel's Scene Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 1825520100720297335, guid: 10211c766996d9e4ea34e0393a501fb7,
         type: 3}
@@ -28706,15 +28741,25 @@ PrefabInstance:
       propertyPath: m_BoneTransforms.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4904974503224698300, guid: 10211c766996d9e4ea34e0393a501fb7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8150981326235557518, guid: 10211c766996d9e4ea34e0393a501fb7,
         type: 3}
       propertyPath: prewarm
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150981326235557518, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150981326235557518, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150981326235557518, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 32768
       objectReference: {fileID: 0}
     - target: {fileID: 8036735409959043319, guid: 10211c766996d9e4ea34e0393a501fb7,
         type: 3}
@@ -28835,6 +28880,156 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.54046273
+      objectReference: {fileID: 0}
+    - target: {fileID: 339420737168647099, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CountdownTimer
+      value: 
+      objectReference: {fileID: 878668592}
+    - target: {fileID: 55278201238085964, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: Giraffe
+      value: 
+      objectReference: {fileID: 1456904066}
+    - target: {fileID: 7650223834833990678, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351729298972731022, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: isCamera
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351729298972731022, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: Giraffe
+      value: 
+      objectReference: {fileID: 1456904066}
+    - target: {fileID: 339420738252580171, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CountdownTimer
+      value: 
+      objectReference: {fileID: 878668592}
+    - target: {fileID: 5351729298896204290, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020103316215945435, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020103316215945435, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020103316215945435, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840242403474990215, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55278202305308604, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: Giraffe
+      value: 
+      objectReference: {fileID: 1566040591}
+    - target: {fileID: 3169880841293467391, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: HeadSpeedParticles
+      value: 
+      objectReference: {fileID: 1741588999}
+    - target: {fileID: 3169880841293467391, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: BodySpeedParticles
+      value: 
+      objectReference: {fileID: 533223745}
+    - target: {fileID: 4065334361088359389, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907726198175885377, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895148933780288497, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106689071804839457, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175062985236331240, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 229444426718788415, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 478140671950104625, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735821817800637571, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 259913089449542102, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 259913089449542102, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934854446374171215, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737526082381809762, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737526082381809762, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452354992551730472, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452354992551730472, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351729298777350038, guid: 10211c766996d9e4ea34e0393a501fb7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10211c766996d9e4ea34e0393a501fb7, type: 3}
