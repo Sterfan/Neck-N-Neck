@@ -10,6 +10,10 @@ public class CollisionLogic : MonoBehaviour
     public GameObject ThornParticles;
     public GameObject TimeController;
     public GameObject ProgressTracker;
+    GameObject[] FirstSpeedLines;
+    GameObject[] SecondSpeedLines;
+    GameObject[] ThirdSpeedLines;
+
     bool shouldSpeedUp = false;
     float scrollSpeed;
     float multiplier;
@@ -22,19 +26,51 @@ public class CollisionLogic : MonoBehaviour
     {
         //scrollSpeed = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
         multiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
+        FirstSpeedLines = GameObject.FindGameObjectsWithTag("FirstSpeedLines");
+        SecondSpeedLines = GameObject.FindGameObjectsWithTag("SecondSpeedLines");
+        ThirdSpeedLines = GameObject.FindGameObjectsWithTag("ThirdSpeedLines");
+
         //LeafParticles.GetComponent<ParticleSystem>().Stop();
     }
 
     private void Update()
     {
-        if (TimeController.GetComponent<CountdownTimer>().startGame == true && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false)
+        //Debug.Log(TimeController.GetComponent<CountdownTimer>().GetStartGame() == true);
+        if (TimeController.GetComponent<CountdownTimer>().GetStartGame() == true/* && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false*/)
         {
             timeSinceHit += Time.deltaTime;
-            if (timeSinceHit >= 6.0f && multiplier < 1.3f)
+            Debug.Log(timeSinceHit);
+            if (timeSinceHit >= 6.0f && multiplier <= 1.3f)
             {
+                Debug.Log("Should speed up");
                 multiplier += overSpeedAcceleration * Time.deltaTime;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
+                if (multiplier <= 1.15f)
+                {
+                    Debug.Log("First Lines");
+                    StartSpeedLines(FirstSpeedLines);
+                }
+                else if (multiplier <= 1.25f && multiplier > 1.15f)
+                {
+                    Debug.Log("Second Lines");
+
+                    StartSpeedLines(SecondSpeedLines);
+                    StopSpeedLines(FirstSpeedLines);
+                }
+                else if (multiplier <= 1.3f && multiplier > 1.25f)
+                {
+                    Debug.Log("Third Lines");
+
+                    StartSpeedLines(ThirdSpeedLines);
+                    StopSpeedLines(SecondSpeedLines);
+                }
             }
+        }
+        if (multiplier <= 1.0f)
+        {
+            StopSpeedLines(FirstSpeedLines);
+            StopSpeedLines(SecondSpeedLines);
+            StopSpeedLines(ThirdSpeedLines);
         }
 
         if (shouldSpeedUp == true && multiplier <= 1.0f)
@@ -128,5 +164,21 @@ public class CollisionLogic : MonoBehaviour
     public void SetSpeedUpFalse()
     {
         shouldSpeedUp = false;
+    }
+
+    public void StartSpeedLines(GameObject[] speedlines)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            speedlines[i].GetComponent<ParticleSystem>().Play();
+        }
+    }
+
+    public void StopSpeedLines(GameObject[] speedlines)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            speedlines[i].GetComponent<ParticleSystem>().Stop();
+        }
     }
 }

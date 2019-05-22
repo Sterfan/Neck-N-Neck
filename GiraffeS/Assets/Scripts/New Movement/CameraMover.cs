@@ -14,6 +14,7 @@ public class CameraMover : MonoBehaviour
     {
         speed = SpeedController.GetComponent<MainSpeed>().GetSpeed();
         speedMultiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
+        Debug.Log(CountdownTimer.GetComponent<CountdownTimer>().startGame == true);
     }
 
     void LateUpdate()

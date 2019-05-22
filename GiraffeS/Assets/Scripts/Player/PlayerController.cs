@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public GameObject Backgrounds;
     public GameObject SpeedController;
     public GameObject DashFlames;
+    public GameObject HeadSpeedParticles;
+    public GameObject BodySpeedParticles;
 
     [SerializeField] float jumpAmplitude = 15.0f;
     [SerializeField] float dashSpeed = 14.0f;
@@ -89,17 +91,17 @@ public class PlayerController : MonoBehaviour
                     Jumping = true;
                     animator.SetBool("IsJumping", true);
 
-                    if (dashAmmo >= 1.0f)
-                    {
-                        Dash(dashSpeed);
-                        playerState = PlayerStates.Dashing;
-                        Dashing = true;
-                        dashAmmo -= 1.0f;
-                        if (dashAmmo < 0.0f)
-                        {
-                            dashAmmo = 0.0f;
-                        }
-                    }
+                    //if (dashAmmo >= 1.0f)
+                    //{
+                    //    Dash(dashSpeed);
+                    //    playerState = PlayerStates.Dashing;
+                    //    Dashing = true;
+                    //    dashAmmo -= 1.0f;
+                    //    if (dashAmmo < 0.0f)
+                    //    {
+                    //        dashAmmo = 0.0f;
+                    //    }
+                    //}
 
                     break;
                 } 
@@ -171,6 +173,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(12, 13, true);
         GetComponent<CollisionLogic>().SetSpeedUpFalse();
         Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+        SetSpeedParticlesActive(true);
         //playerState = PlayerStates.Dashing;
 
         //Invoke("ResetSpeed", dashDuration);
@@ -183,10 +186,25 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(11, 14, false);
         Physics2D.IgnoreLayerCollision(12, 13, false);
         DashFlames.SetActive(false);
+        SetSpeedParticlesActive(false);
     }
 
     public void SetDashAmmo(float ammo)
     {
         dashAmmo += ammo;
+    }
+
+    public void SetSpeedParticlesActive(bool active)
+    {
+        if (active == true)
+        {
+            HeadSpeedParticles.GetComponent<ParticleSystem>().Play();
+            BodySpeedParticles.GetComponent<ParticleSystem>().Play();
+        }
+        else
+        {
+            HeadSpeedParticles.GetComponent<ParticleSystem>().Stop();
+            BodySpeedParticles.GetComponent<ParticleSystem>().Stop();
+        }
     }
 }
