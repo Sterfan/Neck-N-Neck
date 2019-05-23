@@ -10,9 +10,16 @@ public class CollisionLogic : MonoBehaviour
     public GameObject ThornParticles;
     public GameObject CountdownTimer;
     public GameObject ProgressTracker;
-    GameObject[] FirstSpeedLines;
-    GameObject[] SecondSpeedLines;
-    GameObject[] ThirdSpeedLines;
+    public GameObject HeadSpeedLines1;
+    public GameObject BodySpeedLines1;
+    public GameObject HeadSpeedLines2;
+    public GameObject BodySpeedLines2;
+    public GameObject HeadSpeedLines3;
+    public GameObject BodySpeedLines3;
+
+    //GameObject[] FirstSpeedLines;
+    //GameObject[] SecondSpeedLines;
+    //GameObject[] ThirdSpeedLines;
 
     bool shouldSpeedUp = false;
     float scrollSpeed;
@@ -26,9 +33,16 @@ public class CollisionLogic : MonoBehaviour
     {
         //scrollSpeed = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
         multiplier = Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier();
-        FirstSpeedLines = GameObject.FindGameObjectsWithTag("FirstSpeedLines");
-        SecondSpeedLines = GameObject.FindGameObjectsWithTag("SecondSpeedLines");
-        ThirdSpeedLines = GameObject.FindGameObjectsWithTag("ThirdSpeedLines");
+        //FirstSpeedLines = GameObject.FindGameObjectsWithTag("FirstSpeedLines");
+        //SecondSpeedLines = GameObject.FindGameObjectsWithTag("SecondSpeedLines");
+        //ThirdSpeedLines = GameObject.FindGameObjectsWithTag("ThirdSpeedLines");
+        //FirstSpeedLines[0] = HeadSpeedLines1;
+        //FirstSpeedLines[1] = BodySpeedLines1;
+        //SecondSpeedLines[0] = HeadSpeedLines2;
+        //SecondSpeedLines[1] = BodySpeedLines2;
+        //ThirdSpeedLines[0] = BodySpeedLines3;
+        //ThirdSpeedLines[1] = HeadSpeedLines3;
+
 
         //LeafParticles.GetComponent<ParticleSystem>().Stop();
     }
@@ -46,32 +60,54 @@ public class CollisionLogic : MonoBehaviour
                 //Debug.Log("Should speed up");
                 multiplier += overSpeedAcceleration * Time.deltaTime;
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
-                if (multiplier <= 1.15f)
-                {
-                    Debug.Log("First Lines");
-                    StartSpeedLines(FirstSpeedLines);
-                }
-                else if (multiplier <= 1.25f && multiplier > 1.15f)
+                //if (multiplier <= 1.15f)
+                //{
+                Debug.Log("First Lines");
+                //StartSpeedLines(FirstSpeedLines);
+                HeadSpeedLines1.SetActive(true);
+                BodySpeedLines1.SetActive(true);
+                //}
+                if (multiplier >= 1.13f)
                 {
                     Debug.Log("Second Lines");
 
-                    StartSpeedLines(SecondSpeedLines);
-                    StopSpeedLines(FirstSpeedLines);
+                    HeadSpeedLines2.SetActive(true);
+                    BodySpeedLines2.SetActive(true);
+                    if (multiplier > 1.15f)
+                    {
+                        HeadSpeedLines1.SetActive(false);
+                        BodySpeedLines1.SetActive(false);
+                    }
+                    //StartSpeedLines(SecondSpeedLines);
+                    //StopSpeedLines(FirstSpeedLines);
                 }
-                else if (multiplier > 1.25f)
+                if (multiplier >= 1.23f)
                 {
                     Debug.Log("Third Lines");
 
-                    StartSpeedLines(ThirdSpeedLines);
-                    StopSpeedLines(SecondSpeedLines);
+                    HeadSpeedLines3.SetActive(true);
+                    BodySpeedLines3.SetActive(true);
+                    if (multiplier > 1.25f)
+                    {
+                        HeadSpeedLines2.SetActive(false);
+                        BodySpeedLines2.SetActive(false);
+                    }
+                    //StartSpeedLines(ThirdSpeedLines);
+                    //StopSpeedLines(SecondSpeedLines);
                 }
             }
         }
         if (multiplier <= 1.0f)
         {
-            StopSpeedLines(FirstSpeedLines);
-            StopSpeedLines(SecondSpeedLines);
-            StopSpeedLines(ThirdSpeedLines);
+            HeadSpeedLines1.SetActive(false);
+            BodySpeedLines1.SetActive(false);
+            HeadSpeedLines2.SetActive(false);
+            BodySpeedLines2.SetActive(false);
+            HeadSpeedLines3.SetActive(false);
+            BodySpeedLines3.SetActive(false);
+            //StopSpeedLines(FirstSpeedLines);
+            //StopSpeedLines(SecondSpeedLines);
+            //StopSpeedLines(ThirdSpeedLines);
         }
 
         if (shouldSpeedUp == true && multiplier <= 1.0f)
@@ -171,7 +207,8 @@ public class CollisionLogic : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            speedlines[i].GetComponent<ParticleSystem>().Play();
+            //speedlines[i].GetComponent<ParticleSystem>().Play();
+            speedlines[i].SetActive(true);
         }
     }
 
@@ -179,8 +216,9 @@ public class CollisionLogic : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            speedlines[i].GetComponent<ParticleSystem>().Clear();
-            speedlines[i].GetComponent<ParticleSystem>().Stop();
+            speedlines[i].SetActive(false);
+            //speedlines[i].GetComponent<ParticleSystem>().Clear();
+            //speedlines[i].GetComponent<ParticleSystem>().Stop();
 
         }
     }

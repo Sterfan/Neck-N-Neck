@@ -8,7 +8,7 @@ public class HighscoreTable : MonoBehaviour
     [SerializeField] Transform EntryContainer;
     [SerializeField] Transform EntryTemplate;
 
-    string[] names = { "The very best", "Supersonic giraffe", "Rocket giraffe", "Usain Bolt", "Average giraffe", "Running giraffe", "Jogging giraffe", "Walking giraffe", "Happy giraffe", "Don't give up" };
+    string[] names = { "The very best giraffe", "Supersonic giraffe", "Rocket giraffe", "Usain Bolt giraffe", "Average giraffe", "Running giraffe", "Jogging giraffe", "Walking giraffe", "Happy giraffe", "Don't give up" };
 
     private void Awake()
     {

@@ -21,6 +21,13 @@ public class PlayerController : MonoBehaviour
     public GameObject DashFlames;
     public GameObject HeadSpeedParticles;
     public GameObject BodySpeedParticles;
+    public GameObject Head;
+
+    public Sprite NormalHead;
+    public Sprite DashHead;
+
+    SpriteRenderer spriteRenderer;
+
 
     [SerializeField] float jumpAmplitude = 15.0f;
     [SerializeField] float dashSpeed = 14.0f;
@@ -48,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        spriteRenderer = Head.GetComponent<SpriteRenderer>();
         currentDashSpeed = dashSpeed;
     }
 
@@ -168,6 +176,7 @@ public class PlayerController : MonoBehaviour
     public void Dash(float dashSpeed)
     {
         //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
+        spriteRenderer.sprite = DashHead;
         SpeedController.GetComponent<MainSpeed>().SetSpeed(dashSpeed);
         Physics2D.IgnoreLayerCollision(11, 14, true);
         Physics2D.IgnoreLayerCollision(12, 13, true);
@@ -182,6 +191,7 @@ public class PlayerController : MonoBehaviour
     void ResetSpeed()
     {
         //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
+        spriteRenderer.sprite = NormalHead;
         SpeedController.GetComponent<MainSpeed>().SetSpeed(baseSpeed);
         Physics2D.IgnoreLayerCollision(11, 14, false);
         Physics2D.IgnoreLayerCollision(12, 13, false);
