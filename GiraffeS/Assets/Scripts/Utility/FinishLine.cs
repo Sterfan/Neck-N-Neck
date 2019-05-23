@@ -2,41 +2,25 @@
 
 public class FinishLine : MonoBehaviour
 {
-    GameObject backgroundScrl;
+    public GameObject theCamera;
     public GameObject progressTracker;
-    public GameObject giraffe;
-    public GameObject Backgrounds;
-    public GameObject SpeedController;
     bool endOfRace = false;
-    Vector2 newPosition;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Giraffe"))
         {
-            backgroundScrl = collision.gameObject;
-            //Debug.Log("We all up in this bitch");
-            //gameObject.GetComponentInParent<BackgroundScroller>().scrollSpeed = 0.0f;
-            Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0);
-            //Debug.Log(Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
-            SpeedController.GetComponent<MainSpeed>().SetSpeed(0);
             progressTracker.GetComponent<PlayerProgress>().isFinished = true;
             endOfRace = true;
         }
-    }
-
-
-    void Start()
-    {
-        newPosition = giraffe.GetComponent<Rigidbody2D>().position;
     }
 
     void FixedUpdate()
     {
         if (endOfRace)
         {
-            newPosition = newPosition + new Vector2(0.5f, 0);
-            giraffe.GetComponent<Rigidbody2D>().MovePosition(newPosition);
+            theCamera.GetComponent<CameraMover>().enabled = false;
+            theCamera.GetComponent<CameraController>().enabled = false;
         }
     }
 }

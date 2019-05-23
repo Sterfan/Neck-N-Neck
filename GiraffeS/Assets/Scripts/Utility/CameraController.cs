@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
         if (!hit.collider)
             return transform.position.y - 12;
 
-        //Debug.Log("The ray hit at: " + hit.collider.name);
+        Debug.Log("The ray hit at: " + hit.collider.name);
 
         return hit.point.y;
     }
