@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CollisionLogic : MonoBehaviour
 {
@@ -10,6 +8,9 @@ public class CollisionLogic : MonoBehaviour
     public GameObject ThornParticles;
     public GameObject TimeController;
     public GameObject ProgressTracker;
+    public Leaves leaves;
+    
+    bool inBush;
     bool shouldSpeedUp = false;
     float scrollSpeed;
     float multiplier;
@@ -59,14 +60,19 @@ public class CollisionLogic : MonoBehaviour
             //LeafParticles.SetActive(true);
             //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
             //{
-                if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
-                {
-                    LeafParticles.GetComponent<ParticleSystem>().Play();
-                }
-                if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
-                {
-                    ThornParticles.GetComponent<ParticleSystem>().Play();
-                }
+            if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
+            {
+                LeafParticles.GetComponent<ParticleSystem>().Play();
+                inBush = true;
+                if (leaves == null)
+                    Debug.LogError(gameObject.name + (" is missing leaf reference."));
+                else
+                    leaves.StartShakyShaky();
+            }
+            if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
+            {
+                ThornParticles.GetComponent<ParticleSystem>().Play();
+            }
 
             //}
             FindObjectOfType<AudioManager>().Play("Leaves");
@@ -108,20 +114,21 @@ public class CollisionLogic : MonoBehaviour
     {
         //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
         //{
-            if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
+        if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
+        {
+            timeSinceHit = 0.0f;
+            shouldSpeedUp = true;
+            FindObjectOfType<AudioManager>().StopMusic("Leaves");
+            if (collision.CompareTag("HeadObstacle"))
             {
-                timeSinceHit = 0.0f;
-                shouldSpeedUp = true;
-                FindObjectOfType<AudioManager>().StopMusic("Leaves");
-                if (collision.CompareTag("HeadObstacle"))
-                {
-                    LeafParticles.GetComponent<ParticleSystem>().Stop();
-                }
-                if (collision.CompareTag("LegObstacle"))
-                {
-                    ThornParticles.GetComponent<ParticleSystem>().Stop();
-                }
+                LeafParticles.GetComponent<ParticleSystem>().Stop();
+                inBush = false;
             }
+            if (collision.CompareTag("LegObstacle"))
+            {
+                ThornParticles.GetComponent<ParticleSystem>().Stop();
+            }
+        }
         //}
     }
 
@@ -129,4 +136,6 @@ public class CollisionLogic : MonoBehaviour
     {
         shouldSpeedUp = false;
     }
+
+    public bool IsInBush { get { return inBush; } }
 }
