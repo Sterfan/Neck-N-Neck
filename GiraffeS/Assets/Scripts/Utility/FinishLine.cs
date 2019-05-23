@@ -23,4 +23,6 @@ public class FinishLine : MonoBehaviour
             theCamera.GetComponent<CameraController>().enabled = false;
         }
     }
+
+    public bool GetEndOfRace { get { return endOfRace; } }
 }
