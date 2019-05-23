@@ -8,6 +8,8 @@ public class HighscoreTable : MonoBehaviour
     [SerializeField] Transform EntryContainer;
     [SerializeField] Transform EntryTemplate;
 
+    string[] names = { "The very best giraffe", "Supersonic giraffe", "Rocket giraffe", "Usain Bolt giraffe", "Average giraffe", "Running giraffe", "Jogging giraffe", "Walking giraffe", "Happy giraffe", "Don't give up" };
+
     private void Awake()
     {
         EntryTemplate.gameObject.SetActive(false);
@@ -33,13 +35,14 @@ public class HighscoreTable : MonoBehaviour
             }
             EntryTransform.Find("Position").GetComponent<Text>().text = rankString;
 
-            string name = "Axel";
+            string name = names[i];
 
             EntryTransform.Find("Name").GetComponent<Text>().text = name;
 
-            int score = Random.Range(0, 10000); //Get PlayerPrefs score here
+            //int score = Random.Range(0, 10000); //Get PlayerPrefs score here
+            float score = PlayerPrefs.GetFloat(i + "HScore"); //Get PlayerPrefs score here
 
-            EntryTransform.Find("Time").GetComponent<Text>().text = score.ToString();
+            EntryTransform.Find("Time").GetComponent<Text>().text = score.ToString("F3");
         }
     }
 

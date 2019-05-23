@@ -26,6 +26,8 @@ public class CountdownTimer : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(startGame);
+
         if (timer >= 0.0f && canCount)
         {
             timer -= Time.deltaTime;
@@ -49,6 +51,7 @@ public class CountdownTimer : MonoBehaviour
         }
         else if (timer <= 0.0f && !doOnce)
         {
+            //Debug.Log("Should be true");
             startGame = true;
             one.SetActive(false);
             go.SetActive(true);
@@ -63,5 +66,10 @@ public class CountdownTimer : MonoBehaviour
     void SetGoFalse()
     {
         go.SetActive(false);
+    }
+
+    public bool GetStartGame()
+    {
+        return startGame;
     }
 }
