@@ -51,7 +51,7 @@ public class CollisionLogic : MonoBehaviour
     {
         //Debug.Log(multiplier);
         //Debug.Log(CountdownTimer.GetComponent<CountdownTimer>().startGame == true);
-        if (CountdownTimer.GetComponent<CountdownTimer>().GetStartGame() == true/* && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false*/)
+        if (CountdownTimer.GetComponent<CountdownTimer>().GetStartGame() == true && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false)
         {
             timeSinceHit += Time.deltaTime;
             //Debug.Log(timeSinceHit);
