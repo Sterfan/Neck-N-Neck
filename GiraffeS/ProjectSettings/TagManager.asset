@@ -12,6 +12,9 @@ TagManager:
   - DashAmmo
   - HeadObstacle
   - LegObstacle
+  - FirstSpeedLines
+  - SecondSpeedLines
+  - ThirdSpeedLines
   layers:
   - Default
   - TransparentFX
