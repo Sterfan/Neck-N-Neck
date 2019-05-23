@@ -18,6 +18,10 @@ public class CountdownTimer : MonoBehaviour
     private bool canCount = true;
     private bool doOnce = false;
 
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
 
     private void Start()
     {
