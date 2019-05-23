@@ -11,7 +11,10 @@ public class CameraMover : MonoBehaviour
     [SerializeField]float speed;
     float delayedSpeed;
     float speedMultiplier;
+    float startOffset;
+    float currentOffset;
     [SerializeField] bool isCamera;
+    bool speedChanged = false;
 
 
     private void Start()
@@ -20,16 +23,55 @@ public class CameraMover : MonoBehaviour
         {
             float CamX = gameObject.transform.position.x;
             float GrffX = Giraffe.transform.position.x;
-            float startOffset = CamX - GrffX;
+            startOffset = CamX - GrffX;
         }
     }
 
     private void Update()
     {
-        if (isCamera == true && Giraffe.GetComponent<PlayerController>().GetPlayerState() == PlayerController.PlayerStates.Dashing)
+        float CamX = gameObject.transform.position.x;
+        float GrffX = Giraffe.transform.position.x;
+        currentOffset = CamX - GrffX;
+        if (isCamera == true)
         {
-            Invoke("MakeSpeed", 0.3f);
+            if (Giraffe.GetComponent<PlayerController>().GetPlayerState() == PlayerController.PlayerStates.Dashing)
+            {
+                speed = 10.0f;
+            }
+            if (Giraffe.GetComponent<PlayerController>().GetPlayerState() != PlayerController.PlayerStates.Dashing)
+            {
+                if (startOffset > currentOffset)
+                {
+                    if (currentOffset <= 10.0f)
+                    {
+                        speed += 0.3f;
+                    }
+                    if (currentOffset > 10.0f && speed > 14.0f)
+                    {
+                        speed -= 0.3f;
+                    }
+                }
+                else
+                {
+                    speed = SpeedController.GetComponent<MainSpeed>().GetSpeed();
+                }
+                //Invoke("MakeSpeed", 0.5f);
+            }
+            //else
+            //{
+            //    speed = SpeedController.GetComponent<MainSpeed>().GetSpeed();
+            //}
         }
+        //if (isCamera == true/*&& speedChanged == true*/)
+        //{
+        //    if (Giraffe.GetComponent<PlayerController>().GetPlayerState() != PlayerController.PlayerStates.Dashing)
+        //    {
+        //        if (startOffset > (CamX - GrffX))
+        //        {
+        //            speed = 35.0f;
+        //        }
+        //    }
+        //}
         else
         {
             speed = SpeedController.GetComponent<MainSpeed>().GetSpeed();
@@ -43,13 +85,25 @@ public class CameraMover : MonoBehaviour
     {
         if (CountdownTimer.GetComponent<CountdownTimer>().startGame == true)
             transform.position += Vector3.right * Time.deltaTime * speed * speedMultiplier;
+        //if (isCamera)
+        //{
+        //    Debug.Log(speed);
+
+        //}
+    
         // transform.Translate(Vector2.right * Time.deltaTime * 30);
 
     }
 
+    //void CatchUp()
+    //{
+    //    speed = 35.0f;
+    //}
+
     void MakeSpeed()
     {
-        speed = SpeedController.GetComponent<MainSpeed>().GetSpeed();
+        //speed = SpeedController.GetComponent<MainSpeed>().GetSpeed();
+        speedChanged = true;
     }
 
     void SetSpeed(float x)
