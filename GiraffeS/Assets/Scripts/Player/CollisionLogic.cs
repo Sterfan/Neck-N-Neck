@@ -21,7 +21,7 @@ public class CollisionLogic : MonoBehaviour
 
     public Leaves leaves;
     
-    bool inBush;
+    bool inBush = false;
     bool shouldSpeedUp = false;
     float scrollSpeed;
     float multiplier;
