@@ -32,7 +32,7 @@ public class pButton : MonoBehaviour
     [HideInInspector]
     public int _FunctionIndex;
     [HideInInspector]
-    public List<string> Functions = new List<string>(new string[6] { "No Function", "Next Scene", "2", "3", "4", "5" });
+    public List<string> Functions = new List<string>(new string[6] { "No Function", "Play", "Scoreboard", "3", "4", "5" });
 
     private void Function()
     {
@@ -41,26 +41,30 @@ public class pButton : MonoBehaviour
 
     public void Selected(int grff)
     {
-        Debug.Log("Selected before all " + selected);
+        //Debug.Log("Selected before all " + selected);
         switch (grff)
         {
             case 1:
-                Debug.Log("Selected " + selected);
+                //Debug.Log("Selected " + selected);
                 if (selected == SelectionState.FromBot)
                     selected = SelectionState.ByBoth;
-                else
+                else if (selected == SelectionState.ByNone)
                     selected = SelectionState.FromTop;
+                else
+                    selected = SelectionState.ByBoth;
                 //selected = SelectionState.ByBoth;
                 break;
             case 2:
-                Debug.Log("Selected " + selected);
+                //Debug.Log("Selected " + selected);
                 if (selected == SelectionState.FromTop)
                     selected = SelectionState.ByBoth;
-                else
+                else if (selected == SelectionState.ByNone)
                     selected = SelectionState.FromBot;
-                //selected = SelectionState.ByBoth;
+                else
+                    selected = SelectionState.ByBoth;
                 break;
         }
+
         if (twoPlayerSelection)
         {
             if (selected.Equals(SelectionState.ByBoth))
@@ -76,20 +80,28 @@ public class pButton : MonoBehaviour
         switch (grff)
         {
             case 1:
-                Debug.Log("Deselected " + selected);
+                //Debug.Log("Deselected " + selected);
                 if (selected == SelectionState.FromTop)
                     selected = SelectionState.ByNone;
-                else
+                else if (selected == SelectionState.ByBoth)
                     selected = SelectionState.FromBot;
+                else if (selected == SelectionState.FromBot)
+                    selected = SelectionState.FromBot;
+                else
+                    selected = SelectionState.ByNone;
                 //GetComponentInChildren<SelectButton>().DeactivateLeaf();
                 transform.GetChild(0).gameObject.SetActive(false);
                 break;
             case 2:
-                Debug.Log("Deselected " + selected);
+                //Debug.Log("Deselected " + selected);
                 if (selected == SelectionState.FromBot)
                     selected = SelectionState.ByNone;
-                else
+                else if (selected == SelectionState.ByBoth)
                     selected = SelectionState.FromTop;
+                else if (selected == SelectionState.FromTop)
+                    selected = SelectionState.FromTop;
+                else
+                    selected = SelectionState.ByNone;
                 //Debug.Log(GetComponentInChildren<SelectButton>().gameObject.name);
                 transform.GetChild(1).gameObject.SetActive(false);
                 break;
