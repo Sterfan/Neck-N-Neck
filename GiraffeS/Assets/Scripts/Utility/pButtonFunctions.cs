@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class pButtonFunctions
@@ -10,11 +8,12 @@ public static class pButtonFunctions
         switch(index)
         {
             case 1:
-                Debug.Log("Play button works");
-                NextScene();
+                //Debug.Log("Play button works");
+                PlayScene();
                 break;
             case 2:
-                Debug.Log("Button 2 works as well hehe");
+                //Debug.Log("Scoreboard button works");
+                ScoreBoardScene();
                 break;
             case 3:
                 Debug.Log("Button 3 works as well hehe");
@@ -31,9 +30,13 @@ public static class pButtonFunctions
         }
     }
 
-
-    public static void NextScene()
+    static void PlayScene()
     {
         SceneManager.LoadScene("Axel's Scene");
+    }
+
+    static void ScoreBoardScene()
+    {
+        SceneManager.LoadScene("Leaderboard");
     }
 }

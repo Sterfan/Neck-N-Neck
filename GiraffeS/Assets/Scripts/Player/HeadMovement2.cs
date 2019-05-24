@@ -30,6 +30,7 @@ public class HeadMovement2 : MonoBehaviour
     public bool xGiraffe;
     public bool yGiraffe;
 
+    public float xHeadOffset = 0.7f;
     float headToBodyStart;
     float headToBody;
     float maxNeckLength = 7.0f;
@@ -76,7 +77,7 @@ public class HeadMovement2 : MonoBehaviour
             mouseInput = new Vector3(0, yMouse, 0);
 
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            Head.transform.position += mouseInput * mouseSensitivity;
+            Head.transform.position -= mouseInput * mouseSensitivity;
 
             //if (Body.GetComponent<PlayerController>().Jumping == true)
             //{
@@ -176,7 +177,7 @@ public class HeadMovement2 : MonoBehaviour
 
 
 
-        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + 0.7f, headPos.y + bodyPos.y + 0.4f) / 2;
+        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + xHeadOffset, headPos.y + bodyPos.y + 0.4f) / 2;
 
         float scaleX = Mathf.Abs(bodyPos.x - headPos.x);
         float scaleY = Mathf.Abs(bodyPos.y - headPos.y);

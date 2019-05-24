@@ -10,38 +10,38 @@ public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
     pButton button;
 
     [SerializeField]
+    Sprite buttonNormal;
+    [SerializeField]
+    Sprite buttonHovered;
+
+    [SerializeField]
     GameObject leaf;
 
     public static List<pButton> buttons = new List<pButton>();
-
-    //public static HashSet<pButton> allButtons = new HashSet<pButton>();
-    //public static HashSet<pButton> currentButtons = new HashSet<pButton>();
-
-    //public GameObject counterpart;
-    //[HideInInspector]
-    //public bool counterpartSelected = false;
-
-    //private void Awake()
-    //{
-    //    //allButtons.Add(this.GetComponentInParent<pButton>());
-
-    //}
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject == giraffeHead)
         {
-            if (Input.GetKeyDown(KeyCode.W) && collision.GetComponent<HeadMovement2>().xGiraffe)
+            if (button.GetComponent<SpriteRenderer>().sprite != buttonHovered)
+                button.GetComponent<SpriteRenderer>().sprite = buttonHovered;
+
+            if (Input.GetKey(KeyCode.W) && collision.GetComponent<HeadMovement2>().xGiraffe)
             {
                 //Debug.Log("W was pressed when graffe was in the collider");
                 InvokeSelection(1);
             }
-            if (Input.GetKeyDown(KeyCode.Space) && collision.GetComponent<HeadMovement2>().yGiraffe)
+            if (Input.GetKey(KeyCode.Space) && collision.GetComponent<HeadMovement2>().yGiraffe)
             {
                 //Debug.Log("Space was pressed when graffe was in the collider");
                 InvokeSelection(2);
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        button.GetComponent<SpriteRenderer>().sprite = buttonNormal;
     }
 
     public void InvokeSelection(int grff)
@@ -56,8 +56,6 @@ public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
     {
         foreach (var button in buttons)
         {
-            //Debug.Log(grff);
-            //leaf.SetActive(false);
             button.Deselected(grff);
         }
     }

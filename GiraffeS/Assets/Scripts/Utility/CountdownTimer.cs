@@ -18,6 +18,10 @@ public class CountdownTimer : MonoBehaviour
     private bool canCount = true;
     private bool doOnce = false;
 
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
 
     private void Start()
     {
@@ -38,12 +42,14 @@ public class CountdownTimer : MonoBehaviour
             }
             if (timer > 1.0f && timer <= 2.0f)
             {
+                //three.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
                 three.SetActive(false);
                 two.SetActive(true);
 
             }
             if (timer > 0.0f && timer <= 1.0f)
             {
+                //two.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
                 two.SetActive(false);
                 one.SetActive(true);
 
@@ -53,6 +59,7 @@ public class CountdownTimer : MonoBehaviour
         {
             //Debug.Log("Should be true");
             startGame = true;
+            //one.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
             one.SetActive(false);
             go.SetActive(true);
             Invoke("SetGoFalse", 0.5f);
@@ -65,6 +72,7 @@ public class CountdownTimer : MonoBehaviour
 
     void SetGoFalse()
     {
+        //go.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
         go.SetActive(false);
     }
 

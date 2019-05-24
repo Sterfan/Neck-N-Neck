@@ -46,4 +46,11 @@ public class HighscoreTable : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+    }
 }

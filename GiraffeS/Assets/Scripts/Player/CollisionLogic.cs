@@ -50,6 +50,7 @@ public class CollisionLogic : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(shouldSpeedUp);
         //Debug.Log(multiplier);
         //Debug.Log(CountdownTimer.GetComponent<CountdownTimer>().startGame == true);
         if (CountdownTimer.GetComponent<CountdownTimer>().GetStartGame() == true && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false)
@@ -63,14 +64,14 @@ public class CollisionLogic : MonoBehaviour
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
                 //if (multiplier <= 1.15f)
                 //{
-                Debug.Log("First Lines");
+                //Debug.Log("First Lines");
                 //StartSpeedLines(FirstSpeedLines);
                 HeadSpeedLines1.SetActive(true);
                 BodySpeedLines1.SetActive(true);
                 //}
                 if (multiplier >= 1.13f)
                 {
-                    Debug.Log("Second Lines");
+                    //Debug.Log("Second Lines");
 
                     HeadSpeedLines2.SetActive(true);
                     BodySpeedLines2.SetActive(true);
@@ -84,7 +85,7 @@ public class CollisionLogic : MonoBehaviour
                 }
                 if (multiplier >= 1.23f)
                 {
-                    Debug.Log("Third Lines");
+                    //Debug.Log("Third Lines");
 
                     HeadSpeedLines3.SetActive(true);
                     BodySpeedLines3.SetActive(true);
@@ -113,12 +114,17 @@ public class CollisionLogic : MonoBehaviour
 
         if (shouldSpeedUp == true && multiplier <= 1.0f)
         {
-            multiplier += acceleration * Time.deltaTime;
-            Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
-            if (multiplier >= 1.0f)
+            if (Giraffe.GetComponent<PlayerController>().GetPlayerState() != PlayerController.PlayerStates.Dashing)
             {
-                shouldSpeedUp = false;
-                multiplier = 1.0f;
+                //Debug.Log("Collision interference");
+                multiplier += acceleration * Time.deltaTime;
+                Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
+                if (multiplier >= 1.0f)
+                {
+                    shouldSpeedUp = false;
+                    multiplier = 1.0f;
+                }
+
             }
             //Debug.Log(scrollSpeed);
         }
@@ -130,6 +136,7 @@ public class CollisionLogic : MonoBehaviour
     {
         if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
         {
+            shouldSpeedUp = false;
             //LeafParticles.SetActive(true);
             //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
             //{
@@ -170,9 +177,10 @@ public class CollisionLogic : MonoBehaviour
     {
         //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
         //{
-            if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
+        if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
             //LeafParticles.SetActive(true);
             //LeafParticles.GetComponent<ParticleSystem>().Play();
+            shouldSpeedUp = false;
             timeSinceHit = 0.0f;
             if (multiplier >= 0.25f)
             {
