@@ -5,6 +5,19 @@ using UnityEngine.EventSystems;
 
 public class pButton : MonoBehaviour
 {
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+    }
+
     public enum SelectionState
     {
         ByNone,

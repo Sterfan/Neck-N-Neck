@@ -77,7 +77,7 @@ public class HeadMovement2 : MonoBehaviour
             mouseInput = new Vector3(0, yMouse, 0);
 
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            Head.transform.position += mouseInput * mouseSensitivity;
+            Head.transform.position -= mouseInput * mouseSensitivity;
 
             //if (Body.GetComponent<PlayerController>().Jumping == true)
             //{
