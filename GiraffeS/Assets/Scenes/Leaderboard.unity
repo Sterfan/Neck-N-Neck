@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 144020803}
   - component: {fileID: 144020802}
   - component: {fileID: 144020804}
+  - component: {fileID: 144020805}
   m_Layer: 0
   m_Name: ManageScenes
   m_TagString: Untagged
@@ -170,6 +171,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backInBlack: {fileID: 1656883001}
   nextScene: Menu
+--- !u!114 &144020805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144020801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1283925b62f8f4e974539019c4f033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backInBlack: {fileID: 1656883001}
 --- !u!1 &168817437
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
