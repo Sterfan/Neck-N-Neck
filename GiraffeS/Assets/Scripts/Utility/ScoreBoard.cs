@@ -64,16 +64,16 @@ public class ScoreBoard : MonoBehaviour
             {
                 if (newScore < PlayerPrefs.GetFloat(i+"HScore")) //Change the sign to "NS < OS" here since we want lowest time
                 {
-                    Debug.Log("New Score: " + newScore);
+                    //Debug.Log("New Score: " + newScore);
                     oldScore = PlayerPrefs.GetFloat(i + "HScore");
-                    Debug.Log("Old Score: " + oldScore);
+                    //Debug.Log("Old Score: " + oldScore);
                     //oldName = PlayerPrefs.GetString(i + "HScoreName");
                     PlayerPrefs.SetFloat(i + "HScore", newScore);
                     //PlayerPrefs.SetString(i + "HScoreName", newName);
                     newScore = oldScore;
                     //newName = oldName;
-                    Debug.Log("New Score after: " + newScore);
-                    Debug.Log("Old Score after: " + oldScore);
+                    //Debug.Log("New Score after: " + newScore);
+                    //Debug.Log("Old Score after: " + oldScore);
                 }
             }
             else

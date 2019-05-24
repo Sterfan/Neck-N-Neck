@@ -16,7 +16,7 @@ public class pButton : MonoBehaviour
     private void OnEnable()
     {
         SelectButton.buttons.Add(this);
-        Debug.Log("On Enable " + selected);
+        //Debug.Log("On Enable " + selected);
     }
 
     private void OnDisable()
@@ -76,7 +76,7 @@ public class pButton : MonoBehaviour
 
     public void Deselected(int grff)
     {
-        Debug.Log("Deselected before all " + selected);
+        //Debug.Log("Deselected before all " + selected);
         switch (grff)
         {
             case 1:

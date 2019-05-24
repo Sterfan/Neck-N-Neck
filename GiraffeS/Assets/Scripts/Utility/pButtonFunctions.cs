@@ -8,11 +8,11 @@ public static class pButtonFunctions
         switch(index)
         {
             case 1:
-                Debug.Log("Play button works");
+                //Debug.Log("Play button works");
                 PlayScene();
                 break;
             case 2:
-                Debug.Log("Scoreboard button works");
+                //Debug.Log("Scoreboard button works");
                 ScoreBoardScene();
                 break;
             case 3:
