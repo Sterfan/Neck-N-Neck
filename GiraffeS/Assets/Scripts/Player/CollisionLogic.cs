@@ -113,6 +113,7 @@ public class CollisionLogic : MonoBehaviour
 
         if (shouldSpeedUp == true && multiplier <= 1.0f)
         {
+            Debug.Log("Collision interference");
             multiplier += acceleration * Time.deltaTime;
             Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
             if (multiplier >= 1.0f)
