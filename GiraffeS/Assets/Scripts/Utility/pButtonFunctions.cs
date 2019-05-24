@@ -28,15 +28,18 @@ public static class pButtonFunctions
                 Debug.LogError("No button function passed in the switch function in the pButtonFunctions script.");
                 break;
         }
+        GameObject.Find("ManageScenes").GetComponent<FadeOut>().StartCoroutine("fadeOut");
     }
 
     static void PlayScene()
     {
-        SceneManager.LoadScene("Axel's Scene");
+        //SceneManager.LoadScene("Axel's Scene");
+        GameObject.Find("ManageScenes").GetComponent<FadeOut>().nextScene = "Axel's Scene";
     }
 
     static void ScoreBoardScene()
     {
-        SceneManager.LoadScene("Leaderboard");
+        //SceneManager.LoadScene("Leaderboard");
+        GameObject.Find("ManageScenes").GetComponent<FadeOut>().nextScene = "Leaderboard";
     }
 }

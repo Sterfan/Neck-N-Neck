@@ -31,11 +31,10 @@ public class CountdownTimer : MonoBehaviour
     private void Update()
     {
         //Debug.Log(startGame);
-
         if (timer >= 0.0f && canCount)
         {
             timer -= Time.deltaTime;
-            if (timer > 2.0f)
+            if (timer <= 3.0f && timer > 2.0f)
             {
                 //text.text = "3";
                 three.SetActive(true);
