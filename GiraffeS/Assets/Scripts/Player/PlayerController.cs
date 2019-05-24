@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(12, 13, true);
         GetComponent<CollisionLogic>().SetSpeedUpFalse();
         Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
-        Debug.Log("SPEED MULITPLIER AT DASH = " + Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
+        //Debug.Log("SPEED MULITPLIER AT DASH = " + Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
         SetSpeedParticlesActive(true);
         //playerState = PlayerStates.Dashing;
 
@@ -198,6 +198,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(12, 13, false);
         DashFlames.SetActive(false);
         SetSpeedParticlesActive(false);
+        gameObject.GetComponent<CollisionLogic>().SetSpeedUpFalse();
     }
 
     public void SetDashAmmo(float ammo)
