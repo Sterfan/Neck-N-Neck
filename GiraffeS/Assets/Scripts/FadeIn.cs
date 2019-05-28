@@ -8,6 +8,7 @@ public class FadeIn : MonoBehaviour
 
     private void Start()
     {
+        backInBlack.color = new Color(0f, 0f, 0f, 1f);
         StartCoroutine("fadeIn");
     }
 

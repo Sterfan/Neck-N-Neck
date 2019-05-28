@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1964,7 +1964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803260340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2, y: 12.52, z: -5.125}
+  m_LocalPosition: {x: -3.2, y: 13.67, z: -5.125}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 532360439}
@@ -3657,7 +3657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852707065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2, y: 10.23, z: -5.125}
+  m_LocalPosition: {x: -3.2, y: 11.379999, z: -5.125}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1340739766}
@@ -3936,11 +3936,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: jumpInput
-      value: 119
-      objectReference: {fileID: 0}
     - target: {fileID: 1032680166864618952, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_IsActive
@@ -4016,11 +4011,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2723852278118834307, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2404472579737509460, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Mesh
@@ -4035,6 +4025,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: jumpInput
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723852278118834307, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a71f163688b190b42b4e280ad04d6daf, type: 3}

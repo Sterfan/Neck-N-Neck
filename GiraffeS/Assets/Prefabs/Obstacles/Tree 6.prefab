@@ -384,7 +384,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1250508379513550855}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2813090371381145353
 SpriteRenderer:
@@ -592,92 +592,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &3367185592656231629
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3873163733185175356}
-  - component: {fileID: 803587134860445798}
-  m_Layer: 11
-  m_Name: Collider
-  m_TagString: HeadObstacle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3873163733185175356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3367185592656231629}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.6230764, y: -1.4512502, z: 0}
-  m_LocalScale: {x: 1.4894496, y: 1.445086, z: 0.31110466}
-  m_Children: []
-  m_Father: {fileID: 1250508379513550855}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &803587134860445798
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3367185592656231629}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.000001, y: 10.000001}
-    newSize: {x: 21, y: 15}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 5.0455723, y: 0.88578075}
-      - {x: 5.021046, y: 0.9357353}
-      - {x: 4.972274, y: 0.98832387}
-      - {x: 4.8833504, y: 1.0403881}
-      - {x: 4.8277245, y: 1.0475981}
-      - {x: 4.733543, y: 1.1303103}
-      - {x: 4.6064725, y: 1.2028714}
-      - {x: 4.456708, y: 1.2220358}
-      - {x: 4.3814487, y: 1.2065551}
-      - {x: 4.313086, y: 1.2659715}
-      - {x: 4.2329125, y: 1.2791165}
-      - {x: 4.142179, y: 1.2749104}
-      - {x: 4.047544, y: 1.2349445}
-      - {x: 3.9795907, y: 1.157065}
-      - {x: 3.9590516, y: 1.096219}
-      - {x: 3.8975422, y: 1.062109}
-      - {x: 3.8567448, y: 1.00918}
-      - {x: 3.8403006, y: 0.91716915}
-      - {x: 3.9116588, y: 0.8530739}
-      - {x: 4.0467253, y: 0.8327783}
-      - {x: 4.143838, y: 0.85947025}
-      - {x: 4.214787, y: 0.79111105}
-      - {x: 4.3532157, y: 0.76935035}
-      - {x: 4.5186915, y: 0.7958515}
-      - {x: 4.598714, y: 0.74011475}
-      - {x: 4.6637144, y: 0.723813}
-      - {x: 4.7840824, y: 0.73853433}
-      - {x: 4.920937, y: 0.75641656}
-      - {x: 5.012339, y: 0.7995392}
-      - {x: 5.0382013, y: 0.83845186}
 --- !u!1 &4382328535774529065
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +620,6 @@ Transform:
   m_LocalPosition: {x: -2.2323, y: 0.178, z: 0}
   m_LocalScale: {x: 0.13322967, y: 0.24242306, z: 0.23473467}
   m_Children:
-  - {fileID: 3873163733185175356}
   - {fileID: 8386047640220397013}
   m_Father: {fileID: 7155680734380728642}
   m_RootOrder: 5
@@ -1014,12 +927,15 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -2.0570168, y: 0.3456436}
       - {x: -2.1132903, y: 0.31684604}
-      - {x: -2.1261556, y: 0.2188681}
-      - {x: -2.1494489, y: 0.19104855}
-      - {x: -2.1476614, y: 0.1541567}
-      - {x: -2.0480978, y: 0.14209177}
-      - {x: -1.9565835, y: 0.07487331}
-      - {x: -1.9003872, y: 0.14326757}
+      - {x: -2.1506624, y: 0.21118669}
+      - {x: -2.2831757, y: 0.27525905}
+      - {x: -2.351632, y: 0.17824619}
+      - {x: -2.3243165, y: 0.128552}
+      - {x: -2.1230986, y: 0.09508748}
+      - {x: -2.1069987, y: 0.15062411}
+      - {x: -2.0511613, y: 0.13184983}
+      - {x: -1.9555626, y: 0.05694999}
+      - {x: -1.891197, y: 0.1253442}
 --- !u!1 &7468229818902984369
 GameObject:
   m_ObjectHideFlags: 0

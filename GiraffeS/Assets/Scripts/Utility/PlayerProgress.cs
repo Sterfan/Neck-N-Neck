@@ -82,6 +82,14 @@ public class PlayerProgress : MonoBehaviour
                 {
                     ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime); // CALL THIS ONLY ONCE
                     scored = true;
+                    if (Giraffe.GetComponentInChildren<HeadMovement2>().xGiraffe == true)
+                    {
+                        PlayerPrefs.SetFloat("xScore", gameTime);
+                    }
+                    else if (Giraffe.GetComponentInChildren<HeadMovement2>().yGiraffe == true)
+                    {
+                        PlayerPrefs.SetFloat("yScore", gameTime);
+                    }
                 }
             }
 

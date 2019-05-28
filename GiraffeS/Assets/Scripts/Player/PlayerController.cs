@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(12, 13, false);
         DashFlames.SetActive(false);
         SetSpeedParticlesActive(false);
-        gameObject.GetComponent<CollisionLogic>().SetSpeedUpFalse();
+        //gameObject.GetComponent<CollisionLogic>().SetSpeedUpFalse();
     }
 
     public void SetDashAmmo(float ammo)
