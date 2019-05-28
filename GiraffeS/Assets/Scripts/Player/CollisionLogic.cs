@@ -50,7 +50,7 @@ public class CollisionLogic : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(shouldSpeedUp);
+        //Debug.Log(shouldSpeedUp);
         //Debug.Log(multiplier);
         //Debug.Log(CountdownTimer.GetComponent<CountdownTimer>().startGame == true);
         if (CountdownTimer.GetComponent<CountdownTimer>().GetStartGame() == true && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false)
