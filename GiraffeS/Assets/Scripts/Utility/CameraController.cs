@@ -14,6 +14,13 @@ public class CameraController : MonoBehaviour
     private Vector2 direction;
     private Vector2 startingPosition;
 
+    float originalCameraPosY;
+
+    private void Awake()
+    {
+        originalCameraPosY = transform.position.y;
+    }
+
     void FixedUpdate()
     {
         Vector3 desiredPosition = new Vector3(transform.position.x, HitPointY() + desiredGroundDistance, transform.position.z);
@@ -40,4 +47,6 @@ public class CameraController : MonoBehaviour
 
         return hit.point.y;
     }
+
+    public float GetOGYPos { get { return originalCameraPosY; } }
 }
