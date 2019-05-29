@@ -207,7 +207,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 1
   right: 0
   left: 0
@@ -307,7 +306,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 1
   left: 0
@@ -407,7 +405,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 1
   right: 0
   left: 0
@@ -544,7 +541,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 0
   left: 0
@@ -708,7 +704,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 0
   left: 0
@@ -870,7 +865,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 1
   left: 0
@@ -29527,7 +29521,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 7151196379781376190}
   Background1: {fileID: 5351729298373011975}
+  Backgrounds: {fileID: 0}
   otherGiraffeTracker: {fileID: 5351729299433678856}
+  branchTracker: {fileID: 0}
   Giraffe: {fileID: 7650223835901670118}
   FinishLine: {fileID: 5351729297596014088}
   ScoreManager: {fileID: 8143171758949389547}
@@ -38992,7 +38988,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 7151196379781376190}
   Background1: {fileID: 0}
+  Backgrounds: {fileID: 0}
   otherGiraffeTracker: {fileID: 5351729298618205007}
+  branchTracker: {fileID: 0}
   Giraffe: {fileID: 0}
   FinishLine: {fileID: 5351729299331707670}
   ScoreManager: {fileID: 8143171758949389547}
@@ -58042,7 +58040,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 0
   left: 1
@@ -58142,7 +58139,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 0
   left: 0
@@ -58304,7 +58300,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 0
   left: 1
@@ -58404,7 +58399,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 1
   right: 0
   left: 0
@@ -58600,7 +58594,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 1
   right: 0
   left: 0
@@ -58700,7 +58693,6 @@ MonoBehaviour:
   giraffe: {fileID: 0}
   shakeAmount: 5
   stefansPenisSize: 4
-  lerp: 0
   top: 0
   right: 0
   left: 0
@@ -62478,7 +62470,7 @@ PrefabInstance:
     - target: {fileID: 8047573175797887159, guid: 4a4872fb1ebc8c74c946586e062f662e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7122097159596181321, guid: 4a4872fb1ebc8c74c946586e062f662e,
         type: 3}
@@ -62648,7 +62640,7 @@ PrefabInstance:
     - target: {fileID: 3288641937187177203, guid: 4a4872fb1ebc8c74c946586e062f662e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2362887184409281036, guid: 4a4872fb1ebc8c74c946586e062f662e,
         type: 3}
@@ -63265,10 +63257,25 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 7151196378169538786}
+    - target: {fileID: 2988998475154979057, guid: 11df645fd6056104c8859c0dfeac3ca5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988998473688192156, guid: 11df645fd6056104c8859c0dfeac3ca5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2988998473656091853, guid: 11df645fd6056104c8859c0dfeac3ca5,
         type: 3}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988998474632737287, guid: 11df645fd6056104c8859c0dfeac3ca5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7435734131565825345, guid: 11df645fd6056104c8859c0dfeac3ca5,
         type: 3}
@@ -63282,18 +63289,6 @@ PrefabInstance:
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11df645fd6056104c8859c0dfeac3ca5, type: 3}
---- !u!114 &7151196379216698650 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2988998473656091852, guid: 11df645fd6056104c8859c0dfeac3ca5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5351729299088054742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7151196379322952656 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2988998474632737286, guid: 11df645fd6056104c8859c0dfeac3ca5,
@@ -63309,6 +63304,18 @@ MonoBehaviour:
 --- !u!114 &7151196377768943910 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2988998475154979056, guid: 11df645fd6056104c8859c0dfeac3ca5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5351729299088054742}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7151196379216698650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2988998473656091852, guid: 11df645fd6056104c8859c0dfeac3ca5,
     type: 3}
   m_PrefabInstance: {fileID: 5351729299088054742}
   m_PrefabAsset: {fileID: 0}

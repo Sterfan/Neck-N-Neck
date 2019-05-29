@@ -9,6 +9,7 @@ public class PlayerProgress : MonoBehaviour
     public GameObject Background1;
     public GameObject Backgrounds;
     public GameObject otherGiraffeTracker;
+    public GameObject branchTracker;
     public GameObject Giraffe;
     public GameObject FinishLine;
     public GameObject ScoreManager;
@@ -21,6 +22,7 @@ public class PlayerProgress : MonoBehaviour
     float gameTime = 0;
     Vector3 startPos;
     Vector3 endPos;
+    Vector3[] branchCorners;
     float percentProgress;
     float distanceTraveled;
     float distanceRemaining;
@@ -46,6 +48,7 @@ public class PlayerProgress : MonoBehaviour
         startPos = gameObject.GetComponent<RectTransform>().position;
         //endPos = cam.transform.position.x - (width / 4);
         endPos = gameObject.GetComponent<RectTransform>().offsetMax;
+        //branchCorners = branchTracker.GetComponent<RectTransform>().GetWorldCorners();
         //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
     }
