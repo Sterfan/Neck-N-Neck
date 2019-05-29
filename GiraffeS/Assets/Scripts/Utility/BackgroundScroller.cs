@@ -31,7 +31,7 @@ public class BackgroundScroller : MonoBehaviour
     void Start()
     {
         //startPosition = new Vector2(transform.position.x + giraffe.transform.position.x, transform.position.y);
-        startPosition = transform.position;
+        startPosition = giraffe.transform.position;
         if (isMainBg)
         {
             endPosition = finishLine.transform.position;
@@ -56,7 +56,7 @@ public class BackgroundScroller : MonoBehaviour
                 transform.position = startPosition + Vector2.right * newPosition;
             if (isMainBg)
             {
-                distanceTraveled = totalDistance - (startPosition.x - giraffe.transform.position.x);
+                distanceTraveled = totalDistance - (giraffe.transform.position.x - startPosition.x);
                 percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
             }
         }

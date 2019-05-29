@@ -22,8 +22,8 @@ public class PlayerProgress : MonoBehaviour
     public Sprite second;
 
     float gameTime = 0;
-    Vector3 startPos;
-    Vector3 endPos;
+    Vector2 startPos;
+    float endPos;
     Vector3[] branchCorners;
     float percentProgress;
     float distanceTraveled;
@@ -31,6 +31,7 @@ public class PlayerProgress : MonoBehaviour
     float height;
     float width;
     float trackLength;
+    float pizzaDistance;
     public float yPos = 5.7f;
 
     public Text timer;
@@ -48,16 +49,19 @@ public class PlayerProgress : MonoBehaviour
         //width = height * cam.aspect;
         //startPos = cam.transform.position.x - (width / 4);
         startPos = gameObject.GetComponent<RectTransform>().position;
+        endPos = branchTracker.GetComponent<RectTransform>().rect.width /** branchTracker.GetComponent<RectTransform>().localScale.x*/;
+        pizzaDistance = branchTracker.GetComponent<RectTransform>().rect.width;
         //endPos = cam.transform.position.x - (width / 4);
         //endPos = gameObject.GetComponent<RectTransform>().offsetMax;
         //branchyTracker.GetWorldCorners(branchCorners);
-        Debug.Log(branchCorners);
+        //Debug.Log(branchCorners);
         //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
     }
 
     void LateUpdate()
     {
+
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             percentProgress = Background1.GetComponent<BackgroundScroller>().GetPercentCompleted();
@@ -82,6 +86,8 @@ public class PlayerProgress : MonoBehaviour
             }
 
             //gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
+            gameObject.transform.position = new Vector2(startPos.x + pizzaDistance * percentProgress / 100, startPos.y);
+            Debug.Log(pizzaDistance * percentProgress / 100);
             timer.text = gameTime.ToString("n2");
 
             if (isFinished == true)
