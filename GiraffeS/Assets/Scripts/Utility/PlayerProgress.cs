@@ -18,8 +18,8 @@ public class PlayerProgress : MonoBehaviour
     public Sprite second;
 
     float gameTime = 0;
-    float startPos;
-    float endPos;
+    Vector3 startPos;
+    Vector3 endPos;
     float percentProgress;
     float distanceTraveled;
     float distanceRemaining;
@@ -38,12 +38,14 @@ public class PlayerProgress : MonoBehaviour
 
     void Start()
     {
-        Camera cam = Camera.main;
-        height = 2f * cam.orthographicSize;
-        width = height * cam.aspect;
-        startPos = cam.transform.position.x - (width / 4);
-        endPos = cam.transform.position.x - (width / 4);
-        gameObject.transform.position = new Vector2(startPos, yPos);
+        //Camera cam = Camera.main;
+        //height = 2f * cam.orthographicSize;
+        //width = height * cam.aspect;
+        //startPos = cam.transform.position.x - (width / 4);
+        startPos = gameObject.GetComponent<RectTransform>().position;
+        //endPos = cam.transform.position.x - (width / 4);
+        endPos = gameObject.GetComponent<RectTransform>().offsetMax;
+        //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
     }
 
@@ -72,7 +74,7 @@ public class PlayerProgress : MonoBehaviour
                 }
             }
 
-            gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
+            //gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
             timer.text = gameTime.ToString("n2");
 
             if (isFinished == true)
