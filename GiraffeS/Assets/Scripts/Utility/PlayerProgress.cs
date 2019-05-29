@@ -14,6 +14,8 @@ public class PlayerProgress : MonoBehaviour
     public GameObject FinishLine;
     public GameObject ScoreManager;
 
+    public RectTransform branchyTracker;
+
     public Image position;
 
     public Sprite first;
@@ -47,8 +49,9 @@ public class PlayerProgress : MonoBehaviour
         //startPos = cam.transform.position.x - (width / 4);
         startPos = gameObject.GetComponent<RectTransform>().position;
         //endPos = cam.transform.position.x - (width / 4);
-        endPos = gameObject.GetComponent<RectTransform>().offsetMax;
-        //branchCorners = branchTracker.GetComponent<RectTransform>().GetWorldCorners();
+        //endPos = gameObject.GetComponent<RectTransform>().offsetMax;
+        branchyTracker.GetWorldCorners(branchCorners);
+        Debug.Log(branchCorners);
         //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
     }
