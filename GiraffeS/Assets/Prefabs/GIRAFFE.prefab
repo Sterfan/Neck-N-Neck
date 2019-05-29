@@ -9820,7 +9820,8 @@ MonoBehaviour:
   HeadSpeedLines3: {fileID: 1204216591721673353}
   BodySpeedLines3: {fileID: 8342490658008015472}
   leaves: {fileID: 0}
-  acceleration: 0.15
+  spikes: {fileID: 0}
+  acceleration: 0.4
 --- !u!114 &5368653914321092920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39810,6 +39811,7 @@ MonoBehaviour:
   mouseSensitivity: 0.5
   xGiraffe: 0
   yGiraffe: 1
+  xHeadOffset: 0.7
 --- !u!70 &6146889485680537247
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

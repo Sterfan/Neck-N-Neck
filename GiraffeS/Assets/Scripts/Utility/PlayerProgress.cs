@@ -50,7 +50,7 @@ public class PlayerProgress : MonoBehaviour
         startPos = gameObject.GetComponent<RectTransform>().position;
         //endPos = cam.transform.position.x - (width / 4);
         //endPos = gameObject.GetComponent<RectTransform>().offsetMax;
-        branchyTracker.GetWorldCorners(branchCorners);
+        //branchyTracker.GetWorldCorners(branchCorners);
         Debug.Log(branchCorners);
         //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
