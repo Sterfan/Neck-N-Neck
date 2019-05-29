@@ -7,6 +7,7 @@ public class PlayerProgress : MonoBehaviour
 {
     public GameObject countdownTimer;
     public GameObject Background1;
+    public GameObject Backgrounds;
     public GameObject otherGiraffeTracker;
     public GameObject Giraffe;
     public GameObject FinishLine;
@@ -79,7 +80,7 @@ public class PlayerProgress : MonoBehaviour
 
             if (isFinished == true)
             {
-                Background1.GetComponent<BackgroundScroller>().SetSpeedMultiplier(0.0f);
+                Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0.0f);
                 if (scored == false)
                 {
                     ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime); // CALL THIS ONLY ONCE

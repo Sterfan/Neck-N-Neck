@@ -156,7 +156,7 @@ public class CollisionLogic : MonoBehaviour
                 ThornParticles.GetComponent<ParticleSystem>().Play();
                 inSpikes = true;
                 if (spikes == null)
-                    Debug.LogError(gameObject.name + (" is missing leaf reference."));
+                    Debug.LogError(gameObject.name + (" is missing spikes reference."));
                 else
                     spikes.StartShakyShaky();
             }
