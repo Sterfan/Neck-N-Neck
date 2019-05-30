@@ -10,7 +10,8 @@ public class BackgroundScroller : MonoBehaviour
     public float scrollSpeed = 10.0f;
     float speedMultiplier = 1.0f;
 
-    private Vector2 startPosition;
+    private Vector2 BGStartPos;
+    private Vector2 giraffeStartPos;
     private Vector2 endPosition;
 
     float totalDistance;
@@ -31,11 +32,12 @@ public class BackgroundScroller : MonoBehaviour
     void Start()
     {
         //startPosition = new Vector2(transform.position.x + giraffe.transform.position.x, transform.position.y);
-        startPosition = giraffe.transform.position;
+        giraffeStartPos = giraffe.transform.position;
+        BGStartPos = transform.position;
         if (isMainBg)
         {
             endPosition = finishLine.transform.position;
-            totalDistance = endPosition.x - startPosition.x;
+            totalDistance = endPosition.x - giraffeStartPos.x;
         }
     }
 
@@ -51,12 +53,12 @@ public class BackgroundScroller : MonoBehaviour
         {
             newPosition += Time.deltaTime * scrollSpeed * speedMultiplier;
             if (!cameraScrolling)
-                transform.position = startPosition + Vector2.left * newPosition;
+                transform.position = BGStartPos + Vector2.left * newPosition;
             if (cameraScrolling)
-                transform.position = startPosition + Vector2.right * newPosition;
+                transform.position = BGStartPos + Vector2.right * newPosition;
             if (isMainBg)
             {
-                distanceTraveled = totalDistance - (giraffe.transform.position.x - startPosition.x);
+                distanceTraveled = totalDistance - (giraffe.transform.position.x - giraffeStartPos.x);
                 percentCompleted = (1 - (distanceTraveled / totalDistance)) * 100;
             }
         }
