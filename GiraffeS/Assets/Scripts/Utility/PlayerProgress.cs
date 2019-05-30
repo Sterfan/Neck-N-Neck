@@ -86,8 +86,7 @@ public class PlayerProgress : MonoBehaviour
             }
 
             //gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
-            gameObject.transform.position = new Vector2(startPos.x + pizzaDistance * percentProgress / 100, startPos.y);
-            Debug.Log(pizzaDistance * percentProgress / 100);
+            gameObject.transform.position = new Vector2(startPos.x + pizzaDistance * 0.98f * percentProgress / 100, startPos.y);
             timer.text = gameTime.ToString("n2");
 
             if (isFinished == true)
