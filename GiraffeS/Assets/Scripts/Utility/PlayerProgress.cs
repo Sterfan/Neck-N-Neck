@@ -14,7 +14,7 @@ public class PlayerProgress : MonoBehaviour
     public GameObject FinishLine;
     public GameObject ScoreManager;
 
-    public RectTransform branchyTracker;
+    //public RectTransform branchyTracker;
 
     public Image position;
 
@@ -24,7 +24,7 @@ public class PlayerProgress : MonoBehaviour
     float gameTime = 0;
     Vector2 startPos;
     float endPos;
-    Vector3[] branchCorners;
+    //Vector3[] branchCorners;
     float percentProgress;
     float distanceTraveled;
     float distanceRemaining;
@@ -57,6 +57,7 @@ public class PlayerProgress : MonoBehaviour
         //Debug.Log(branchCorners);
         //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
+        //Debug.Log(trackLength);
     }
 
     void LateUpdate()
@@ -91,6 +92,7 @@ public class PlayerProgress : MonoBehaviour
 
             if (isFinished == true)
             {
+                Giraffe.GetComponent<Animator>().SetBool("IsFinished", true);
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0.0f);
                 if (scored == false)
                 {
@@ -110,6 +112,8 @@ public class PlayerProgress : MonoBehaviour
             if (isFinished == true && otherGiraffeTracker.GetComponent<PlayerProgress>().isFinished == false)
             {
                 winner = true;
+                //Giraffe.GetComponent<Animator>().SetBool("IsWinner", true);
+                Invoke("SetBoolWinner", 1.5f);
             }
             if (winner == true)
             {
@@ -123,6 +127,7 @@ public class PlayerProgress : MonoBehaviour
             if (isFinished == true && winner == false)
             {
                 resultText.text = "SECOND WINNER";
+                Giraffe.GetComponent<Animator>().SetBool("IsLoser", true);
             }
         }
     }
@@ -130,5 +135,10 @@ public class PlayerProgress : MonoBehaviour
     public void ChangePosSprite()
     {
         position.sprite = second;
+    }
+
+    public void SetBoolWinner()
+    {
+        Giraffe.GetComponent<Animator>().SetBool("IsWinner", true);
     }
 }
