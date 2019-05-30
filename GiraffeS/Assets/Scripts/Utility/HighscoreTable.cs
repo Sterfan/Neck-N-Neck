@@ -13,6 +13,7 @@ public class HighscoreTable : MonoBehaviour
     private void Awake()
     {
         EntryTemplate.gameObject.SetActive(false);
+        Color color = EntryTemplate.Find("Time").GetComponent<Text>().color;
 
         float templateHeight = 25.0f;
         for (int i = 0; i < 10; i++)
@@ -41,8 +42,20 @@ public class HighscoreTable : MonoBehaviour
 
             //int score = Random.Range(0, 10000); //Get PlayerPrefs score here
             float score = PlayerPrefs.GetFloat(i + "HScore"); //Get PlayerPrefs score here
+            if (score == PlayerPrefs.GetFloat("xScore") || score == PlayerPrefs.GetFloat("yScore"))
+            {
+                EntryTransform.Find("Time").GetComponent<Text>().color = new Color(255f / 255, 20f / 255, 147f / 255, 1);
+                EntryTransform.Find("Name").GetComponent<Text>().color = new Color(255f / 255, 20f / 255, 147f / 255, 1);
+                EntryTransform.Find("Position").GetComponent<Text>().color = new Color(255f / 255, 20f / 255, 147f / 255, 1);
+            }
+            else
+            {
+                EntryTemplate.Find("Time").GetComponent<Text>().color = color;
+                EntryTemplate.Find("Name").GetComponent<Text>().color = color;
+                EntryTemplate.Find("Position").GetComponent<Text>().color = color;
+            }
 
-            EntryTransform.Find("Time").GetComponent<Text>().text = score.ToString("F3");
+            EntryTransform.Find("Time").GetComponent<Text>().text = score.ToString("n3");
         }
     }
 

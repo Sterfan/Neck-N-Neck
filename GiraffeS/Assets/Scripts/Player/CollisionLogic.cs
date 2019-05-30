@@ -20,8 +20,10 @@ public class CollisionLogic : MonoBehaviour
     //GameObject[] ThirdSpeedLines;
 
     public Leaves leaves;
+    public Leaves spikes;
     
     bool inBush = false;
+    bool inSpikes = false;
     bool shouldSpeedUp = false;
     float scrollSpeed;
     float multiplier;
@@ -50,7 +52,7 @@ public class CollisionLogic : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(shouldSpeedUp);
+        //Debug.Log(shouldSpeedUp);
         //Debug.Log(multiplier);
         //Debug.Log(CountdownTimer.GetComponent<CountdownTimer>().startGame == true);
         if (CountdownTimer.GetComponent<CountdownTimer>().GetStartGame() == true && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false)
@@ -152,6 +154,11 @@ public class CollisionLogic : MonoBehaviour
             if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
             {
                 ThornParticles.GetComponent<ParticleSystem>().Play();
+                inSpikes = true;
+                if (spikes == null)
+                    Debug.LogError(gameObject.name + (" is missing spikes reference."));
+                else
+                    spikes.StartShakyShaky();
             }
 
             //}
@@ -208,6 +215,7 @@ public class CollisionLogic : MonoBehaviour
             if (collision.CompareTag("LegObstacle"))
             {
                 ThornParticles.GetComponent<ParticleSystem>().Stop();
+                inSpikes = false;
             }
         }
         //}
@@ -219,6 +227,7 @@ public class CollisionLogic : MonoBehaviour
     }
 
     public bool IsInBush { get { return inBush; } }
+    public bool IsInSpikes { get { return inSpikes; } }
 
     public void StartSpeedLines(GameObject[] speedlines)
     {

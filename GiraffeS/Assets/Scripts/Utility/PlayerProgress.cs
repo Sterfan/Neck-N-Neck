@@ -7,10 +7,14 @@ public class PlayerProgress : MonoBehaviour
 {
     public GameObject countdownTimer;
     public GameObject Background1;
+    public GameObject Backgrounds;
     public GameObject otherGiraffeTracker;
+    public GameObject branchTracker;
     public GameObject Giraffe;
     public GameObject FinishLine;
     public GameObject ScoreManager;
+
+    public RectTransform branchyTracker;
 
     public Image position;
 
@@ -18,14 +22,16 @@ public class PlayerProgress : MonoBehaviour
     public Sprite second;
 
     float gameTime = 0;
-    float startPos;
+    Vector2 startPos;
     float endPos;
+    Vector3[] branchCorners;
     float percentProgress;
     float distanceTraveled;
     float distanceRemaining;
     float height;
     float width;
     float trackLength;
+    float pizzaDistance;
     public float yPos = 5.7f;
 
     public Text timer;
@@ -38,17 +44,24 @@ public class PlayerProgress : MonoBehaviour
 
     void Start()
     {
-        Camera cam = Camera.main;
-        height = 2f * cam.orthographicSize;
-        width = height * cam.aspect;
-        startPos = cam.transform.position.x - (width / 4);
-        endPos = cam.transform.position.x - (width / 4);
-        gameObject.transform.position = new Vector2(startPos, yPos);
+        //Camera cam = Camera.main;
+        //height = 2f * cam.orthographicSize;
+        //width = height * cam.aspect;
+        //startPos = cam.transform.position.x - (width / 4);
+        startPos = gameObject.GetComponent<RectTransform>().position;
+        endPos = branchTracker.GetComponent<RectTransform>().rect.width /** branchTracker.GetComponent<RectTransform>().localScale.x*/;
+        pizzaDistance = branchTracker.GetComponent<RectTransform>().rect.width;
+        //endPos = cam.transform.position.x - (width / 4);
+        //endPos = gameObject.GetComponent<RectTransform>().offsetMax;
+        //branchyTracker.GetWorldCorners(branchCorners);
+        //Debug.Log(branchCorners);
+        //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
     }
 
     void LateUpdate()
     {
+
         if (countdownTimer.GetComponent<CountdownTimer>().startGame == true)
         {
             percentProgress = Background1.GetComponent<BackgroundScroller>().GetPercentCompleted();
@@ -72,16 +85,25 @@ public class PlayerProgress : MonoBehaviour
                 }
             }
 
-            gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
+            //gameObject.transform.position = new Vector2(startPos + (width / 2 * percentProgress / 100), yPos);
+            gameObject.transform.position = new Vector2(startPos.x + pizzaDistance * 0.98f * percentProgress / 100, startPos.y);
             timer.text = gameTime.ToString("n2");
 
             if (isFinished == true)
             {
-                Background1.GetComponent<BackgroundScroller>().SetSpeedMultiplier(0.0f);
+                Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0.0f);
                 if (scored == false)
                 {
                     ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime); // CALL THIS ONLY ONCE
                     scored = true;
+                    if (Giraffe.GetComponentInChildren<HeadMovement2>().xGiraffe == true)
+                    {
+                        PlayerPrefs.SetFloat("xScore", gameTime);
+                    }
+                    else if (Giraffe.GetComponentInChildren<HeadMovement2>().yGiraffe == true)
+                    {
+                        PlayerPrefs.SetFloat("yScore", gameTime);
+                    }
                 }
             }
 

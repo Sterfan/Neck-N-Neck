@@ -10,6 +10,8 @@ public class CountdownTimer : MonoBehaviour
     public GameObject two;
     public GameObject one;
     public GameObject go;
+    public GameObject assFlamesTop;
+    public GameObject assFlamesBot;
     //public TMPro.TextMeshProUGUI text;
 
     public bool startGame = false;
@@ -17,6 +19,9 @@ public class CountdownTimer : MonoBehaviour
     private float timer;
     private bool canCount = true;
     private bool doOnce = false;
+    private bool hasFired = false;
+
+    Vector3 startScale;
 
     private void Awake()
     {
@@ -26,6 +31,7 @@ public class CountdownTimer : MonoBehaviour
     private void Start()
     {
         timer = mainTimer;
+        startScale = assFlamesBot.transform.localScale;
     }
 
     private void Update()
@@ -38,9 +44,15 @@ public class CountdownTimer : MonoBehaviour
             {
                 //text.text = "3";
                 three.SetActive(true);
+                if (hasFired == false)
+                {
+                    Invoke("AssFire", 0.1f);
+                }
+
             }
             if (timer > 1.0f && timer <= 2.0f)
             {
+                Invoke("AssFire", 0.1f);
                 //three.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
                 three.SetActive(false);
                 two.SetActive(true);
@@ -48,6 +60,7 @@ public class CountdownTimer : MonoBehaviour
             }
             if (timer > 0.0f && timer <= 1.0f)
             {
+                RescaleFlames();
                 //two.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
                 two.SetActive(false);
                 one.SetActive(true);
@@ -78,5 +91,50 @@ public class CountdownTimer : MonoBehaviour
     public bool GetStartGame()
     {
         return startGame;
+    }
+
+    void ScaleUpFlames()
+    {
+        assFlamesBot.transform.localScale = new Vector3(1, 1, 1);
+        assFlamesTop.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    void ScaleDownFlames()
+    {
+        assFlamesTop.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        assFlamesBot.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+    }
+
+    void RescaleFlames()
+    {
+        assFlamesTop.transform.localScale = startScale;
+        assFlamesBot.transform.localScale = startScale;
+    }
+
+    void ActivateFIRE()
+    {
+        assFlamesTop.SetActive(true);
+        assFlamesBot.SetActive(true);
+    }
+
+    void DeactivateFIRE()
+    {
+        assFlamesTop.SetActive(false);
+        assFlamesBot.SetActive(false);
+    }
+
+    void AssFire()
+    {
+        ScaleDownFlames();
+        ActivateFIRE();
+        Invoke("DeactivateFIRE", 0.1f);
+        Invoke("ActivateFIRE", 0.15f);
+        Invoke("DeactivateFIRE", 0.25f);
+        Invoke("ActivateFIRE", 0.27f);
+        Invoke("DeactivateFIRE", 0.32f);
+        Invoke("ActivateFIRE", 0.35f);
+        Invoke("RescaleFlames", 0.4f);
+        Invoke("DeactivateFIRE", 0.6f);
+        hasFired = true;
     }
 }

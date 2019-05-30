@@ -9,8 +9,6 @@ public class Leaf : MonoBehaviour
     float shakeAmount;
     [SerializeField]
     float stefansPenisSize;
-    [SerializeField]
-    float lerp;
 
     [SerializeField]
     bool top = false;
@@ -52,7 +50,7 @@ public class Leaf : MonoBehaviour
     {
         if (seCoRunning)
             transform.localPosition = originalPosition;
-        if (!coRunning || !giraffe.IsInBush)
+        if ((!coRunning && !giraffe.IsInBush) || (!coRunning && !giraffe.IsInSpikes))
             StartCoroutine("ShakyShakyTime");
     }
 
@@ -74,7 +72,10 @@ public class Leaf : MonoBehaviour
         if (shaking == false)
             shaking = true;
 
-        yield return new WaitUntil(() => !giraffe.IsInBush);
+        if (transform.parent.name.Contains("Spikes"))
+            yield return new WaitUntil(() => !giraffe.IsInSpikes);
+        if (transform.parent.name.Contains("Leaves"))
+            yield return new WaitUntil(() => !giraffe.IsInBush);
         StopCoroutine("ToPlace");
         StartCoroutine("ToPlace", originalPosition);
 
