@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public Sprite NormalHead;
     public Sprite DashHead;
 
+    public GameObject dustParticleSystem;
+
+
     SpriteRenderer spriteRenderer;
 
 
@@ -71,6 +74,8 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerStates.Running:
                 {
+                    if (startGame)
+                        dustParticleSystem.SetActive(true);
                     animator.SetBool("IsRunning", true);
                     Jumping = false;
                     if (Input.GetKey(jumpInput) && startGame == true)
@@ -97,6 +102,8 @@ public class PlayerController : MonoBehaviour
                 {
                     //rb.velocity -= Vector2.up * fallSpeedMultiplier;
                     //Head.GetComponent<Rigidbody2D>().velocity -= Vector2.up * 0.75f;
+                    dustParticleSystem.SetActive(false);
+
                     Jumping = true;
                     animator.SetBool("IsJumping", true);
 
@@ -116,6 +123,7 @@ public class PlayerController : MonoBehaviour
                 } 
             case PlayerStates.Dashing:
                 {
+                    dustParticleSystem.SetActive(true);
                     DashFlames.SetActive(true);
                     //animator.SetBool("IsDashing", true);
                     dashTimer += Time.deltaTime;
