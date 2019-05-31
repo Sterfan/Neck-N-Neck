@@ -1086,12 +1086,22 @@ PrefabInstance:
     - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
         type: 3}
       propertyPath: audioFiles.Array.data[2].playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
         type: 3}
       propertyPath: audioFiles.Array.data[3].playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
+        type: 3}
+      propertyPath: audioFiles.Array.data[9].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
+        type: 3}
+      propertyPath: audioFiles.Array.data[9].playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173cf197e7df574448645bad1929cdc7, type: 3}

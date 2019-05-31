@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
 
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         foreach (var s in audioFiles)
         {
