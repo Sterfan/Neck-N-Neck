@@ -27,7 +27,7 @@ public class CameraMover : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float CamX = gameObject.transform.position.x;
         float GrffX = Giraffe.transform.position.x;
@@ -44,11 +44,11 @@ public class CameraMover : MonoBehaviour
                 {
                     if (currentOffset <= 10.0f)
                     {
-                        speed += 0.3f;
+                        speed += 0.3f * 8.5f;
                     }
                     if (currentOffset > 10.0f && speed > 14.0f)
                     {
-                        speed -= 0.3f;
+                        speed -= 0.3f * 3.5f;
                     }
                 }
                 else

@@ -12,6 +12,8 @@ public class CountdownTimer : MonoBehaviour
     public GameObject go;
     public GameObject assFlamesTop;
     public GameObject assFlamesBot;
+    public GameObject GiraffeTOP;
+    public GameObject GiraffeBOT;
     //public TMPro.TextMeshProUGUI text;
 
     public bool startGame = false;
@@ -71,6 +73,8 @@ public class CountdownTimer : MonoBehaviour
         {
             //Debug.Log("Should be true");
             startGame = true;
+            GiraffeTOP.GetComponent<PlayerController>().StartGame();
+            GiraffeBOT.GetComponent<PlayerController>().StartGame();
             //one.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
             one.SetActive(false);
             go.SetActive(true);

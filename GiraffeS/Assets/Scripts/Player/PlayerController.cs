@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     float currentDashSpeed;
     [SerializeField] float dashDuration = 0.5f;
     float dashTimer = 0.0f;
-    float deceleration = 0.99f;
+    float deceleration = 0.976f;
     [SerializeField] float dashAmmo;
     //Doesn't work when it's a variable idk why, go change value manually
     //public float fallSpeedMultiplier = 0.75f;
@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public bool Jumping = false;
     public bool Dashing = false;
     public bool testPurposes;
+    bool startGame = false;
 
     Rigidbody2D rb;
 
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
         currentDashSpeed = dashSpeed;
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (testPurposes)
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 {
                     animator.SetBool("IsRunning", true);
                     Jumping = false;
-                    if (Input.GetKey(jumpInput))
+                    if (Input.GetKey(jumpInput) && startGame == true)
                     {
                         Jump();
                         playerState = PlayerStates.Jumping;
@@ -223,5 +224,10 @@ public class PlayerController : MonoBehaviour
     public PlayerStates GetPlayerState()
     {
         return playerState;
+    }
+
+    public void StartGame()
+    {
+        startGame = true;
     }
 }
