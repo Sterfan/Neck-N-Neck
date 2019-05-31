@@ -4,6 +4,7 @@ using System.Collections;
 public class ExitBufferSceneorsomeshtlikethat : MonoBehaviour
 {
     bool started;
+    [SerializeField] float secondsToWait = 3.7f;
 
     public bool HasStarted { set { started = value; } }
     void Update()
@@ -13,7 +14,7 @@ public class ExitBufferSceneorsomeshtlikethat : MonoBehaviour
 
     IEnumerator SuckMyAss()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(secondsToWait);
         GetComponent<FadeOut>().StartCoroutine("fadeOut");
     }
 

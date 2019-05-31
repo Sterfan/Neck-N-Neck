@@ -13,6 +13,7 @@ public class PlayerProgress : MonoBehaviour
     public GameObject Giraffe;
     public GameObject FinishLine;
     public GameObject ScoreManager;
+    public GameObject DustyParticles;
 
     //public RectTransform branchyTracker;
 
@@ -92,6 +93,7 @@ public class PlayerProgress : MonoBehaviour
 
             if (isFinished == true)
             {
+                DustyParticles.SetActive(false);
                 Giraffe.GetComponent<Animator>().SetBool("IsFinished", true);
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0.0f);
                 if (scored == false)
