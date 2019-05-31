@@ -87,13 +87,13 @@ MonoBehaviour:
     isLooping: 0
     playOnAwake: 0
   - audioName: GiraffeJump
-    audioClip: {fileID: 8300000, guid: 36f00b9942a1234438b792cb1b438e5b, type: 3}
+    audioClip: {fileID: 8300000, guid: 0aac3a89a43e6a243b03ed9a586c09c8, type: 3}
     volume: 1
     source: {fileID: 0}
     isLooping: 0
     playOnAwake: 0
   - audioName: GiraffeLand
-    audioClip: {fileID: 8300000, guid: 8903e8c4380df0e4db7bada6ffc22cfb, type: 3}
+    audioClip: {fileID: 8300000, guid: 9d3b0e49e7a2db548aba2a34d592caca, type: 3}
     volume: 1
     source: {fileID: 0}
     isLooping: 0
