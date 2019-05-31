@@ -1086,12 +1086,22 @@ PrefabInstance:
     - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
         type: 3}
       propertyPath: audioFiles.Array.data[2].playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
         type: 3}
       propertyPath: audioFiles.Array.data[3].playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
+        type: 3}
+      propertyPath: audioFiles.Array.data[9].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
+        type: 3}
+      propertyPath: audioFiles.Array.data[9].playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173cf197e7df574448645bad1929cdc7, type: 3}
@@ -1138,7 +1148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: db3d8b951eb120b48b97f80f2fabbe02, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 93a4c62d495fa7c4f90dda19e4efc65f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3494,7 +3504,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: db3d8b951eb120b48b97f80f2fabbe02, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 93a4c62d495fa7c4f90dda19e4efc65f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3936,6 +3946,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: jumpInput
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 1032680166864618952, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_IsActive
@@ -4011,6 +4026,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2723852278118834307, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2404472579737509460, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Mesh
@@ -4025,16 +4045,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: jumpInput
-      value: 119
-      objectReference: {fileID: 0}
-    - target: {fileID: 2723852278118834307, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a71f163688b190b42b4e280ad04d6daf, type: 3}

@@ -22,6 +22,7 @@ public class CountdownTimer : MonoBehaviour
     private bool canCount = true;
     private bool doOnce = false;
     private bool hasFired = false;
+    private bool hasSounded = false;
 
     Vector3 startScale;
 
@@ -42,6 +43,12 @@ public class CountdownTimer : MonoBehaviour
         if (timer >= 0.0f && canCount)
         {
             timer -= Time.deltaTime;
+            if (timer <= 3.5f && hasSounded == false)
+            {
+                FindObjectOfType<AudioManager>().Play("CarRevs");
+                hasSounded = true;
+
+            }
             if (timer <= 3.0f && timer > 2.0f)
             {
                 //text.text = "3";

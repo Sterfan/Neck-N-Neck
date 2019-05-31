@@ -12,6 +12,10 @@ public class HighscoreTable : MonoBehaviour
 
     private void Awake()
     {
+        //FindObjectOfType<AudioManager>().StopMusic("MenuMusic");
+        //FindObjectOfType<AudioManager>().StopMusic("BackgroundMusic");
+
+
         EntryTemplate.gameObject.SetActive(false);
         Color color = EntryTemplate.Find("Time").GetComponent<Text>().color;
 
