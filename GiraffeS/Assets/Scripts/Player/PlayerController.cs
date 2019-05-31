@@ -134,6 +134,7 @@ public class PlayerController : MonoBehaviour
                             ResetSpeed();
                             currentDashSpeed = dashSpeed;
                             dashTimer = 0.0f;
+                            Physics2D.IgnoreLayerCollision(14, 16, false);
                             playerState = PlayerStates.Running;
                             Dashing = false;
                         }
@@ -190,6 +191,8 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("SPEED MULITPLIER AT DASH = " + Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
         SetSpeedParticlesActive(true);
         TearParticles.GetComponent<ParticleSystem>().Play();
+        Physics2D.IgnoreLayerCollision(14, 16, true);
+
         //playerState = PlayerStates.Dashing;
 
         //Invoke("ResetSpeed", dashDuration);
