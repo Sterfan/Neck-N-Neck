@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public GameObject DashFlames;
     public GameObject HeadSpeedParticles;
     public GameObject BodySpeedParticles;
+    public GameObject TearParticles;
     public GameObject Head;
 
     public Sprite NormalHead;
@@ -157,6 +158,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerState == PlayerStates.Jumping && collision.gameObject.CompareTag("Ground"))
         {
+            FindObjectOfType<AudioManager>().Play("GiraffeLand");
             playerState = PlayerStates.Running;
             animator.SetBool("IsJumping", false);
         }
@@ -171,12 +173,14 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         rb.velocity = Vector2.up * jumpAmplitude;
+        FindObjectOfType<AudioManager>().Play("GiraffeJump");
         //Head.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpAmplitude;
     }
 
     public void Dash(float dashSpeed)
     {
         //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(dashSpeed);
+        FindObjectOfType<AudioManager>().Play("GiraffeDash");
         spriteRenderer.sprite = DashHead;
         SpeedController.GetComponent<MainSpeed>().SetSpeed(dashSpeed);
         Physics2D.IgnoreLayerCollision(11, 14, true);
@@ -185,6 +189,7 @@ public class PlayerController : MonoBehaviour
         Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
         //Debug.Log("SPEED MULITPLIER AT DASH = " + Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
         SetSpeedParticlesActive(true);
+        TearParticles.GetComponent<ParticleSystem>().Play();
         //playerState = PlayerStates.Dashing;
 
         //Invoke("ResetSpeed", dashDuration);
@@ -199,6 +204,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(12, 13, false);
         DashFlames.SetActive(false);
         SetSpeedParticlesActive(false);
+        TearParticles.GetComponent<ParticleSystem>().Stop();
         //gameObject.GetComponent<CollisionLogic>().SetSpeedUpFalse();
     }
 

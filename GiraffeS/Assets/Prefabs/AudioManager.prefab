@@ -74,4 +74,28 @@ MonoBehaviour:
     source: {fileID: 0}
     isLooping: 1
     playOnAwake: 1
+  - audioName: CarRevs
+    audioClip: {fileID: 8300000, guid: 3fdd9995764d69b4daf447dd106b8d5e, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: GiraffeDash
+    audioClip: {fileID: 8300000, guid: d6c9c7c789481c64b8aea0519baa7a56, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: GiraffeJump
+    audioClip: {fileID: 8300000, guid: 36f00b9942a1234438b792cb1b438e5b, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: GiraffeLand
+    audioClip: {fileID: 8300000, guid: 8903e8c4380df0e4db7bada6ffc22cfb, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
   Mixer: {fileID: 0}
