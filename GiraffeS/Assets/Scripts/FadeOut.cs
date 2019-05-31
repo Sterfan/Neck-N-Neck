@@ -11,7 +11,7 @@ public class FadeOut : MonoBehaviour
     IEnumerator fadeOut()
     {
         HasStarted();
-        if (SceneManager.GetActiveScene().name == "Axel\'s Scene")
+        if (SceneManager.GetActiveScene().name == "Axel's Scene")
             yield return new WaitForSeconds(4f);
         while (true)
         {
@@ -27,7 +27,7 @@ public class FadeOut : MonoBehaviour
 
     void HasStarted()
     {
-        if (SceneManager.GetActiveScene().name == "Axel\'s Scene")
+        if (SceneManager.GetActiveScene().name == "Axel's Scene")
             GetComponent<TheEnd>().HasStarted = true;
         if(SceneManager.GetActiveScene().name == "Leaderboard")
             GetComponent<exitLeaderboard>().HasStarted = true;
