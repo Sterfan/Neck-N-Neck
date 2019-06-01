@@ -23,6 +23,9 @@ public class CountdownTimer : MonoBehaviour
     private bool doOnce = false;
     private bool hasFired = false;
     private bool hasSounded = false;
+    bool threeSound = false;
+    bool twoSound = false;
+    bool oneSound = false;
 
     Vector3 startScale;
 
@@ -48,30 +51,41 @@ public class CountdownTimer : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("CarRevs");
                 hasSounded = true;
             }
-            if (timer <= 3.3f && timer > 3.0f)
-                FindObjectOfType<AudioManager>().Play("3");
             if (timer <= 3.0f && timer > 2.0f)
             {
+                if (threeSound == false)
+                {
+                    FindObjectOfType<AudioManager>().Play("3");
+                    threeSound = true;
+                }
                 //text.text = "3";
                 three.SetActive(true);
                 if (hasFired == false)
                 {
                     Invoke("AssFire", 0.1f);
                 }
-                FindObjectOfType<AudioManager>().Play("2");
 
             }
             if (timer > 1.0f && timer <= 2.0f)
             {
+                if (twoSound == false)
+                {
+                    FindObjectOfType<AudioManager>().Play("2");
+                    twoSound = true;
+                }
                 Invoke("AssFire", 0.1f);
                 //three.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
                 three.SetActive(false);
                 two.SetActive(true);
-                FindObjectOfType<AudioManager>().Play("1");
 
             }
             if (timer > 0.0f && timer <= 1.0f)
             {
+                if (oneSound == false)
+                {
+                    FindObjectOfType<AudioManager>().Play("1");
+                    oneSound = true;
+                }
                 RescaleFlames();
                 //two.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
                 two.SetActive(false);

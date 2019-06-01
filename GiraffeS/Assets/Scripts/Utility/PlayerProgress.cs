@@ -42,6 +42,7 @@ public class PlayerProgress : MonoBehaviour
     public bool winner = false;
     bool scored = false;
     bool victory = false;
+    bool cheers = false;
 
 
     void Start()
@@ -134,8 +135,12 @@ public class PlayerProgress : MonoBehaviour
             }
             if (isFinished == true && winner == false)
             {
+                if (cheers == false)
+                {
+                    DelayedCheer();
+                    cheers = true;
+                }
                 resultText.text = "SECOND WINNER";
-                DelayedCheer();
                 Giraffe.GetComponent<Animator>().SetBool("IsLoser", true);
             }
         }

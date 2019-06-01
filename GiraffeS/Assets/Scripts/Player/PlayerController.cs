@@ -174,7 +174,8 @@ public class PlayerController : MonoBehaviour
     {
         if (playerState == PlayerStates.Jumping && collision.gameObject.CompareTag("Ground"))
         {
-            FindObjectOfType<AudioManager>().Play("GiraffeLand");
+            if (startGame)
+                FindObjectOfType<AudioManager>().Play("GiraffeLand");
             playerState = PlayerStates.Running;
             animator.SetBool("IsJumping", false);
         }
