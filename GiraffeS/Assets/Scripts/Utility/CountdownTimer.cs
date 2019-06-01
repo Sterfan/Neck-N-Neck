@@ -45,7 +45,7 @@ public class CountdownTimer : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 3.5f && hasSounded == false)
             {
-                //FindObjectOfType<AudioManager>().Play("CarRevs");
+                FindObjectOfType<AudioManager>().Play("CarRevs");
                 hasSounded = true;
             }
             if (timer <= 3.3f && timer > 3.0f)
