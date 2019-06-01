@@ -34,6 +34,7 @@ public class HeadMovement2 : MonoBehaviour
     float headToBodyStart;
     float headToBody;
     float maxNeckLength = 7.0f;
+    [SerializeField] float minNeckLength = 1.95f;
     float yMouse;
     float xMouse;
 
@@ -51,7 +52,7 @@ public class HeadMovement2 : MonoBehaviour
             yGiraffe = false;
         }
 
-        Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + 2);
+        Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
         headStart = Head.transform.position;
         bodyStart = Body.transform.position;
         headToBodyStart = headStart.y - bodyStart.y;
@@ -92,9 +93,9 @@ public class HeadMovement2 : MonoBehaviour
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 //mouseStart.y = mouseStart.y + headToBodyStart * 0.042f;
             }
-            if (Head.transform.position.y <= Body.transform.position.y + 2)
+            if (Head.transform.position.y <= Body.transform.position.y + minNeckLength)
             {
-                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + 2);
+                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
                 //mouseStart.y = mouseStart.y - headToBodyStart * 0.039f;
                 //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -129,9 +130,9 @@ public class HeadMovement2 : MonoBehaviour
                 //mouseStart.y = mouseStart.y + headToBody * 0.042f;
 
             }
-            if (Head.transform.position.y <= Body.transform.position.y + 2)
+            if (Head.transform.position.y <= Body.transform.position.y + minNeckLength)
             {
-                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + 2);
+                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
                 //mouseStart.y = mouseStart.y - headToBody * 0.039f;
             }
         }
@@ -175,7 +176,7 @@ public class HeadMovement2 : MonoBehaviour
             Neck.transform.localScale = new Vector3(scaleX / 2.5f, scaleY / 2.9f, 1);
             //Debug.Log("neck2");
         }
-        else if (headToBody < 2.25f && headToBody > 2)
+        else if (headToBody < 2.25f && headToBody > minNeckLength)
         {
             spriteR.sprite = neck1;
             Neck.transform.localScale = new Vector3(scaleX / 2.5f, scaleY / 2.5f, 1);
