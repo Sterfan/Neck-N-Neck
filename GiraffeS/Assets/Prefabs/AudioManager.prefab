@@ -63,11 +63,11 @@ MonoBehaviour:
     isLooping: 1
     playOnAwake: 0
   - audioName: Go
-    audioClip: {fileID: 8300000, guid: 6e0d86273e00b7a43bda35878efaa5ce, type: 3}
+    audioClip: {fileID: 8300000, guid: c0d9adad810ca0448a4f7cf57dd541db, type: 3}
     volume: 1
     source: {fileID: 0}
     isLooping: 0
-    playOnAwake: 1
+    playOnAwake: 0
   - audioName: ThemeMusic
     audioClip: {fileID: 8300000, guid: cc7d09481a8c0a54398d83c02833992b, type: 3}
     volume: 1
@@ -109,5 +109,35 @@ MonoBehaviour:
     volume: 1
     source: {fileID: 0}
     isLooping: 1
+    playOnAwake: 0
+  - audioName: 3
+    audioClip: {fileID: 8300000, guid: eecee38e52e49d6479ba30ab1d4bcbeb, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: 2
+    audioClip: {fileID: 8300000, guid: 4bcbd62aa56d58c47ba5181abe271237, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: 1
+    audioClip: {fileID: 8300000, guid: dd483852adf8128448b385fbcf3d43e3, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: Victory
+    audioClip: {fileID: 8300000, guid: ab70feba59a43e345bbf2774229293d9, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: Cheers
+    audioClip: {fileID: 8300000, guid: 93b8e1f7b67165942a36dfc9c51b6790, type: 3}
+    volume: 1
+    source: {fileID: 0}
+    isLooping: 0
     playOnAwake: 0
   Mixer: {fileID: 0}
