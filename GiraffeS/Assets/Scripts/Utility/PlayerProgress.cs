@@ -114,6 +114,8 @@ public class PlayerProgress : MonoBehaviour
             if (isFinished == true && otherGiraffeTracker.GetComponent<PlayerProgress>().isFinished == false)
             {
                 winner = true;
+                FindObjectOfType<AudioManager>().Play("Victory");
+                Invoke("DelayedCheer", 0.2f);
                 //Giraffe.GetComponent<Animator>().SetBool("IsWinner", true);
                 Invoke("SetBoolWinner", 1.5f);
             }
@@ -142,5 +144,11 @@ public class PlayerProgress : MonoBehaviour
     public void SetBoolWinner()
     {
         Giraffe.GetComponent<Animator>().SetBool("IsWinner", true);
+    }
+
+    void DelayedCheer()
+    {
+        FindObjectOfType<AudioManager>().Play("Cheers");
+
     }
 }

@@ -45,10 +45,11 @@ public class CountdownTimer : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 3.5f && hasSounded == false)
             {
-                FindObjectOfType<AudioManager>().Play("CarRevs");
+                //FindObjectOfType<AudioManager>().Play("CarRevs");
                 hasSounded = true;
-
             }
+            if (timer <= 3.3f && timer > 3.0f)
+                FindObjectOfType<AudioManager>().Play("3");
             if (timer <= 3.0f && timer > 2.0f)
             {
                 //text.text = "3";
@@ -57,6 +58,7 @@ public class CountdownTimer : MonoBehaviour
                 {
                     Invoke("AssFire", 0.1f);
                 }
+                FindObjectOfType<AudioManager>().Play("2");
 
             }
             if (timer > 1.0f && timer <= 2.0f)
@@ -65,6 +67,7 @@ public class CountdownTimer : MonoBehaviour
                 //three.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
                 three.SetActive(false);
                 two.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("1");
 
             }
             if (timer > 0.0f && timer <= 1.0f)
@@ -79,6 +82,7 @@ public class CountdownTimer : MonoBehaviour
         else if (timer <= 0.0f && !doOnce)
         {
             //Debug.Log("Should be true");
+            FindObjectOfType<AudioManager>().Play("Go");
             startGame = true;
             GiraffeTOP.GetComponent<PlayerController>().StartGame();
             GiraffeBOT.GetComponent<PlayerController>().StartGame();
