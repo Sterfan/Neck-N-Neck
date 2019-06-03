@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backInBlack: {fileID: 1966878653}
-  nextScene: Axel's Scene
+  nextScene: Axel's Scene Single
 --- !u!114 &532816206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01d899ea9e230d46842e85d4aac5fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsToWait: 3.7
 --- !u!4 &532816208
 Transform:
   m_ObjectHideFlags: 0

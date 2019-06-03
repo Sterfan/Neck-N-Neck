@@ -859,6 +859,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Giraffe Bot
       objectReference: {fileID: 0}
+    - target: {fileID: 2336848663984591506, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2336848663984591507, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -912,26 +917,6 @@ PrefabInstance:
     - target: {fileID: 2336848663984591507, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1032680166864618952, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3820896780629110282, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1538336991667292822, guid: a71f163688b190b42b4e280ad04d6daf,
@@ -999,6 +984,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820896780629110282, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032680166864618952, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6481555258885353249, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1018,11 +1023,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3699251302086166412, guid: 173cf197e7df574448645bad1929cdc7,
-        type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
     - target: {fileID: 7442532176113822190, guid: 173cf197e7df574448645bad1929cdc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1077,6 +1077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699251302086166412, guid: 173cf197e7df574448645bad1929cdc7,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 8858688252249037298, guid: 173cf197e7df574448645bad1929cdc7,
         type: 3}
@@ -1909,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503ddb49bff60994bb5a10910916888c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twoPlayerSelection: 1
+  twoPlayerSelection: 0
   _FunctionIndex: 1
   Functions:
   - No Function
@@ -3936,31 +3941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: jumpInput
-      value: 119
-      objectReference: {fileID: 0}
-    - target: {fileID: 1032680166864618952, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3820896780629110282, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1538336991667292822, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Mesh
@@ -4026,15 +4006,40 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2723852278118834307, guid: a71f163688b190b42b4e280ad04d6daf,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2404472579737509460, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688314807604102095, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368653914321092920, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041523864093419643, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: jumpInput
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820896780629110282, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032680166864618952, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723852278118834307, guid: a71f163688b190b42b4e280ad04d6daf,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6481555258885353249, guid: a71f163688b190b42b4e280ad04d6daf,
         type: 3}

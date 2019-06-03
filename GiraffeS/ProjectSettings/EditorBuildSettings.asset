@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Leaderboard.unity
     guid: bf53dec22ed6b5c4c98b05b50abc8edc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Axel's Scene.unity
     guid: 0f7d2a6597888ce4ab38c4f013ca012f
   - enabled: 0
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Buffer Scene or some sht like that.unity
     guid: 3222784ad47009745a00f97dceff472c
+  - enabled: 1
+    path: Assets/Scenes/Axel's Scene Single.unity
+    guid: ed655cc49ace5ed4699952b8a5397731
   m_configObjects: {}

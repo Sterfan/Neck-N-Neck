@@ -27,7 +27,7 @@ public class FadeOut : MonoBehaviour
 
     void HasStarted()
     {
-        if (SceneManager.GetActiveScene().name == "Axel's Scene")
+        if (SceneManager.GetActiveScene().name == "Axel's Scene" || SceneManager.GetActiveScene().name == "Axel's Scene Single")
             GetComponent<TheEnd>().HasStarted = true;
         if(SceneManager.GetActiveScene().name == "Leaderboard")
             GetComponent<exitLeaderboard>().HasStarted = true;
