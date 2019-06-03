@@ -12,7 +12,7 @@ public class FadeOut : MonoBehaviour
     {
         HasStarted();
         if (SceneManager.GetActiveScene().name == "Axel's Scene")
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(5.5f);
         while (true)
         {
             backInBlack.color += new Color(0f, 0f, 0f, 0.02f);

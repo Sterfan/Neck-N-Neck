@@ -79,16 +79,16 @@ public class PlayerController : MonoBehaviour
                     {
                         if (dustParticleSystem)
                             dustParticleSystem.SetActive(true);
+                        if (Input.GetKey(jumpInput) || (Input.GetKey(KeyCode.Z) && grffenumber == 1))
+                        {
+                            Jump();
+                            playerState = PlayerStates.Jumping;
+                        }
                     }
 
                     
                     animator.SetBool("IsRunning", true);
                     Jumping = false;
-                    if (Input.GetKey(jumpInput) && startGame == true)
-                    {
-                        Jump();
-                        playerState = PlayerStates.Jumping;
-                    }
                     //if (Input.GetKey(dashInput) && dashAmmo > 0.0f)
                     if (dashAmmo >= 1.0f)
                     {

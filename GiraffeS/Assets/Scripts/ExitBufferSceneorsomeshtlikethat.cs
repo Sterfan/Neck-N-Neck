@@ -4,7 +4,7 @@ using System.Collections;
 public class ExitBufferSceneorsomeshtlikethat : MonoBehaviour
 {
     bool started;
-    [SerializeField] float secondsToWait = 3.7f;
+    [SerializeField] float secondsToWait = 4.5f;
 
     public bool HasStarted { set { started = value; } }
     void Update()
