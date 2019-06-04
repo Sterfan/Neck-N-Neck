@@ -29,6 +29,7 @@ public class HeadMovement2 : MonoBehaviour
 
     public bool xGiraffe;
     public bool yGiraffe;
+    public bool singleP;
 
     public float xHeadOffset = 0.7f;
     float headToBodyStart;
@@ -124,6 +125,24 @@ public class HeadMovement2 : MonoBehaviour
             //    //Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
             //}
 
+            if (headToBody > maxNeckLength)
+            {
+                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
+                //mouseStart.y = mouseStart.y + headToBody * 0.042f;
+
+            }
+            if (Head.transform.position.y <= Body.transform.position.y + minNeckLength)
+            {
+                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
+                //mouseStart.y = mouseStart.y - headToBody * 0.039f;
+            }
+        }
+        if (singleP)
+        {
+            xMouse = Input.GetAxis("Mouse X");
+            yMouse = Input.GetAxis("Mouse Y");
+            mouseInput = new Vector3(0.0f, yMouse + xMouse, 0.0f);
+            Head.transform.position -= mouseInput * mouseSensitivity;
             if (headToBody > maxNeckLength)
             {
                 Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
