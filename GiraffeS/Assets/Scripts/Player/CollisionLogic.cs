@@ -25,6 +25,7 @@ public class CollisionLogic : MonoBehaviour
     bool inBush = false;
     bool inSpikes = false;
     bool shouldSpeedUp = false;
+    bool dashing = false;
     float scrollSpeed;
     float multiplier;
     float timeSinceHit = 0.0f;
@@ -136,29 +137,33 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
+        if (dashing == false)
         {
-            shouldSpeedUp = false;
-            //LeafParticles.SetActive(true);
-            //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
-            //{
-            if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
+            if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
             {
-                LeafParticles.GetComponent<ParticleSystem>().Play();
-                inBush = true;
-                if (leaves == null)
-                    Debug.LogError(gameObject.name + (" is missing leaf reference."));
-                else
-                    leaves.StartShakyShaky();
-            }
-            if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
-            {
-                ThornParticles.GetComponent<ParticleSystem>().Play();
-                inSpikes = true;
-                if (spikes == null)
-                    Debug.LogError(gameObject.name + (" is missing spikes reference."));
-                else
-                    spikes.StartShakyShaky();
+                shouldSpeedUp = false;
+                //LeafParticles.SetActive(true);
+                //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
+                //{
+                if (collision.CompareTag("HeadObstacle") && LeafParticles.GetComponent<ParticleSystem>().isEmitting == false)
+                {
+                    LeafParticles.GetComponent<ParticleSystem>().Play();
+                    inBush = true;
+                    if (leaves == null)
+                        Debug.LogError(gameObject.name + (" is missing leaf reference."));
+                    else
+                        leaves.StartShakyShaky();
+                }
+                if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
+                {
+                    ThornParticles.GetComponent<ParticleSystem>().Play();
+                    inSpikes = true;
+                    if (spikes == null)
+                        Debug.LogError(gameObject.name + (" is missing spikes reference."));
+                    else
+                        spikes.StartShakyShaky();
+                }
+
             }
 
             //}
@@ -172,7 +177,7 @@ public class CollisionLogic : MonoBehaviour
             }
             //Background.GetComponent<BackgroundScroller>().SetSpeedMultiplier(multiplier);
         }
-        if (collision.CompareTag("DashAmmo"))
+        if (collision.CompareTag("DashAmmo") && dashing == false)
         {
             Giraffe.GetComponent<PlayerController>().SetDashAmmo(1.0f);
             Destroy(collision.gameObject);
@@ -184,16 +189,19 @@ public class CollisionLogic : MonoBehaviour
     {
         //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
         //{
-        if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
-            //LeafParticles.SetActive(true);
-            //LeafParticles.GetComponent<ParticleSystem>().Play();
-            shouldSpeedUp = false;
-            timeSinceHit = 0.0f;
-            if (multiplier >= 0.25f)
-            {
-                multiplier *= 0.98f;
-                Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
-            }
+        if (dashing == false)
+        {
+            if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
+                //LeafParticles.SetActive(true);
+                //LeafParticles.GetComponent<ParticleSystem>().Play();
+                shouldSpeedUp = false;
+                timeSinceHit = 0.0f;
+                if (multiplier >= 0.25f)
+                {
+                    multiplier *= 0.98f;
+                    Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
+                }
+        }
         //}
 
     }
@@ -202,20 +210,23 @@ public class CollisionLogic : MonoBehaviour
     {
         //if (Giraffe.GetComponent<PlayerController>().Dashing == false)
         //{
-        if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
+        if (dashing == false)
         {
-            timeSinceHit = 0.0f;
-            shouldSpeedUp = true;
-            FindObjectOfType<AudioManager>().StopMusic("Leaves");
-            if (collision.CompareTag("HeadObstacle"))
+            if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
             {
-                LeafParticles.GetComponent<ParticleSystem>().Stop();
-                inBush = false;
-            }
-            if (collision.CompareTag("LegObstacle"))
-            {
-                ThornParticles.GetComponent<ParticleSystem>().Stop();
-                inSpikes = false;
+                timeSinceHit = 0.0f;
+                shouldSpeedUp = true;
+                FindObjectOfType<AudioManager>().StopMusic("Leaves");
+                if (collision.CompareTag("HeadObstacle"))
+                {
+                    LeafParticles.GetComponent<ParticleSystem>().Stop();
+                    inBush = false;
+                }
+                if (collision.CompareTag("LegObstacle"))
+                {
+                    ThornParticles.GetComponent<ParticleSystem>().Stop();
+                    inSpikes = false;
+                }
             }
         }
         //}
@@ -253,4 +264,9 @@ public class CollisionLogic : MonoBehaviour
     //{
     //    FirstSpeedLines[1].GetComponent<ParticleSystem>().emission
     //}
+
+    public void SetDashing(bool x)
+    {
+        dashing = x;
+    }
 }

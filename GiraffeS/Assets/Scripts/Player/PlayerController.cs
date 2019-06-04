@@ -149,7 +149,8 @@ public class PlayerController : MonoBehaviour
                             ResetSpeed();
                             currentDashSpeed = dashSpeed;
                             dashTimer = 0.0f;
-                            Physics2D.IgnoreLayerCollision(14, 16, false);
+                            //Physics2D.IgnoreLayerCollision(14, 16, false);
+                            gameObject.GetComponent<CollisionLogic>().SetDashing(false);
                             playerState = PlayerStates.Running;
                             Dashing = false;
                         }
@@ -200,14 +201,15 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("GiraffeDash");
         spriteRenderer.sprite = DashHead;
         SpeedController.GetComponent<MainSpeed>().SetSpeed(dashSpeed);
-        Physics2D.IgnoreLayerCollision(11, 14, true);
-        Physics2D.IgnoreLayerCollision(12, 13, true);
+        //Physics2D.IgnoreLayerCollision(11, 14, true);
+        //Physics2D.IgnoreLayerCollision(12, 13, true);
         GetComponent<CollisionLogic>().SetSpeedUpFalse();
         Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
         //Debug.Log("SPEED MULITPLIER AT DASH = " + Backgrounds.GetComponent<BGSpeedMultiplier>().GetSpeedMultiplier());
         SetSpeedParticlesActive(true);
         TearParticles.GetComponent<ParticleSystem>().Play();
-        Physics2D.IgnoreLayerCollision(14, 16, true);
+        //Physics2D.IgnoreLayerCollision(14, 16, true);
+        gameObject.GetComponent<CollisionLogic>().SetDashing(true);
 
         //playerState = PlayerStates.Dashing;
 
@@ -219,8 +221,8 @@ public class PlayerController : MonoBehaviour
         //Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(1.0f);
         spriteRenderer.sprite = NormalHead;
         SpeedController.GetComponent<MainSpeed>().SetSpeed(baseSpeed);
-        Physics2D.IgnoreLayerCollision(11, 14, false);
-        Physics2D.IgnoreLayerCollision(12, 13, false);
+        //Physics2D.IgnoreLayerCollision(11, 14, false);
+        //Physics2D.IgnoreLayerCollision(12, 13, false);
         DashFlames.SetActive(false);
         SetSpeedParticlesActive(false);
         TearParticles.GetComponent<ParticleSystem>().Stop();
