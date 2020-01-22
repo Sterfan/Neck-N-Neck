@@ -34,7 +34,7 @@ public class HeadMovement2 : MonoBehaviour
     float headToBodyStart;
     float headToBody;
     float maxNeckLength = 7.0f;
-    [SerializeField] float minNeckLength = 1.95f;
+    [SerializeField] float minNeckLength = 1.9f;
     float yMouse;
     float xMouse;
 
