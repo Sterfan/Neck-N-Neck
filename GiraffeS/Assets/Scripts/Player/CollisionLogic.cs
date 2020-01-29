@@ -58,6 +58,12 @@ public class CollisionLogic : MonoBehaviour
         //Debug.Log(CountdownTimer.GetComponent<CountdownTimer>().startGame == true);
         if (CountdownTimer.GetComponent<CountdownTimer>().GetStartGame() == true && ProgressTracker.GetComponent<PlayerProgress>().isFinished == false)
         {
+            if (dashing)
+            {
+                inBush = false;
+                inSpikes = false;
+                LeafParticles.GetComponent<ParticleSystem>().Stop();
+            }
             timeSinceHit += Time.deltaTime;
             //Debug.Log(timeSinceHit);
             if (timeSinceHit >= 6.0f && multiplier <= 1.3f)
@@ -153,9 +159,11 @@ public class CollisionLogic : MonoBehaviour
                         Debug.LogError(gameObject.name + (" is missing leaf reference."));
                     else
                         leaves.StartShakyShaky();
+                    FindObjectOfType<AudioManager>().Play("Leaves");
                 }
                 if (collision.CompareTag("LegObstacle") && ThornParticles.GetComponent<ParticleSystem>().isEmitting == false)
                 {
+                    FindObjectOfType<AudioManager>().Play("Leaves");
                     ThornParticles.GetComponent<ParticleSystem>().Play();
                     inSpikes = true;
                     if (spikes == null)
@@ -167,7 +175,6 @@ public class CollisionLogic : MonoBehaviour
             }
 
             //}
-            FindObjectOfType<AudioManager>().Play("Leaves");
             if (multiplier >= 0.7f/* && Giraffe.GetComponent<PlayerController>().Dashing == false*/)
             {
                 multiplier = 0.7f;
@@ -192,8 +199,7 @@ public class CollisionLogic : MonoBehaviour
         if (dashing == false)
         {
             if (collision.CompareTag("HeadObstacle") || collision.CompareTag("LegObstacle"))
-                //LeafParticles.SetActive(true);
-                //LeafParticles.GetComponent<ParticleSystem>().Play();
+            {
                 shouldSpeedUp = false;
                 timeSinceHit = 0.0f;
                 if (multiplier >= 0.25f)
@@ -201,6 +207,20 @@ public class CollisionLogic : MonoBehaviour
                     multiplier *= 0.98f;
                     Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(multiplier);
                 }
+                if (collision.CompareTag("LegObstacle"))
+                {
+                    inSpikes = true;
+                }
+                if (collision.CompareTag("HeadObstacle"))
+                {
+                    inBush = true;
+                }
+
+
+            }
+                //LeafParticles.SetActive(true);
+                //LeafParticles.GetComponent<ParticleSystem>().Play();
+
         }
         //}
 
