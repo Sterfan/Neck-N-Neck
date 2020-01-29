@@ -27,9 +27,9 @@ public class HeadMovement2 : MonoBehaviour
 
     [SerializeField] float mouseSensitivity = 0.05f;
 
-    public bool xGiraffe;
-    public bool yGiraffe;
-    public bool singleP;
+    //public bool xGiraffe;
+    //public bool yGiraffe;
+    //public bool singleP;
 
     public float xHeadOffset = 0.7f;
     float headToBodyStart;
@@ -37,21 +37,21 @@ public class HeadMovement2 : MonoBehaviour
     float maxNeckLength = 7.0f;
     [SerializeField] float minNeckLength = 1.95f;
     float yMouse;
-    float xMouse;
+    //float xMouse;
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
 
-        if (yGiraffe == true)
-        {
-            xGiraffe = false;
+        //if (yGiraffe == true)
+        //{
+        //    xGiraffe = false;
 
-        }
-        if (xGiraffe == true)
-        {
-            yGiraffe = false;
-        }
+        //}
+        //if (xGiraffe == true)
+        //{
+        //    yGiraffe = false;
+        //}
 
         Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
         headStart = Head.transform.position;
@@ -71,15 +71,20 @@ public class HeadMovement2 : MonoBehaviour
         //var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //mousePos.z = 0;
 
-        if (yGiraffe == true)
+
+
+        //Debug.Log(Input.GetAxis("Mouse Y"));
+        if (Input.GetMouseButton(0) && Input.mousePosition.x <= Screen.width / 2.0f) 
         {
-            //Debug.Log(Input.GetAxis("Mouse Y"));
             yMouse = Input.GetAxis("Mouse Y");
-            mouseMovement = new Vector2(0.0f, yMouse);
-            mouseInput = new Vector3(0, yMouse, 0);
+            Debug.Log("width: "+ Screen.width);
+            //Debug.Log("mouse: " + Input.GetAxis("Mouse X"));
+        }
+        mouseMovement = new Vector2(0.0f, yMouse);
+        mouseInput = new Vector3(0, yMouse, 0);
 
             //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-            Head.transform.position -= mouseInput * mouseSensitivity;
+        Head.transform.position += mouseInput * mouseSensitivity;
 
             //if (Body.GetComponent<PlayerController>().Jumping == true)
             //{
@@ -102,59 +107,11 @@ public class HeadMovement2 : MonoBehaviour
 
             }
 
-        }
-
-        if (xGiraffe == true)
-        {
-            xMouse = Input.GetAxis("Mouse X");
-            mouseMovement = new Vector2(0.0f, xMouse);
-            mouseInput = new Vector3(0, xMouse, 0);
+        
 
 
 
-            //Vector3 headMove = new Vector3(0.0f, mousePos.x, 0.0f);
 
-            //Head.transform.position = headStart - ((mouseStart - headMove) / mouseSlower);
-            //Head.transform.position += new Vector3(Head.transform.position.x, xMouse, 0);
-            Head.transform.position -= mouseInput * mouseSensitivity;
-
-
-            //if (Giraffe.GetComponent<PlayerController>().Jumping == true)
-            //{
-            //    //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - headMove) / mouseSlower);
-            //    //Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
-            //}
-
-            if (headToBody > maxNeckLength)
-            {
-                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
-                //mouseStart.y = mouseStart.y + headToBody * 0.042f;
-
-            }
-            if (Head.transform.position.y <= Body.transform.position.y + minNeckLength)
-            {
-                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
-                //mouseStart.y = mouseStart.y - headToBody * 0.039f;
-            }
-        }
-        if (singleP)
-        {
-            xMouse = Input.GetAxis("Mouse X");
-            yMouse = Input.GetAxis("Mouse Y");
-            mouseInput = new Vector3(0.0f, yMouse + xMouse, 0.0f);
-            Head.transform.position -= mouseInput * mouseSensitivity;
-            if (headToBody > maxNeckLength)
-            {
-                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
-                //mouseStart.y = mouseStart.y + headToBody * 0.042f;
-
-            }
-            if (Head.transform.position.y <= Body.transform.position.y + minNeckLength)
-            {
-                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
-                //mouseStart.y = mouseStart.y - headToBody * 0.039f;
-            }
-        }
 
         //Debug.Log(headToBody);
         Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + xHeadOffset, headPos.y + bodyPos.y + 0.4f) / 2;

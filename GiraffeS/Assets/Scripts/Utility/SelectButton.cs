@@ -26,16 +26,16 @@ public class SelectButton : MonoBehaviour/*, ISelectHandler, IDeselectHandler*/
             if (button.GetComponent<SpriteRenderer>().sprite != buttonHovered)
                 button.GetComponent<SpriteRenderer>().sprite = buttonHovered;
 
-            if (Input.GetKey(KeyCode.W) && collision.GetComponent<HeadMovement2>().xGiraffe)
-            {
-                //Debug.Log("W was pressed when graffe was in the collider");
-                InvokeSelection(1);
-            }
-            if (Input.GetKey(KeyCode.Space) && collision.GetComponent<HeadMovement2>().yGiraffe)
-            {
-                //Debug.Log("Space was pressed when graffe was in the collider");
-                InvokeSelection(2);
-            }
+            //if (Input.GetKey(KeyCode.W) && collision.GetComponent<HeadMovement2>().xGiraffe)
+            //{
+            //    //Debug.Log("W was pressed when graffe was in the collider");
+            //    InvokeSelection(1);
+            //}
+            //if (Input.GetKey(KeyCode.Space) && collision.GetComponent<HeadMovement2>().yGiraffe)
+            //{
+            //    //Debug.Log("Space was pressed when graffe was in the collider");
+            //    InvokeSelection(2);
+            //}
         }
     }
 

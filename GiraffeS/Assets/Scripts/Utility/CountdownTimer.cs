@@ -10,9 +10,7 @@ public class CountdownTimer : MonoBehaviour
     public GameObject two;
     public GameObject one;
     public GameObject go;
-    public GameObject assFlamesTop;
     public GameObject assFlamesBot;
-    public GameObject GiraffeTOP;
     public GameObject GiraffeBOT;
     //public TMPro.TextMeshProUGUI text;
 
@@ -98,7 +96,6 @@ public class CountdownTimer : MonoBehaviour
             //Debug.Log("Should be true");
             FindObjectOfType<AudioManager>().Play("Go");
             startGame = true;
-            GiraffeTOP.GetComponent<PlayerController>().StartGame();
             GiraffeBOT.GetComponent<PlayerController>().StartGame();
             //one.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(0, 0, 0, 0);
             one.SetActive(false);
@@ -125,30 +122,25 @@ public class CountdownTimer : MonoBehaviour
     void ScaleUpFlames()
     {
         assFlamesBot.transform.localScale = new Vector3(1, 1, 1);
-        assFlamesTop.transform.localScale = new Vector3(1, 1, 1);
     }
 
     void ScaleDownFlames()
     {
-        assFlamesTop.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         assFlamesBot.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
     }
 
     void RescaleFlames()
     {
-        assFlamesTop.transform.localScale = startScale;
         assFlamesBot.transform.localScale = startScale;
     }
 
     void ActivateFIRE()
     {
-        assFlamesTop.SetActive(true);
         assFlamesBot.SetActive(true);
     }
 
     void DeactivateFIRE()
     {
-        assFlamesTop.SetActive(false);
         assFlamesBot.SetActive(false);
     }
 
