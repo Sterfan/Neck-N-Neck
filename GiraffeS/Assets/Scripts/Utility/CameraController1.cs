@@ -28,6 +28,10 @@ public class CameraController1 : MonoBehaviour
         transform.position = smoothedPosition;
     }
 
+
+    //      THIS CODE was to calculate how far from the ground the camera should be. It was removed to be replaced with
+    //      the camera following the body of the pie chart -- sorry graf
+    //
     //private RaycastHit2D GroundLevel()
     //{
     //    direction = new Vector2(0, -1);
