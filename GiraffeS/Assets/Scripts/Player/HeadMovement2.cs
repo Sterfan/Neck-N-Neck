@@ -27,31 +27,16 @@ public class HeadMovement2 : MonoBehaviour
 
     [SerializeField] float mouseSensitivity = 0.05f;
 
-    //public bool xGiraffe;
-    //public bool yGiraffe;
-    //public bool singleP;
-
     public float xHeadOffset = 0.7f;
     float headToBodyStart;
     float headToBody;
     float maxNeckLength = 7.0f;
     [SerializeField] float minNeckLength = 1.95f;
     float yMouse;
-    //float xMouse;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-
-        //if (yGiraffe == true)
-        //{
-        //    xGiraffe = false;
-
-        //}
-        //if (xGiraffe == true)
-        //{
-        //    yGiraffe = false;
-        //}
 
         Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
         headStart = Head.transform.position;
@@ -66,54 +51,29 @@ public class HeadMovement2 : MonoBehaviour
         Vector2 headPos = Head.transform.position;
         Vector2 bodyPos = Body.transform.position;
 
-        //mouseMovement = new Vector2(0.0f, Input.GetAxis("Mouse X"));
         headToBody = Head.transform.position.y - Body.transform.position.y;
-        //var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //mousePos.z = 0;
 
-
-
-        //Debug.Log(Input.GetAxis("Mouse Y"));
         if (Input.GetMouseButton(0) && Input.mousePosition.x <= Screen.width / 2.0f) 
         {
             yMouse = Input.GetAxis("Mouse Y");
-            Debug.Log("width: "+ Screen.width);
-            //Debug.Log("mouse: " + Input.GetAxis("Mouse X"));
+            mouseMovement = new Vector2(0.0f, yMouse);
+            mouseInput = new Vector3(0, yMouse, 0);
+
+            Head.transform.position += mouseInput * mouseSensitivity;
+            //Debug.Log("width: "+ Screen.width);
         }
-        mouseMovement = new Vector2(0.0f, yMouse);
-        mouseInput = new Vector3(0, yMouse, 0);
-
-            //Head.transform.position = new Vector2(Head.transform.position.x, Input.mousePosition.y);
-        Head.transform.position += mouseInput * mouseSensitivity;
-
-            //if (Body.GetComponent<PlayerController>().Jumping == true)
-            //{
-            //    //Head.transform.position = (headStart + (Body.transform.position - bodyStart)) - ((mouseStart - mousePos) / mouseSlower);
-            //    Head.transform.position = (headPos + (bodyPos - bodyStart)) + (mouseMovement * mouseSensitivity);
-
-            //}
-
-            if (headToBody > maxNeckLength)
-            {
-                Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
-                //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                //mouseStart.y = mouseStart.y + headToBodyStart * 0.042f;
-            }
-            if (Head.transform.position.y <= Body.transform.position.y + minNeckLength)
-            {
-                Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
-                //mouseStart.y = mouseStart.y - headToBodyStart * 0.039f;
-                //mouseStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            }
-
-        
 
 
+        if (headToBody > maxNeckLength)
+        {
+            Head.transform.position = new Vector2(Head.transform.position.x, bodyPos.y + maxNeckLength);
+        }
 
+        else if (Head.transform.position.y <= Body.transform.position.y + minNeckLength)
+        {
+            Head.transform.position = new Vector2(Head.transform.position.x, Body.transform.position.y + minNeckLength);
+        }
 
-
-        //Debug.Log(headToBody);
         Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + xHeadOffset, headPos.y + bodyPos.y + 0.4f) / 2;
         float scaleX = Mathf.Abs(bodyPos.x - headPos.x);
         float scaleY = Mathf.Abs(bodyPos.y - headPos.y);
@@ -136,7 +96,7 @@ public class HeadMovement2 : MonoBehaviour
         }
         else if (headToBody < 3.75f && headToBody >= 3)
         {
-            spriteR.sprite = neck4; //HAPPENS TOO SOON FROM HERE ON
+            spriteR.sprite = neck4;
             Neck.transform.localScale = new Vector3(scaleX / 2.5f, scaleY / 3.6f, 1);
             //Debug.Log("neck4");
         }
@@ -159,24 +119,6 @@ public class HeadMovement2 : MonoBehaviour
             //Debug.Log("neck1");
         }
 
-
-
-
-
-
-
-
         Neck.transform.position = centerPos;
     }
-
-    //    void NeckDraw(Vector3 headPos, Vector3 bodyPos)
-    //    {
-    //        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x, headPos.y + bodyPos.y) / 2;
-
-    //        float scaleX = Mathf.Abs(bodyPos.x - headPos.x);
-    //        float scaleY = Mathf.Abs(bodyPos.y - headPos.y);
-
-    //        Neck.transform.position = centerPos;
-    //        Neck.transform.localScale = new Vector3(scaleX, scaleY, 1);
-    //    }
 }
