@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreBoard : MonoBehaviour
 {
-
+    int timesPlayed = 0;
     private void Update()
     {
         if (Input.GetKey(KeyCode.P))
@@ -24,11 +24,11 @@ public class ScoreBoard : MonoBehaviour
         newScore = score;
         newName = name;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < timesPlayed; i++)
         {
             if (PlayerPrefs.HasKey(i + "HScore"))
             {
-                if (PlayerPrefs.GetInt(i+"HScore") < newScore)
+                if (PlayerPrefs.GetInt(i+"HScore") > newScore)
                 {
                     oldScore = PlayerPrefs.GetInt(i + "HScore");
                     oldName = PlayerPrefs.GetString(i + "HScoreName");
@@ -36,6 +36,7 @@ public class ScoreBoard : MonoBehaviour
                     PlayerPrefs.SetString(i + "HScoreName", newName);
                     newScore = oldScore;
                     newName = oldName;
+                    timesPlayed++;
                 }
             }
             else
@@ -44,6 +45,7 @@ public class ScoreBoard : MonoBehaviour
                 PlayerPrefs.SetString(i + "HScoreName", newName);
                 newScore = 999;
                 newName = "";
+                timesPlayed++;
             }
         }
     }
@@ -52,37 +54,36 @@ public class ScoreBoard : MonoBehaviour
     public void NewScore(float score)
     {
         float newScore;
-        //string newName;
         float oldScore;
-        //string oldName;
         newScore = score;
-        //newName = name;
 
-        for (int i = 0; i < 10; i++)
+        if (PlayerPrefs.HasKey("timesPlayed"))
         {
-            if (PlayerPrefs.HasKey(i + "HScore"))
+            PlayerPrefs.SetInt("timesPlayed", PlayerPrefs.GetInt("timesPlayed") + 1);
+            timesPlayed = PlayerPrefs.GetInt("timesPlayed");
+            for (int i = 0; i < timesPlayed ; i++)
             {
-                if (newScore < PlayerPrefs.GetFloat(i+"HScore")) //Change the sign to "NS < OS" here since we want lowest time
+                if (PlayerPrefs.HasKey(i + "HScore"))
                 {
-                    //Debug.Log("New Score: " + newScore);
-                    oldScore = PlayerPrefs.GetFloat(i + "HScore");
-                    //Debug.Log("Old Score: " + oldScore);
-                    //oldName = PlayerPrefs.GetString(i + "HScoreName");
+                    if (newScore < PlayerPrefs.GetFloat(i+"HScore")) //Change the sign to "NS < OS" here since we want lowest time
+                    {
+                        oldScore = PlayerPrefs.GetFloat(i + "HScore");
+                        PlayerPrefs.SetFloat(i + "HScore", newScore);
+                        newScore = oldScore;
+                    }
+                }
+                else
+                {
                     PlayerPrefs.SetFloat(i + "HScore", newScore);
-                    //PlayerPrefs.SetString(i + "HScoreName", newName);
-                    newScore = oldScore;
-                    //newName = oldName;
-                    //Debug.Log("New Score after: " + newScore);
-                    //Debug.Log("Old Score after: " + oldScore);
+                    newScore = 999; //Set this to something high
                 }
             }
-            else
-            {
-                PlayerPrefs.SetFloat(i + "HScore", newScore);
-                //PlayerPrefs.SetString(i + "HScoreName", newName);
-                newScore = 999; //Set this to something high
-                //newName = "";
-            }
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("timesPlayed", 0);
+            NewScore(score);
         }
     }
 }

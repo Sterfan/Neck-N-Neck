@@ -60,6 +60,7 @@ public class PlayerProgress : MonoBehaviour
         //Debug.Log(branchCorners);
         //gameObject.transform.position = new Vector2(startPos, yPos);
         trackLength = FinishLine.transform.position.x - Giraffe.transform.position.x;
+
         //Debug.Log(trackLength);
     }
 
@@ -101,15 +102,31 @@ public class PlayerProgress : MonoBehaviour
                 if (scored == false)
                 {
                     ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime); // CALL THIS ONLY ONCE
-                    scored = true;
                     if (Giraffe.GetComponentInChildren<HeadMovement2>().xGiraffe == true)
                     {
                         PlayerPrefs.SetFloat("xScore", gameTime);
+                        //if (PlayerPrefs.HasKey("timesPlayed"))
+                        //{
+                        //    PlayerPrefs.SetInt("timesPlayed", PlayerPrefs.GetInt("timesPlayed") + 2);
+                        //}
+                        //else
+                        //{
+                        //    PlayerPrefs.SetInt("timesPlayed", 1);
+                        //}
                     }
                     else if (Giraffe.GetComponentInChildren<HeadMovement2>().yGiraffe == true)
                     {
                         PlayerPrefs.SetFloat("yScore", gameTime);
+                        //if (PlayerPrefs.HasKey("timesPlayed"))
+                        //{
+                        //    PlayerPrefs.SetInt("timesPlayed", PlayerPrefs.GetInt("timesPlayed") + 2);
+                        //}
+                        //else
+                        //{
+                        //    PlayerPrefs.SetInt("timesPlayed", 1);
+                        //}
                     }
+                    scored = true;
                 }
             }
 
