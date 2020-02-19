@@ -51,11 +51,14 @@ public class ScoreBoard : MonoBehaviour
     }
 
 
-    public void NewScore(float score)
+
+    //This is the one I use
+    public void NewScore(float score, string giraffe)
     {
         float newScore;
         float oldScore;
         newScore = score;
+        bool savedPos = false;
 
         if (PlayerPrefs.HasKey("timesPlayed"))
         {
@@ -65,16 +68,26 @@ public class ScoreBoard : MonoBehaviour
             {
                 if (PlayerPrefs.HasKey(i + "HScore"))
                 {
-                    if (newScore < PlayerPrefs.GetFloat(i+"HScore")) //Change the sign to "NS < OS" here since we want lowest time
+                    if (newScore < PlayerPrefs.GetFloat(i + "HScore")) //Change the sign to "NS < OS" here since we want lowest time
                     {
                         oldScore = PlayerPrefs.GetFloat(i + "HScore");
                         PlayerPrefs.SetFloat(i + "HScore", newScore);
+                        if (!savedPos)
+                        {
+                            PlayerPrefs.SetInt(giraffe, i + 1);
+                            savedPos = true;
+                        }
                         newScore = oldScore;
                     }
                 }
                 else
                 {
                     PlayerPrefs.SetFloat(i + "HScore", newScore);
+                    if (!savedPos)
+                    {
+                        PlayerPrefs.SetInt(giraffe, i + 1);
+                        savedPos = true;
+                    }
                     newScore = 999; //Set this to something high
                 }
             }
@@ -83,7 +96,7 @@ public class ScoreBoard : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("timesPlayed", 0);
-            NewScore(score);
+            NewScore(score, giraffe);
         }
     }
 }
