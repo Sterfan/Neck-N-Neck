@@ -101,9 +101,10 @@ public class PlayerProgress : MonoBehaviour
                 Backgrounds.GetComponent<BGSpeedMultiplier>().SetSpeedMultiplier(0.0f);
                 if (scored == false)
                 {
-                    ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime); // CALL THIS ONLY ONCE
+                    //ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime); // CALL THIS ONLY ONCE
                     if (Giraffe.GetComponentInChildren<HeadMovement2>().xGiraffe == true)
                     {
+                        ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime, "xPos"); // CALL THIS ONLY ONCE
                         PlayerPrefs.SetFloat("xScore", gameTime);
                         //if (PlayerPrefs.HasKey("timesPlayed"))
                         //{
@@ -116,6 +117,7 @@ public class PlayerProgress : MonoBehaviour
                     }
                     else if (Giraffe.GetComponentInChildren<HeadMovement2>().yGiraffe == true)
                     {
+                        ScoreManager.GetComponent<ScoreBoard>().NewScore(gameTime, "yPos"); // CALL THIS ONLY ONCE
                         PlayerPrefs.SetFloat("yScore", gameTime);
                         //if (PlayerPrefs.HasKey("timesPlayed"))
                         //{
