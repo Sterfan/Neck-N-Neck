@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
                         {
                             Jump();
                             playerState = PlayerStates.Jumping;
+
                         }
                     }
 
@@ -113,6 +114,8 @@ public class PlayerController : MonoBehaviour
 
                     Jumping = true;
                     animator.SetBool("IsJumping", true);
+                    animator.SetBool("IsRunning", false);
+
 
                     //if (dashAmmo >= 1.0f)
                     //{
