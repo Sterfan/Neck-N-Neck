@@ -34,7 +34,7 @@ public static class pButtonFunctions
     static void PlayScene()
     {
         //SceneManager.LoadScene("Axel's Scene");
-        GameObject.Find("ManageScenes").GetComponent<FadeOut>().nextScene = "Buffer Scene or some sht like that";
+        GameObject.Find("ManageScenes").GetComponent<FadeOut>().nextScene = "GGCWarningScene";
     }
 
     static void ScoreBoardScene()
