@@ -82,6 +82,15 @@ public class PlayerProgress : MonoBehaviour
                     //Debug.Log("Should change to second");
                     position.sprite = first;
                     otherGiraffeTracker.GetComponent<PlayerProgress>().ChangePosSprite();
+                    if (otherGiraffeTracker.GetComponent<PlayerProgress>().distanceRemaining - distanceRemaining >= 50)
+                    {
+                        //increase max speed up to a certain point
+
+                    }
+                    else
+                    {
+                        // reset max speed
+                    }
                 }
                 //if (distanceTraveled == otherGiraffeTracker.GetComponent<PlayerProgress>().distanceTraveled)
                 if (distanceRemaining == otherGiraffeTracker.GetComponent<PlayerProgress>().distanceRemaining)
