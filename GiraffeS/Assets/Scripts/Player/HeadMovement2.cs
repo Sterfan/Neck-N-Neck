@@ -138,7 +138,7 @@ public class HeadMovement2 : MonoBehaviour
         }
 
         //Debug.Log(headToBody);
-        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + xHeadOffset, headPos.y + bodyPos.y + 0.4f) / 2;
+        Vector3 centerPos = new Vector3(headPos.x + bodyPos.x + xHeadOffset, headPos.y + bodyPos.y + 0.1f) / 2;
         float scaleX = Mathf.Abs(bodyPos.x - headPos.x);
         float scaleY = Mathf.Abs(bodyPos.y - headPos.y);
 
@@ -172,12 +172,14 @@ public class HeadMovement2 : MonoBehaviour
         }
         else if (headToBody < 2.5f && headToBody >= 2.25f)
         {
+            //centerPos = new Vector3(headPos.x + bodyPos.x + xHeadOffset, headPos.y + bodyPos.y + 0.2f) / 2;
             spriteR.sprite = neck2;
             Neck.transform.localScale = new Vector3(scaleX / 2.5f, scaleY / 2.9f, 1);
             //Debug.Log("neck2");
         }
         else if (headToBody < 2.25f && headToBody > minNeckLength)
         {
+            //centerPos = new Vector3(headPos.x + bodyPos.x + xHeadOffset, headPos.y + bodyPos.y + 0.2f) / 2;
             spriteR.sprite = neck1;
             Neck.transform.localScale = new Vector3(scaleX / 2.5f, scaleY / 2.5f, 1);
             //Debug.Log("neck1");
